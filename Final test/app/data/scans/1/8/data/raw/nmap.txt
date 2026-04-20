@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Sun Apr 19 21:19:31 2026 as: /usr/lib/nmap/nmap --privileged -sV -Pn -T4 -iL data/state/subdomains_all.txt -oN data/raw/nmap.txt -oX data/raw/nmap.xml
+Failed to resolve "nmu.edu.eg".
+WARNING: No targets were specified, so 0 hosts scanned.
+# Nmap done at Sun Apr 19 21:19:56 2026 -- 0 IP addresses (0 hosts up) scanned in 25.16 seconds

@@ -1,0 +1,3300 @@
+# Nmap 7.95 scan initiated Sun Apr 19 20:35:13 2026 as: /usr/lib/nmap/nmap --privileged -sV -Pn -T4 -iL data/state/subdomains_all.txt -oN data/raw/nmap.txt -oX data/raw/nmap.xml
+Failed to resolve "cpanel.nmu.edu.eg".
+Failed to resolve "cpcalendars.nmu.edu.eg".
+Failed to resolve "cpcontacts.nmu.edu.eg".
+Failed to resolve "mail.nmu.edu.eg".
+Failed to resolve "webdisk.nmu.edu.eg".
+Failed to resolve "webmail.nmu.edu.eg".
+Warning: 41.33.2.164 giving up on port because retransmission cap hit (6).
+Nmap scan report for bs.nmu.edu.eg (41.33.2.163)
+Host is up (0.017s latency).
+Not shown: 990 filtered tcp ports (no-response)
+PORT      STATE  SERVICE       VERSION
+25/tcp    open   tcpwrapped
+80/tcp    open   http          nginx 1.18.0 (Ubuntu)
+443/tcp   open   ssl/http      nginx 1.18.0 (Ubuntu)
+749/tcp   closed kerberos-adm
+873/tcp   closed rsync
+1998/tcp  closed x25-svc-port
+2000/tcp  open   cisco-sccp?
+3703/tcp  closed adobeserver-3
+5060/tcp  open   sip?
+32781/tcp closed unknown
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for erp.nmu.edu.eg (41.33.2.165)
+Host is up (0.033s latency).
+Not shown: 986 filtered tcp ports (no-response)
+PORT      STATE  SERVICE       VERSION
+25/tcp    open   tcpwrapped
+80/tcp    open   http          nginx 1.18.0 (Ubuntu)
+443/tcp   open   ssl/http      nginx 1.18.0 (Ubuntu)
+749/tcp   closed kerberos-adm
+873/tcp   closed rsync
+1998/tcp  closed x25-svc-port
+2000/tcp  open   cisco-sccp?
+2046/tcp  closed sdfunc
+3703/tcp  closed adobeserver-3
+4900/tcp  closed hfcs
+5060/tcp  open   sip?
+5269/tcp  closed xmpp-server
+32781/tcp closed unknown
+49156/tcp closed unknown
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for es.nmu.edu.eg (41.33.2.167)
+Host is up (0.021s latency).
+
+PORT      STATE    SERVICE           VERSION
+1/tcp     open     ssl/http          Apache httpd
+3/tcp     open     ssl/http          Apache httpd
+4/tcp     open     http              Apache httpd
+6/tcp     open     http              Apache httpd
+7/tcp     open     http              Apache httpd
+9/tcp     open     ssl/http          Apache httpd
+13/tcp    open     http              Apache httpd
+17/tcp    open     http              Apache httpd
+19/tcp    open     http              Apache httpd
+20/tcp    open     http              Apache httpd
+21/tcp    open     http              Apache httpd
+22/tcp    open     http              Apache httpd
+23/tcp    open     http              Apache httpd
+24/tcp    open     http              Apache httpd
+25/tcp    open     tcpwrapped
+26/tcp    open     ssl/http          Apache httpd
+30/tcp    open     http              Apache httpd
+32/tcp    open     http              Apache httpd
+33/tcp    open     http              Apache httpd
+37/tcp    open     http              Apache httpd
+42/tcp    open     http              Apache httpd
+43/tcp    open     http              Apache httpd
+49/tcp    open     http              Apache httpd
+53/tcp    open     domain?
+70/tcp    open     ssl/http          Apache httpd
+79/tcp    open     http              Apache httpd
+80/tcp    open     http              Apache httpd
+81/tcp    open     http              Apache httpd
+82/tcp    open     http              Apache httpd
+83/tcp    open     http              Apache httpd
+84/tcp    open     ssl/http          Apache httpd
+85/tcp    open     http              Apache httpd
+88/tcp    open     ssl/http          Apache httpd
+89/tcp    open     ssl/http          Apache httpd
+90/tcp    open     http              Apache httpd
+99/tcp    open     http              Apache httpd
+100/tcp   open     ssl/http          Apache httpd
+106/tcp   open     http              Apache httpd
+109/tcp   open     http              Apache httpd
+110/tcp   open     ssl/http          Apache httpd
+111/tcp   open     ssl/http          Apache httpd
+113/tcp   open     http              Apache httpd
+119/tcp   open     ssl/http          Apache httpd
+125/tcp   open     http              Apache httpd
+135/tcp   open     http              Apache httpd
+139/tcp   open     http              Apache httpd
+143/tcp   open     http              Apache httpd
+144/tcp   open     ssl/http          Apache httpd
+146/tcp   open     http              Apache httpd
+161/tcp   open     http              Apache httpd
+163/tcp   open     http              Apache httpd
+179/tcp   open     http              Apache httpd
+199/tcp   open     http              Apache httpd
+211/tcp   open     http              Apache httpd
+212/tcp   open     http              Apache httpd
+222/tcp   open     ssl/http          Apache httpd
+254/tcp   open     ssl/http          Apache httpd
+255/tcp   open     http              Apache httpd
+256/tcp   open     http              Apache httpd
+259/tcp   open     http              Apache httpd
+264/tcp   open     http              Apache httpd
+280/tcp   open     ssl/http          Apache httpd
+301/tcp   open     http              Apache httpd
+306/tcp   open     ssl/http          Apache httpd
+311/tcp   open     ssl/http          Apache httpd
+340/tcp   open     http              Apache httpd
+366/tcp   open     http              Apache httpd
+389/tcp   open     http              Apache httpd
+406/tcp   open     http              Apache httpd
+407/tcp   open     http              Apache httpd
+416/tcp   open     ssl/http          Apache httpd
+417/tcp   open     ssl/http          Apache httpd
+425/tcp   open     http              Apache httpd
+427/tcp   open     http              Apache httpd
+443/tcp   open     ssl/http          Apache httpd
+444/tcp   open     ssl/http          Apache httpd
+445/tcp   open     http              Apache httpd
+458/tcp   open     http              Apache httpd
+464/tcp   open     http              Apache httpd
+465/tcp   open     ssl/http          Apache httpd
+481/tcp   open     http              Apache httpd
+497/tcp   open     http              Apache httpd
+500/tcp   open     ssl/http          Apache httpd
+512/tcp   open     http              Apache httpd
+513/tcp   open     http              Apache httpd
+514/tcp   open     http              Apache httpd
+515/tcp   open     http              Apache httpd
+524/tcp   open     ssl/http          Apache httpd
+541/tcp   open     tcpwrapped
+543/tcp   open     http              Apache httpd
+544/tcp   open     http              Apache httpd
+545/tcp   open     ssl/http          Apache httpd
+548/tcp   open     ssl/http          Apache httpd
+554/tcp   open     http              Apache httpd
+555/tcp   open     http              Apache httpd
+563/tcp   open     ssl/http          Apache httpd
+587/tcp   open     http              Apache httpd
+593/tcp   open     http              Apache httpd
+616/tcp   open     http              Apache httpd
+617/tcp   open     http              Apache httpd
+625/tcp   filtered apple-xsrvr-admin
+631/tcp   open     http              Apache httpd
+636/tcp   open     ssl/http          Apache httpd
+646/tcp   open     http              Apache httpd
+648/tcp   open     http              Apache httpd
+666/tcp   open     http              Apache httpd
+667/tcp   open     http              Apache httpd
+668/tcp   open     http              Apache httpd
+683/tcp   open     http              Apache httpd
+687/tcp   open     http              Apache httpd
+691/tcp   open     http              Apache httpd
+700/tcp   filtered epp
+705/tcp   open     http              Apache httpd
+711/tcp   open     ssl/http          Apache httpd
+714/tcp   open     http              Apache httpd
+720/tcp   open     http              Apache httpd
+722/tcp   open     http              Apache httpd
+726/tcp   open     http              Apache httpd
+749/tcp   open     http              Apache httpd
+765/tcp   open     http              Apache httpd
+777/tcp   open     http              Apache httpd
+783/tcp   open     http              Apache httpd
+787/tcp   open     http              Apache httpd
+800/tcp   open     http              Apache httpd
+801/tcp   open     http              Apache httpd
+808/tcp   open     http              Apache httpd
+843/tcp   open     http              Apache httpd
+873/tcp   open     http              Apache httpd
+880/tcp   open     ssl/http          Apache httpd
+888/tcp   open     http              Apache httpd
+898/tcp   open     http              Apache httpd
+900/tcp   open     http              Apache httpd
+901/tcp   open     ssl/http          Apache httpd
+902/tcp   open     ssl/http          Apache httpd
+903/tcp   open     http              Apache httpd
+911/tcp   open     http              Apache httpd
+912/tcp   open     http              Apache httpd
+981/tcp   open     http              Apache httpd
+987/tcp   open     http              Apache httpd
+990/tcp   open     ssl/http          Apache httpd
+992/tcp   open     ssl/http          Apache httpd
+993/tcp   open     ssl/http          Apache httpd
+995/tcp   open     ssl/http          Apache httpd
+999/tcp   open     http              Apache httpd
+1000/tcp  open     http              Apache httpd
+1001/tcp  open     http              Apache httpd
+1002/tcp  open     ssl/http          Apache httpd
+1007/tcp  open     http              Apache httpd
+1009/tcp  open     http              Apache httpd
+1010/tcp  open     http              Apache httpd
+1011/tcp  open     http              Apache httpd
+1021/tcp  open     http              Apache httpd
+1022/tcp  open     http              Apache httpd
+1023/tcp  open     http              Apache httpd
+1024/tcp  open     http              Apache httpd
+1025/tcp  open     http              Apache httpd
+1026/tcp  open     http              Apache httpd
+1027/tcp  open     http              Apache httpd
+1028/tcp  open     http              Apache httpd
+1029/tcp  open     ssl/http          Apache httpd
+1030/tcp  open     http              Apache httpd
+1031/tcp  open     http              Apache httpd
+1032/tcp  open     http              Apache httpd
+1033/tcp  open     ssl/http          Apache httpd
+1034/tcp  open     http              Apache httpd
+1035/tcp  open     ssl/http          Apache httpd
+1036/tcp  open     http              Apache httpd
+1037/tcp  open     http              Apache httpd
+1038/tcp  open     http              Apache httpd
+1039/tcp  open     http              Apache httpd
+1040/tcp  open     http              Apache httpd
+1041/tcp  open     http              Apache httpd
+1042/tcp  open     http              Apache httpd
+1043/tcp  open     http              Apache httpd
+1044/tcp  open     ssl/http          Apache httpd
+1045/tcp  open     http              Apache httpd
+1046/tcp  filtered wfremotertm
+1047/tcp  open     http              Apache httpd
+1048/tcp  open     ssl/http          Apache httpd
+1049/tcp  open     http              Apache httpd
+1050/tcp  open     http              Apache httpd
+1051/tcp  open     http              Apache httpd
+1052/tcp  open     http              Apache httpd
+1053/tcp  open     http              Apache httpd
+1054/tcp  open     http              Apache httpd
+1055/tcp  open     http              Apache httpd
+1056/tcp  open     http              Apache httpd
+1057/tcp  open     http              Apache httpd
+1058/tcp  open     http              Apache httpd
+1059/tcp  open     http              Apache httpd
+1060/tcp  open     ssl/http          Apache httpd
+1061/tcp  open     http              Apache httpd
+1062/tcp  open     http              Apache httpd
+1063/tcp  open     http              Apache httpd
+1064/tcp  open     http              Apache httpd
+1065/tcp  open     http              Apache httpd
+1066/tcp  open     http              Apache httpd
+1067/tcp  open     http              Apache httpd
+1068/tcp  open     http              Apache httpd
+1069/tcp  open     http              Apache httpd
+1070/tcp  open     http              Apache httpd
+1071/tcp  open     http              Apache httpd
+1072/tcp  open     http              Apache httpd
+1073/tcp  open     ssl/http          Apache httpd
+1074/tcp  open     http              Apache httpd
+1075/tcp  open     http              Apache httpd
+1076/tcp  open     http              Apache httpd
+1077/tcp  open     http              Apache httpd
+1078/tcp  filtered avocent-proxy
+1079/tcp  open     http              Apache httpd
+1080/tcp  open     http              Apache httpd
+1081/tcp  open     http              Apache httpd
+1082/tcp  open     http              Apache httpd
+1083/tcp  open     http              Apache httpd
+1084/tcp  open     http              Apache httpd
+1085/tcp  open     http              Apache httpd
+1086/tcp  open     http              Apache httpd
+1087/tcp  open     http              Apache httpd
+1088/tcp  open     http              Apache httpd
+1089/tcp  open     http              Apache httpd
+1090/tcp  open     ssl/http          Apache httpd
+1091/tcp  open     http              Apache httpd
+1092/tcp  open     http              Apache httpd
+1093/tcp  open     ssl/http          Apache httpd
+1094/tcp  open     http              Apache httpd
+1095/tcp  open     http              Apache httpd
+1096/tcp  open     ssl/http          Apache httpd
+1097/tcp  open     http              Apache httpd
+1098/tcp  open     http              Apache httpd
+1099/tcp  open     http              Apache httpd
+1100/tcp  open     ssl/http          Apache httpd
+1102/tcp  open     http              Apache httpd
+1104/tcp  open     http              Apache httpd
+1105/tcp  open     http              Apache httpd
+1106/tcp  open     http              Apache httpd
+1107/tcp  open     http              Apache httpd
+1108/tcp  open     http              Apache httpd
+1110/tcp  open     http              Apache httpd
+1111/tcp  open     http              Apache httpd
+1112/tcp  open     http              Apache httpd
+1113/tcp  open     http              Apache httpd
+1114/tcp  open     http              Apache httpd
+1117/tcp  open     http              Apache httpd
+1119/tcp  open     http              Apache httpd
+1121/tcp  open     http              Apache httpd
+1122/tcp  open     availant-mgr?
+1123/tcp  open     http              Apache httpd
+1124/tcp  open     http              Apache httpd
+1126/tcp  open     http              Apache httpd
+1130/tcp  open     http              Apache httpd
+1131/tcp  open     http              Apache httpd
+1132/tcp  open     http              Apache httpd
+1137/tcp  open     http              Apache httpd
+1138/tcp  open     http              Apache httpd
+1141/tcp  open     http              Apache httpd
+1145/tcp  open     http              Apache httpd
+1147/tcp  open     http              Apache httpd
+1148/tcp  open     http              Apache httpd
+1149/tcp  filtered bvtsonar
+1151/tcp  open     http              Apache httpd
+1152/tcp  open     http              Apache httpd
+1154/tcp  open     http              Apache httpd
+1163/tcp  open     http              Apache httpd
+1164/tcp  open     http              Apache httpd
+1165/tcp  open     http              Apache httpd
+1166/tcp  open     http              Apache httpd
+1169/tcp  open     http              Apache httpd
+1174/tcp  open     ssl/http          Apache httpd
+1175/tcp  open     http              Apache httpd
+1183/tcp  open     ssl/http          Apache httpd
+1185/tcp  open     http              Apache httpd
+1186/tcp  open     http              Apache httpd
+1187/tcp  open     ssl/http          Apache httpd
+1192/tcp  open     http              Apache httpd
+1198/tcp  open     http              Apache httpd
+1199/tcp  open     http              Apache httpd
+1201/tcp  open     http              Apache httpd
+1213/tcp  open     http              Apache httpd
+1216/tcp  open     http              Apache httpd
+1217/tcp  open     ssl/http          Apache httpd
+1218/tcp  open     http              Apache httpd
+1233/tcp  open     ssl/http          Apache httpd
+1234/tcp  open     http              Apache httpd
+1236/tcp  open     ssl/http          Apache httpd
+1244/tcp  open     http              Apache httpd
+1247/tcp  open     http              Apache httpd
+1248/tcp  open     ssl/http          Apache httpd
+1259/tcp  open     http              Apache httpd
+1271/tcp  open     http              Apache httpd
+1272/tcp  open     http              Apache httpd
+1277/tcp  open     http              Apache httpd
+1287/tcp  open     http              Apache httpd
+1296/tcp  open     http              Apache httpd
+1300/tcp  open     ssl/http          Apache httpd
+1301/tcp  open     http              Apache httpd
+1309/tcp  open     http              Apache httpd
+1310/tcp  open     http              Apache httpd
+1311/tcp  open     ssl/http          Apache httpd
+1322/tcp  open     http              Apache httpd
+1328/tcp  open     http              Apache httpd
+1334/tcp  open     ssl/http          Apache httpd
+1352/tcp  open     http              Apache httpd
+1417/tcp  open     ssl/http          Apache httpd
+1433/tcp  open     http              Apache httpd
+1434/tcp  open     http              Apache httpd
+1443/tcp  open     ssl/http          Apache httpd
+1455/tcp  open     http              Apache httpd
+1461/tcp  open     http              Apache httpd
+1494/tcp  open     http              Apache httpd
+1500/tcp  open     ssl/http          Apache httpd
+1501/tcp  open     http              Apache httpd
+1503/tcp  open     http              Apache httpd
+1521/tcp  open     http              Apache httpd
+1524/tcp  open     http              Apache httpd
+1533/tcp  open     http              Apache httpd
+1556/tcp  open     http              Apache httpd
+1580/tcp  open     http              Apache httpd
+1583/tcp  open     http              Apache httpd
+1594/tcp  open     http              Apache httpd
+1600/tcp  open     ssl/http          Apache httpd
+1641/tcp  open     http              Apache httpd
+1658/tcp  open     http              Apache httpd
+1666/tcp  open     http              Apache httpd
+1687/tcp  open     http              Apache httpd
+1688/tcp  open     http              Apache httpd
+1700/tcp  open     ssl/http          Apache httpd
+1717/tcp  open     http              Apache httpd
+1718/tcp  open     ssl/http          Apache httpd
+1719/tcp  open     ssl/http          Apache httpd
+1720/tcp  open     http              Apache httpd
+1721/tcp  open     http              Apache httpd
+1723/tcp  open     ssl/http          Apache httpd
+1755/tcp  open     http              Apache httpd
+1761/tcp  open     ssl/http          Apache httpd
+1782/tcp  open     http              Apache httpd
+1783/tcp  open     http              Apache httpd
+1801/tcp  open     http              Apache httpd
+1805/tcp  open     http              Apache httpd
+1812/tcp  open     http              Apache httpd
+1839/tcp  open     ssl/http          Apache httpd
+1840/tcp  open     http              Apache httpd
+1862/tcp  open     ssl/http          Apache httpd
+1863/tcp  open     http              Apache httpd
+1864/tcp  open     http              Apache httpd
+1875/tcp  open     http              Apache httpd
+1900/tcp  open     http              Apache httpd
+1914/tcp  open     http              Apache httpd
+1935/tcp  open     http              Apache httpd
+1947/tcp  open     http              Apache httpd
+1971/tcp  open     http              Apache httpd
+1972/tcp  open     http              Apache httpd
+1974/tcp  open     http              Apache httpd
+1984/tcp  open     http              Apache httpd
+1998/tcp  open     http              Apache httpd
+1999/tcp  open     http              Apache httpd
+2000/tcp  open     ssl/http          Apache httpd
+2001/tcp  open     http              Apache httpd
+2002/tcp  open     http              Apache httpd
+2003/tcp  open     http              Apache httpd
+2004/tcp  open     ssl/http          Apache httpd
+2005/tcp  open     ssl/http          Apache httpd
+2006/tcp  open     http              Apache httpd
+2007/tcp  open     http              Apache httpd
+2008/tcp  open     http              Apache httpd
+2009/tcp  open     http              Apache httpd
+2010/tcp  open     http              Apache httpd
+2013/tcp  open     http              Apache httpd
+2020/tcp  open     http              Apache httpd
+2021/tcp  open     http              Apache httpd
+2022/tcp  open     ssl/http          Apache httpd
+2030/tcp  open     http              Apache httpd
+2033/tcp  open     ssl/http          Apache httpd
+2034/tcp  open     http              Apache httpd
+2035/tcp  open     http              Apache httpd
+2038/tcp  open     http              Apache httpd
+2040/tcp  open     ssl/http          Apache httpd
+2041/tcp  open     http              Apache httpd
+2042/tcp  open     http              Apache httpd
+2043/tcp  open     http              Apache httpd
+2045/tcp  open     http              Apache httpd
+2046/tcp  open     http              Apache httpd
+2047/tcp  open     http              Apache httpd
+2048/tcp  open     ssl/http          Apache httpd
+2049/tcp  open     http              Apache httpd
+2065/tcp  open     http              Apache httpd
+2068/tcp  open     ssl/http          Apache httpd
+2099/tcp  open     http              Apache httpd
+2100/tcp  open     http              Apache httpd
+2103/tcp  open     http              Apache httpd
+2105/tcp  open     http              Apache httpd
+2106/tcp  open     ssl/http          Apache httpd
+2107/tcp  open     http              Apache httpd
+2111/tcp  open     http              Apache httpd
+2119/tcp  open     http              Apache httpd
+2121/tcp  open     http              Apache httpd
+2126/tcp  open     http              Apache httpd
+2135/tcp  open     http              Apache httpd
+2144/tcp  open     ssl/http          Apache httpd
+2160/tcp  open     http              Apache httpd
+2161/tcp  open     http              Apache httpd
+2170/tcp  open     ssl/http          Apache httpd
+2179/tcp  open     ssl/http          Apache httpd
+2190/tcp  open     http              Apache httpd
+2191/tcp  open     http              Apache httpd
+2196/tcp  open     http              Apache httpd
+2200/tcp  open     http              Apache httpd
+2222/tcp  open     ssl/http          Apache httpd
+2251/tcp  open     http              Apache httpd
+2260/tcp  open     http              Apache httpd
+2288/tcp  open     ssl/http          Apache httpd
+2301/tcp  open     http              Apache httpd
+2323/tcp  open     http              Apache httpd
+2366/tcp  open     ssl/http          Apache httpd
+2381/tcp  open     http              Apache httpd
+2382/tcp  open     http              Apache httpd
+2383/tcp  open     ssl/http          Apache httpd
+2393/tcp  open     http              Apache httpd
+2394/tcp  open     http              Apache httpd
+2399/tcp  open     http              Apache httpd
+2401/tcp  open     http              Apache httpd
+2492/tcp  open     http              Apache httpd
+2500/tcp  open     http              Apache httpd
+2522/tcp  open     http              Apache httpd
+2525/tcp  open     http              Apache httpd
+2557/tcp  open     ssl/http          Apache httpd
+2601/tcp  open     http              Apache httpd
+2602/tcp  open     http              Apache httpd
+2604/tcp  open     http              Apache httpd
+2605/tcp  open     http              Apache httpd
+2607/tcp  open     http              Apache httpd
+2608/tcp  open     http              Apache httpd
+2638/tcp  open     http              Apache httpd
+2701/tcp  open     http              Apache httpd
+2702/tcp  open     ssl/http          Apache httpd
+2710/tcp  open     http              Apache httpd
+2717/tcp  open     http              Apache httpd
+2718/tcp  open     http              Apache httpd
+2725/tcp  open     http              Apache httpd
+2800/tcp  open     http              Apache httpd
+2809/tcp  open     http              Apache httpd
+2811/tcp  open     http              Apache httpd
+2869/tcp  open     http              Apache httpd
+2875/tcp  open     http              Apache httpd
+2909/tcp  open     http              Apache httpd
+2910/tcp  open     http              Apache httpd
+2920/tcp  open     http              Apache httpd
+2967/tcp  open     http              Apache httpd
+2968/tcp  open     http              Apache httpd
+2998/tcp  open     http              Apache httpd
+3000/tcp  open     http              Apache httpd
+3001/tcp  open     http              Apache httpd
+3003/tcp  open     http              Apache httpd
+3005/tcp  open     http              Apache httpd
+3006/tcp  open     http              Apache httpd
+3011/tcp  open     http              Apache httpd
+3017/tcp  open     ssl/http          Apache httpd
+3030/tcp  open     http              Apache httpd
+3031/tcp  open     http              Apache httpd
+3052/tcp  open     http              Apache httpd
+3071/tcp  open     http              Apache httpd
+3077/tcp  open     http              Apache httpd
+3128/tcp  open     http              Apache httpd
+3168/tcp  open     http              Apache httpd
+3211/tcp  open     http              Apache httpd
+3221/tcp  open     http              Apache httpd
+3260/tcp  open     ssl/http          Apache httpd
+3261/tcp  open     http              Apache httpd
+3268/tcp  open     ssl/http          Apache httpd
+3269/tcp  open     ssl/http          Apache httpd
+3283/tcp  open     http              Apache httpd
+3300/tcp  open     http              Apache httpd
+3301/tcp  open     http              Apache httpd
+3306/tcp  open     ssl/http          Apache httpd
+3322/tcp  open     http              Apache httpd
+3323/tcp  open     http              Apache httpd
+3324/tcp  open     http              Apache httpd
+3325/tcp  open     http              Apache httpd
+3333/tcp  open     http              Apache httpd
+3351/tcp  open     http              Apache httpd
+3367/tcp  open     http              Apache httpd
+3369/tcp  open     http              Apache httpd
+3370/tcp  open     http              Apache httpd
+3371/tcp  open     http              Apache httpd
+3372/tcp  open     http              Apache httpd
+3389/tcp  open     ssl/http          Apache httpd
+3390/tcp  open     http              Apache httpd
+3404/tcp  open     http              Apache httpd
+3476/tcp  open     http              Apache httpd
+3493/tcp  open     http              Apache httpd
+3517/tcp  open     ssl/http          Apache httpd
+3527/tcp  open     http              Apache httpd
+3546/tcp  open     http              Apache httpd
+3551/tcp  open     http              Apache httpd
+3580/tcp  open     http              Apache httpd
+3659/tcp  open     http              Apache httpd
+3689/tcp  open     http              Apache httpd
+3690/tcp  open     http              Apache httpd
+3703/tcp  open     ssl/http          Apache httpd
+3737/tcp  open     http              Apache httpd
+3766/tcp  open     http              Apache httpd
+3784/tcp  open     http              Apache httpd
+3800/tcp  open     ssl/http          Apache httpd
+3801/tcp  open     http              Apache httpd
+3809/tcp  open     http              Apache httpd
+3814/tcp  open     http              Apache httpd
+3826/tcp  open     http              Apache httpd
+3827/tcp  open     ssl/http          Apache httpd
+3828/tcp  open     http              Apache httpd
+3851/tcp  open     http              Apache httpd
+3869/tcp  open     http              Apache httpd
+3871/tcp  open     http              Apache httpd
+3878/tcp  open     http              Apache httpd
+3880/tcp  open     ssl/http          Apache httpd
+3889/tcp  open     http              Apache httpd
+3905/tcp  open     ssl/http          Apache httpd
+3914/tcp  open     http              Apache httpd
+3918/tcp  open     http              Apache httpd
+3920/tcp  open     http              Apache httpd
+3945/tcp  open     http              Apache httpd
+3971/tcp  open     http              Apache httpd
+3986/tcp  open     http              Apache httpd
+3995/tcp  open     http              Apache httpd
+3998/tcp  open     http              Apache httpd
+4000/tcp  open     http              Apache httpd
+4001/tcp  open     http              Apache httpd
+4002/tcp  open     http              Apache httpd
+4003/tcp  open     http              Apache httpd
+4004/tcp  open     ssl/http          Apache httpd
+4005/tcp  open     http              Apache httpd
+4006/tcp  open     http              Apache httpd
+4045/tcp  open     ssl/http          Apache httpd
+4111/tcp  open     http              Apache httpd
+4125/tcp  open     http              Apache httpd
+4126/tcp  open     http              Apache httpd
+4129/tcp  open     http              Apache httpd
+4224/tcp  open     http              Apache httpd
+4242/tcp  open     http              Apache httpd
+4279/tcp  open     ssl/http          Apache httpd
+4321/tcp  open     ssl/http          Apache httpd
+4343/tcp  open     http              Apache httpd
+4443/tcp  open     ssl/http          Apache httpd
+4444/tcp  open     http              Apache httpd
+4445/tcp  open     http              Apache httpd
+4446/tcp  open     ssl/http          Apache httpd
+4449/tcp  open     http              Apache httpd
+4550/tcp  open     http              Apache httpd
+4567/tcp  open     http              Apache httpd
+4662/tcp  open     http              Apache httpd
+4848/tcp  open     http              Apache httpd
+4899/tcp  open     http              Apache httpd
+4900/tcp  open     ssl/http          Apache httpd
+4998/tcp  open     http              Apache httpd
+5000/tcp  open     http              Apache httpd
+5001/tcp  open     http              Apache httpd
+5002/tcp  open     http              Apache httpd
+5003/tcp  open     http              Apache httpd
+5004/tcp  open     http              Apache httpd
+5009/tcp  open     http              Apache httpd
+5030/tcp  open     http              Apache httpd
+5033/tcp  open     ssl/http          Apache httpd
+5050/tcp  open     ssl/http          Apache httpd
+5051/tcp  open     http              Apache httpd
+5054/tcp  open     ssl/http          Apache httpd
+5060/tcp  open     http              Apache httpd
+5061/tcp  open     ssl/http          Apache httpd
+5080/tcp  open     http              Apache httpd
+5087/tcp  open     http              Apache httpd
+5100/tcp  open     http              Apache httpd
+5101/tcp  open     http              Apache httpd
+5102/tcp  open     http              Apache httpd
+5120/tcp  open     http              Apache httpd
+5190/tcp  open     http              Apache httpd
+5200/tcp  open     http              Apache httpd
+5214/tcp  open     ssl/http          Apache httpd
+5221/tcp  open     http              Apache httpd
+5222/tcp  open     http              Apache httpd
+5225/tcp  open     http              Apache httpd
+5226/tcp  open     ssl/http          Apache httpd
+5269/tcp  open     ssl/http          Apache httpd
+5280/tcp  open     http              Apache httpd
+5298/tcp  open     http              Apache httpd
+5357/tcp  open     http              Apache httpd
+5405/tcp  open     http              Apache httpd
+5414/tcp  open     ssl/http          Apache httpd
+5431/tcp  open     http              Apache httpd
+5432/tcp  open     http              Apache httpd
+5440/tcp  open     http              Apache httpd
+5500/tcp  open     http              Apache httpd
+5510/tcp  open     ssl/http          Apache httpd
+5544/tcp  open     http              Apache httpd
+5550/tcp  open     ssl/http          Apache httpd
+5555/tcp  open     http              Apache httpd
+5560/tcp  open     http              Apache httpd
+5566/tcp  open     http              Apache httpd
+5631/tcp  open     http              Apache httpd
+5633/tcp  open     http              Apache httpd
+5666/tcp  open     http              Apache httpd
+5678/tcp  open     http              Apache httpd
+5679/tcp  open     http              Apache httpd
+5718/tcp  open     http              Apache httpd
+5730/tcp  open     ssl/http          Apache httpd
+5800/tcp  open     http              Apache httpd
+5801/tcp  open     http              Apache httpd
+5802/tcp  open     http              Apache httpd
+5810/tcp  open     http              Apache httpd
+5811/tcp  open     http              Apache httpd
+5815/tcp  open     http              Apache httpd
+5822/tcp  open     http              Apache httpd
+5825/tcp  open     http              Apache httpd
+5850/tcp  open     ssl/http          Apache httpd
+5859/tcp  open     http              Apache httpd
+5862/tcp  open     http              Apache httpd
+5877/tcp  open     http              Apache httpd
+5900/tcp  open     ssl/http          Apache httpd
+5901/tcp  open     http              Apache httpd
+5902/tcp  open     http              Apache httpd
+5903/tcp  open     http              Apache httpd
+5904/tcp  open     http              Apache httpd
+5906/tcp  open     http              Apache httpd
+5907/tcp  open     http              Apache httpd
+5910/tcp  open     http              Apache httpd
+5911/tcp  open     http              Apache httpd
+5915/tcp  open     http              Apache httpd
+5922/tcp  open     http              Apache httpd
+5925/tcp  open     http              Apache httpd
+5950/tcp  open     ssl/http          Apache httpd
+5952/tcp  open     http              Apache httpd
+5959/tcp  open     http              Apache httpd
+5960/tcp  open     http              Apache httpd
+5961/tcp  open     http              Apache httpd
+5962/tcp  open     http              Apache httpd
+5963/tcp  open     http              Apache httpd
+5985/tcp  filtered wsman
+5986/tcp  open     ssl/http          Apache httpd
+5987/tcp  open     http              Apache httpd
+5988/tcp  open     http              Apache httpd
+5989/tcp  open     http              Apache httpd
+5998/tcp  open     http              Apache httpd
+5999/tcp  open     http              Apache httpd
+6000/tcp  open     http              Apache httpd
+6001/tcp  open     http              Apache httpd
+6002/tcp  open     http              Apache httpd
+6003/tcp  open     http              Apache httpd
+6004/tcp  open     http              Apache httpd
+6005/tcp  open     http              Apache httpd
+6006/tcp  open     http              Apache httpd
+6007/tcp  open     http              Apache httpd
+6009/tcp  open     http              Apache httpd
+6025/tcp  open     ssl/http          Apache httpd
+6059/tcp  open     http              Apache httpd
+6100/tcp  open     http              Apache httpd
+6101/tcp  open     http              Apache httpd
+6106/tcp  open     http              Apache httpd
+6112/tcp  open     http              Apache httpd
+6123/tcp  open     http              Apache httpd
+6129/tcp  open     http              Apache httpd
+6156/tcp  open     http              Apache httpd
+6346/tcp  open     http              Apache httpd
+6389/tcp  open     http              Apache httpd
+6502/tcp  open     http              Apache httpd
+6510/tcp  open     http              Apache httpd
+6543/tcp  open     http              Apache httpd
+6547/tcp  open     http              Apache httpd
+6565/tcp  open     http              Apache httpd
+6566/tcp  open     http              Apache httpd
+6567/tcp  open     ssl/http          Apache httpd
+6580/tcp  open     ssl/http          Apache httpd
+6646/tcp  open     http              Apache httpd
+6666/tcp  open     http              Apache httpd
+6667/tcp  open     http              Apache httpd
+6668/tcp  open     http              Apache httpd
+6669/tcp  open     http              Apache httpd
+6689/tcp  open     http              Apache httpd
+6692/tcp  open     ssl/http          Apache httpd
+6699/tcp  open     http              Apache httpd
+6779/tcp  open     http              Apache httpd
+6788/tcp  open     http              Apache httpd
+6789/tcp  open     http              Apache httpd
+6792/tcp  open     http              Apache httpd
+6839/tcp  open     http              Apache httpd
+6881/tcp  open     http              Apache httpd
+6901/tcp  open     http              Apache httpd
+6969/tcp  open     http              Apache httpd
+7000/tcp  open     ssl/http          Apache httpd
+7001/tcp  open     http              Apache httpd
+7002/tcp  open     ssl/http          Apache httpd
+7004/tcp  open     http              Apache httpd
+7007/tcp  open     http              Apache httpd
+7019/tcp  open     http              Apache httpd
+7025/tcp  filtered vmsvc-2
+7070/tcp  open     http              Apache httpd
+7100/tcp  open     http              Apache httpd
+7103/tcp  open     ssl/http          Apache httpd
+7106/tcp  open     http              Apache httpd
+7200/tcp  open     ssl/http          Apache httpd
+7201/tcp  open     http              Apache httpd
+7402/tcp  open     http              Apache httpd
+7435/tcp  open     ssl/http          Apache httpd
+7443/tcp  open     ssl/http          Apache httpd
+7496/tcp  open     http              Apache httpd
+7512/tcp  open     http              Apache httpd
+7625/tcp  open     http              Apache httpd
+7627/tcp  open     ssl/http          Apache httpd
+7676/tcp  filtered imqbrokerd
+7741/tcp  open     http              Apache httpd
+7777/tcp  open     http              Apache httpd
+7778/tcp  open     http              Apache httpd
+7800/tcp  open     http              Apache httpd
+7911/tcp  open     http              Apache httpd
+7920/tcp  open     ssl/http          Apache httpd
+7921/tcp  open     ssl/http          Apache httpd
+7937/tcp  open     http              Apache httpd
+7938/tcp  open     http              Apache httpd
+7999/tcp  open     http              Apache httpd
+8000/tcp  open     http              Apache httpd
+8001/tcp  open     http              Apache httpd
+8002/tcp  open     http              Apache httpd
+8007/tcp  open     http              Apache httpd
+8008/tcp  open     http              Apache httpd
+8009/tcp  open     http              Apache httpd
+8010/tcp  open     http              Apache httpd
+8011/tcp  open     http              Apache httpd
+8021/tcp  open     http              Apache httpd
+8022/tcp  open     http              Apache httpd
+8031/tcp  open     ssl/http          Apache httpd
+8042/tcp  open     ssl/http          Apache httpd
+8045/tcp  open     http              Apache httpd
+8080/tcp  open     ssl/http          Apache httpd
+8081/tcp  open     http              Apache httpd
+8082/tcp  open     http              Apache httpd
+8083/tcp  open     http              Apache httpd
+8084/tcp  open     http              Apache httpd
+8085/tcp  open     ssl/http          Apache httpd
+8086/tcp  open     http              Apache httpd
+8087/tcp  open     http              Apache httpd
+8088/tcp  open     http              Apache httpd
+8089/tcp  filtered unknown
+8090/tcp  open     http              Apache httpd
+8093/tcp  open     http              Apache httpd
+8099/tcp  open     http              Apache httpd
+8100/tcp  open     http              Apache httpd
+8180/tcp  open     http              Apache httpd
+8181/tcp  open     http              Apache httpd
+8192/tcp  open     http              Apache httpd
+8193/tcp  open     http              Apache httpd
+8194/tcp  open     ssl/http          Apache httpd
+8200/tcp  open     http              Apache httpd
+8222/tcp  open     http              Apache httpd
+8254/tcp  open     http              Apache httpd
+8290/tcp  open     ssl/http          Apache httpd
+8291/tcp  open     http              Apache httpd
+8292/tcp  open     http              Apache httpd
+8300/tcp  open     ssl/http          Apache httpd
+8333/tcp  open     http              Apache httpd
+8383/tcp  open     http              Apache httpd
+8400/tcp  open     http              Apache httpd
+8402/tcp  open     http              Apache httpd
+8443/tcp  open     ssl/http          Apache httpd
+8500/tcp  open     http              Apache httpd
+8600/tcp  open     http              Apache httpd
+8649/tcp  open     http              Apache httpd
+8651/tcp  open     http              Apache httpd
+8652/tcp  open     http              Apache httpd
+8654/tcp  open     http              Apache httpd
+8701/tcp  open     http              Apache httpd
+8800/tcp  open     http              Apache httpd
+8873/tcp  open     http              Apache httpd
+8888/tcp  open     ssl/http          Apache httpd
+8899/tcp  open     http              Apache httpd
+8994/tcp  open     http              Apache httpd
+9000/tcp  open     http              Apache httpd
+9001/tcp  open     http              Apache httpd
+9002/tcp  open     http              Apache httpd
+9003/tcp  open     http              Apache httpd
+9009/tcp  open     http              Apache httpd
+9010/tcp  open     ssl/http          Apache httpd
+9011/tcp  open     http              Apache httpd
+9040/tcp  open     ssl/http          Apache httpd
+9050/tcp  open     http              Apache httpd
+9071/tcp  open     http              Apache httpd
+9080/tcp  open     http              Apache httpd
+9081/tcp  open     http              Apache httpd
+9090/tcp  open     http              Apache httpd
+9091/tcp  open     http              Apache httpd
+9099/tcp  open     http              Apache httpd
+9100/tcp  open     jetdirect?
+9101/tcp  open     jetdirect?
+9102/tcp  open     jetdirect?
+9103/tcp  open     jetdirect?
+9110/tcp  open     http              Apache httpd
+9111/tcp  open     http              Apache httpd
+9200/tcp  open     http              Apache httpd
+9207/tcp  open     http              Apache httpd
+9220/tcp  open     http              Apache httpd
+9290/tcp  open     http              Apache httpd
+9415/tcp  open     http              Apache httpd
+9418/tcp  open     http              Apache httpd
+9485/tcp  open     http              Apache httpd
+9500/tcp  open     http              Apache httpd
+9502/tcp  open     unknown
+9503/tcp  open     http              Apache httpd
+9535/tcp  open     http              Apache httpd
+9575/tcp  open     http              Apache httpd
+9593/tcp  open     http              Apache httpd
+9594/tcp  open     ssl/http          Apache httpd
+9595/tcp  open     http              Apache httpd
+9618/tcp  open     http              Apache httpd
+9666/tcp  open     http              Apache httpd
+9876/tcp  open     http              Apache httpd
+9877/tcp  open     tcpwrapped
+9878/tcp  open     http              Apache httpd
+9898/tcp  open     http              Apache httpd
+9900/tcp  open     http              Apache httpd
+9917/tcp  open     http              Apache httpd
+9929/tcp  open     ssl/http          Apache httpd
+9943/tcp  open     http              Apache httpd
+9944/tcp  open     http              Apache httpd
+9968/tcp  open     http              Apache httpd
+9998/tcp  open     ssl/http          Apache httpd
+9999/tcp  open     http              Apache httpd
+10000/tcp open     http              Apache httpd
+10001/tcp open     ssl/http          Apache httpd
+10002/tcp open     ssl/http          Apache httpd
+10003/tcp open     http              Apache httpd
+10004/tcp open     http              Apache httpd
+10009/tcp open     http              Apache httpd
+10010/tcp open     http              Apache httpd
+10012/tcp open     http              Apache httpd
+10024/tcp open     http              Apache httpd
+10025/tcp open     http              Apache httpd
+10082/tcp open     ssl/http          Apache httpd
+10180/tcp open     http              Apache httpd
+10215/tcp open     http              Apache httpd
+10243/tcp open     ssl/http          Apache httpd
+10566/tcp open     unknown
+10616/tcp open     unknown
+10617/tcp open     http              Apache httpd
+10621/tcp open     http              Apache httpd
+10626/tcp open     ssl/http          Apache httpd
+10628/tcp open     http              Apache httpd
+10629/tcp open     http              Apache httpd
+10778/tcp open     http              Apache httpd
+11110/tcp open     http              Apache httpd
+11111/tcp open     http              Apache httpd
+11967/tcp open     http              Apache httpd
+12000/tcp open     http              Apache httpd
+12174/tcp open     http              Apache httpd
+12265/tcp open     http              Apache httpd
+12345/tcp open     http              Apache httpd
+13456/tcp open     ssl/http          Apache httpd
+13722/tcp open     ssl/http          Apache httpd
+13782/tcp open     http              Apache httpd
+13783/tcp open     http              Apache httpd
+14000/tcp open     http              Apache httpd
+14238/tcp open     tcpwrapped
+14441/tcp open     http              Apache httpd
+14442/tcp open     http              Apache httpd
+15000/tcp open     http              Apache httpd
+15002/tcp open     ssl/http          Apache httpd
+15003/tcp open     http              Apache httpd
+15004/tcp open     tcpwrapped
+15660/tcp open     http              Apache httpd
+15742/tcp open     http              Apache httpd
+16000/tcp open     http              Apache httpd
+16001/tcp open     http              Apache httpd
+16012/tcp open     http              Apache httpd
+16016/tcp open     ssl/http          Apache httpd
+16018/tcp open     http              Apache httpd
+16080/tcp open     http              Apache httpd
+16113/tcp open     http              Apache httpd
+16992/tcp open     http              Apache httpd
+16993/tcp open     http              Apache httpd
+17877/tcp open     unknown
+17988/tcp open     http              Apache httpd
+18040/tcp open     http              Apache httpd
+18101/tcp open     http              Apache httpd
+18988/tcp open     http              Apache httpd
+19101/tcp open     http              Apache httpd
+19283/tcp open     http              Apache httpd
+19315/tcp open     http              Apache httpd
+19350/tcp open     http              Apache httpd
+19780/tcp open     ssl/http          Apache httpd
+19801/tcp open     http              Apache httpd
+19842/tcp open     http              Apache httpd
+20000/tcp open     http              Apache httpd
+20005/tcp open     http              Apache httpd
+20031/tcp open     http              Apache httpd
+20221/tcp open     ssl/http          Apache httpd
+20222/tcp open     http              Apache httpd
+20828/tcp open     http              Apache httpd
+21571/tcp open     http              Apache httpd
+22939/tcp open     ssl/http          Apache httpd
+23502/tcp open     http              Apache httpd
+24444/tcp open     http              Apache httpd
+24800/tcp open     ssl/http          Apache httpd
+25734/tcp open     http              Apache httpd
+25735/tcp open     http              Apache httpd
+26214/tcp open     http              Apache httpd
+27000/tcp open     http              Apache httpd
+27352/tcp open     http              Apache httpd
+27353/tcp open     http              Apache httpd
+27355/tcp open     http              Apache httpd
+27356/tcp open     http              Apache httpd
+27715/tcp open     http              Apache httpd
+28201/tcp open     http              Apache httpd
+30000/tcp open     http              Apache httpd
+30718/tcp open     http              Apache httpd
+30951/tcp open     http              Apache httpd
+31038/tcp open     http              Apache httpd
+31337/tcp open     http              Apache httpd
+32768/tcp open     http              Apache httpd
+32769/tcp open     ssl/http          Apache httpd
+32770/tcp open     http              Apache httpd
+32771/tcp open     http              Apache httpd
+32772/tcp open     ssl/http          Apache httpd
+32773/tcp open     http              Apache httpd
+32774/tcp open     http              Apache httpd
+32775/tcp open     http              Apache httpd
+32776/tcp open     http              Apache httpd
+32777/tcp open     http              Apache httpd
+32778/tcp open     http              Apache httpd
+32779/tcp open     http              Apache httpd
+32780/tcp open     http              Apache httpd
+32781/tcp open     http              Apache httpd
+32782/tcp open     http              Apache httpd
+32783/tcp open     ssl/http          Apache httpd
+32784/tcp open     http              Apache httpd
+32785/tcp open     ssl/http          Apache httpd
+33354/tcp open     http              Apache httpd
+33899/tcp open     http              Apache httpd
+34571/tcp open     http              Apache httpd
+34572/tcp open     http              Apache httpd
+34573/tcp open     http              Apache httpd
+35500/tcp open     http              Apache httpd
+38292/tcp open     http              Apache httpd
+40193/tcp open     http              Apache httpd
+40911/tcp open     http              Apache httpd
+41511/tcp open     http              Apache httpd
+42510/tcp open     http              Apache httpd
+44176/tcp open     http              Apache httpd
+44442/tcp open     coldfusion-auth?
+44443/tcp open     ssl/http          Apache httpd
+44501/tcp open     http              Apache httpd
+45100/tcp open     ssl/http          Apache httpd
+48080/tcp open     http              Apache httpd
+49152/tcp open     http              Apache httpd
+49153/tcp open     http              Apache httpd
+49154/tcp open     tcpwrapped
+49155/tcp open     http              Apache httpd
+49156/tcp open     http              Apache httpd
+49157/tcp open     http              Apache httpd
+49158/tcp open     http              Apache httpd
+49159/tcp open     http              Apache httpd
+49160/tcp open     http              Apache httpd
+49161/tcp open     http              Apache httpd
+49163/tcp open     http              Apache httpd
+49165/tcp open     http              Apache httpd
+49167/tcp open     ssl/http          Apache httpd
+49175/tcp open     http              Apache httpd
+49176/tcp open     http              Apache httpd
+49400/tcp open     http              Apache httpd
+49999/tcp open     http              Apache httpd
+50000/tcp open     http              Apache httpd
+50001/tcp open     ssl/http          Apache httpd
+50002/tcp open     ssl/http          Apache httpd
+50003/tcp open     http              Apache httpd
+50006/tcp open     ssl/http          Apache httpd
+50300/tcp open     http              Apache httpd
+50389/tcp open     http              Apache httpd
+50500/tcp open     ssl/http          Apache httpd
+50636/tcp open     ssl/http          Apache httpd
+50800/tcp open     ssl/http          Apache httpd
+51103/tcp open     http              Apache httpd
+51493/tcp open     http              Apache httpd
+52673/tcp open     http              Apache httpd
+52822/tcp open     http              Apache httpd
+52848/tcp open     http              Apache httpd
+52869/tcp open     http              Apache httpd
+54045/tcp open     http              Apache httpd
+54328/tcp open     http              Apache httpd
+55055/tcp open     http              Apache httpd
+55056/tcp open     http              Apache httpd
+55555/tcp open     ssl/http          Apache httpd
+55600/tcp open     unknown
+56737/tcp open     http              Apache httpd
+56738/tcp open     http              Apache httpd
+57294/tcp open     http              Apache httpd
+57797/tcp open     http              Apache httpd
+58080/tcp open     ssl/http          Apache httpd
+60020/tcp open     http              Apache httpd
+60443/tcp open     ssl/http          Apache httpd
+61532/tcp open     http              Apache httpd
+61900/tcp open     ssl/http          Apache httpd
+62078/tcp open     http              Apache httpd
+63331/tcp open     http              Apache httpd
+64623/tcp open     http              Apache httpd
+64680/tcp open     http              Apache httpd
+65000/tcp open     ssl/http          Apache httpd
+65129/tcp open     ssl/http          Apache httpd
+65389/tcp open     http              Apache httpd
+
+Nmap scan report for library.nmu.edu.eg (41.33.2.166)
+Host is up (0.021s latency).
+
+PORT      STATE    SERVICE             VERSION
+1/tcp     open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3/tcp     open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4/tcp     open     unknown
+6/tcp     open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+7/tcp     open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+9/tcp     open     discard?
+13/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+17/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+19/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+20/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+21/tcp    open     ftp?
+22/tcp    open     ssl/ssh?
+23/tcp    open     telnet?
+24/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+25/tcp    open     tcpwrapped
+26/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+30/tcp    open     unknown
+32/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+33/tcp    open     ssl/dsp?
+37/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+42/tcp    open     nameserver?
+43/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+49/tcp    open     tacacs?
+53/tcp    open     domain?
+70/tcp    open     gopher?
+79/tcp    open     finger?
+80/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+81/tcp    open     tcpwrapped
+82/tcp    open     xfer?
+83/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+84/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+85/tcp    open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+88/tcp    open     kerberos-sec?
+89/tcp    open     ssl/su-mit-tg?
+90/tcp    open     dnsix?
+99/tcp    open     tcpwrapped
+100/tcp   open     tcpwrapped
+106/tcp   open     pop3pw?
+109/tcp   open     tcpwrapped
+110/tcp   open     pop3?
+111/tcp   open     rpcbind?
+113/tcp   open     ident?
+119/tcp   open     nntp?
+125/tcp   open     locus-map?
+135/tcp   open     msrpc?
+139/tcp   open     netbios-ssn?
+143/tcp   open     imap?
+144/tcp   open     news?
+146/tcp   open     iso-tp0?
+161/tcp   open     snmp?
+163/tcp   open     cmip-man?
+179/tcp   open     bgp?
+199/tcp   open     smux?
+211/tcp   open     914c-g?
+212/tcp   open     anet?
+222/tcp   open     rsh-spx?
+254/tcp   open     unknown
+255/tcp   open     unknown
+256/tcp   open     fw1-secureremote?
+259/tcp   open     esro-gen?
+264/tcp   open     bgmp?
+280/tcp   open     http-mgmt?
+301/tcp   open     unknown
+306/tcp   open     unknown
+311/tcp   open     tcpwrapped
+340/tcp   open     tcpwrapped
+366/tcp   open     tcpwrapped
+389/tcp   open     tcpwrapped
+406/tcp   open     tcpwrapped
+407/tcp   open     tcpwrapped
+416/tcp   open     tcpwrapped
+417/tcp   open     tcpwrapped
+425/tcp   open     tcpwrapped
+427/tcp   open     tcpwrapped
+443/tcp   open     tcpwrapped
+444/tcp   open     tcpwrapped
+445/tcp   open     tcpwrapped
+458/tcp   open     tcpwrapped
+464/tcp   open     tcpwrapped
+465/tcp   open     tcpwrapped
+481/tcp   open     tcpwrapped
+497/tcp   open     tcpwrapped
+500/tcp   open     tcpwrapped
+512/tcp   open     tcpwrapped
+513/tcp   open     tcpwrapped
+514/tcp   open     tcpwrapped
+515/tcp   open     tcpwrapped
+524/tcp   open     tcpwrapped
+541/tcp   open     tcpwrapped
+543/tcp   open     tcpwrapped
+544/tcp   open     tcpwrapped
+545/tcp   open     tcpwrapped
+548/tcp   open     tcpwrapped
+554/tcp   open     tcpwrapped
+555/tcp   open     tcpwrapped
+563/tcp   open     tcpwrapped
+587/tcp   open     tcpwrapped
+593/tcp   open     tcpwrapped
+616/tcp   open     tcpwrapped
+617/tcp   open     tcpwrapped
+625/tcp   open     tcpwrapped
+631/tcp   open     tcpwrapped
+636/tcp   open     tcpwrapped
+646/tcp   open     tcpwrapped
+648/tcp   open     tcpwrapped
+666/tcp   open     tcpwrapped
+667/tcp   open     tcpwrapped
+668/tcp   open     tcpwrapped
+683/tcp   open     tcpwrapped
+687/tcp   open     tcpwrapped
+691/tcp   open     tcpwrapped
+700/tcp   open     tcpwrapped
+705/tcp   open     tcpwrapped
+711/tcp   open     tcpwrapped
+714/tcp   open     tcpwrapped
+720/tcp   open     tcpwrapped
+722/tcp   open     tcpwrapped
+726/tcp   open     tcpwrapped
+749/tcp   open     tcpwrapped
+765/tcp   open     tcpwrapped
+777/tcp   open     tcpwrapped
+783/tcp   open     tcpwrapped
+787/tcp   open     tcpwrapped
+800/tcp   open     tcpwrapped
+801/tcp   open     tcpwrapped
+808/tcp   open     tcpwrapped
+843/tcp   open     tcpwrapped
+873/tcp   open     tcpwrapped
+880/tcp   open     tcpwrapped
+888/tcp   open     tcpwrapped
+898/tcp   open     tcpwrapped
+900/tcp   open     tcpwrapped
+901/tcp   open     tcpwrapped
+902/tcp   open     tcpwrapped
+903/tcp   open     tcpwrapped
+911/tcp   open     tcpwrapped
+912/tcp   open     tcpwrapped
+981/tcp   open     tcpwrapped
+987/tcp   open     tcpwrapped
+990/tcp   open     tcpwrapped
+992/tcp   open     tcpwrapped
+993/tcp   open     tcpwrapped
+995/tcp   open     tcpwrapped
+999/tcp   open     tcpwrapped
+1000/tcp  open     tcpwrapped
+1001/tcp  open     tcpwrapped
+1002/tcp  open     tcpwrapped
+1007/tcp  open     tcpwrapped
+1009/tcp  open     tcpwrapped
+1010/tcp  open     tcpwrapped
+1011/tcp  open     tcpwrapped
+1021/tcp  open     tcpwrapped
+1022/tcp  open     tcpwrapped
+1023/tcp  open     tcpwrapped
+1024/tcp  open     tcpwrapped
+1025/tcp  open     tcpwrapped
+1026/tcp  open     tcpwrapped
+1027/tcp  open     tcpwrapped
+1028/tcp  open     tcpwrapped
+1029/tcp  open     tcpwrapped
+1030/tcp  open     tcpwrapped
+1031/tcp  open     tcpwrapped
+1032/tcp  open     tcpwrapped
+1033/tcp  open     tcpwrapped
+1034/tcp  open     tcpwrapped
+1035/tcp  open     tcpwrapped
+1036/tcp  open     tcpwrapped
+1037/tcp  open     tcpwrapped
+1038/tcp  open     tcpwrapped
+1039/tcp  open     tcpwrapped
+1040/tcp  open     tcpwrapped
+1041/tcp  open     tcpwrapped
+1042/tcp  open     tcpwrapped
+1043/tcp  open     tcpwrapped
+1044/tcp  open     tcpwrapped
+1045/tcp  open     tcpwrapped
+1046/tcp  open     tcpwrapped
+1047/tcp  open     tcpwrapped
+1048/tcp  open     tcpwrapped
+1049/tcp  open     tcpwrapped
+1050/tcp  open     tcpwrapped
+1051/tcp  open     tcpwrapped
+1052/tcp  open     tcpwrapped
+1053/tcp  open     tcpwrapped
+1054/tcp  open     tcpwrapped
+1055/tcp  open     tcpwrapped
+1056/tcp  open     tcpwrapped
+1057/tcp  open     tcpwrapped
+1058/tcp  open     tcpwrapped
+1059/tcp  open     tcpwrapped
+1060/tcp  open     tcpwrapped
+1061/tcp  open     tcpwrapped
+1062/tcp  open     tcpwrapped
+1063/tcp  open     tcpwrapped
+1064/tcp  open     tcpwrapped
+1065/tcp  open     tcpwrapped
+1066/tcp  open     tcpwrapped
+1067/tcp  open     tcpwrapped
+1068/tcp  open     tcpwrapped
+1069/tcp  open     tcpwrapped
+1070/tcp  open     tcpwrapped
+1071/tcp  open     tcpwrapped
+1072/tcp  open     tcpwrapped
+1073/tcp  open     tcpwrapped
+1074/tcp  open     tcpwrapped
+1075/tcp  open     tcpwrapped
+1076/tcp  open     tcpwrapped
+1077/tcp  open     tcpwrapped
+1078/tcp  open     tcpwrapped
+1079/tcp  open     tcpwrapped
+1080/tcp  open     tcpwrapped
+1081/tcp  open     tcpwrapped
+1082/tcp  open     tcpwrapped
+1083/tcp  open     tcpwrapped
+1084/tcp  open     tcpwrapped
+1085/tcp  open     tcpwrapped
+1086/tcp  open     tcpwrapped
+1087/tcp  open     tcpwrapped
+1088/tcp  open     tcpwrapped
+1089/tcp  open     tcpwrapped
+1090/tcp  open     tcpwrapped
+1091/tcp  open     tcpwrapped
+1092/tcp  open     tcpwrapped
+1093/tcp  open     tcpwrapped
+1094/tcp  open     tcpwrapped
+1095/tcp  open     tcpwrapped
+1096/tcp  open     tcpwrapped
+1097/tcp  open     tcpwrapped
+1098/tcp  open     tcpwrapped
+1099/tcp  open     tcpwrapped
+1100/tcp  open     tcpwrapped
+1102/tcp  open     tcpwrapped
+1104/tcp  open     tcpwrapped
+1105/tcp  open     tcpwrapped
+1106/tcp  open     tcpwrapped
+1107/tcp  open     tcpwrapped
+1108/tcp  open     tcpwrapped
+1110/tcp  open     tcpwrapped
+1111/tcp  open     tcpwrapped
+1112/tcp  open     tcpwrapped
+1113/tcp  open     tcpwrapped
+1114/tcp  open     tcpwrapped
+1117/tcp  open     tcpwrapped
+1119/tcp  open     tcpwrapped
+1121/tcp  open     tcpwrapped
+1122/tcp  open     tcpwrapped
+1123/tcp  open     tcpwrapped
+1124/tcp  open     tcpwrapped
+1126/tcp  open     tcpwrapped
+1130/tcp  open     tcpwrapped
+1131/tcp  open     tcpwrapped
+1132/tcp  open     tcpwrapped
+1137/tcp  open     tcpwrapped
+1138/tcp  open     tcpwrapped
+1141/tcp  open     tcpwrapped
+1145/tcp  open     tcpwrapped
+1147/tcp  open     tcpwrapped
+1148/tcp  open     tcpwrapped
+1149/tcp  open     tcpwrapped
+1151/tcp  open     tcpwrapped
+1152/tcp  open     tcpwrapped
+1154/tcp  open     tcpwrapped
+1163/tcp  open     tcpwrapped
+1164/tcp  open     tcpwrapped
+1165/tcp  open     tcpwrapped
+1166/tcp  open     tcpwrapped
+1169/tcp  open     tcpwrapped
+1174/tcp  open     tcpwrapped
+1175/tcp  open     tcpwrapped
+1183/tcp  open     tcpwrapped
+1185/tcp  open     tcpwrapped
+1186/tcp  open     tcpwrapped
+1187/tcp  open     tcpwrapped
+1192/tcp  open     tcpwrapped
+1198/tcp  open     tcpwrapped
+1199/tcp  open     tcpwrapped
+1201/tcp  open     tcpwrapped
+1213/tcp  open     tcpwrapped
+1216/tcp  open     tcpwrapped
+1217/tcp  open     tcpwrapped
+1218/tcp  open     tcpwrapped
+1233/tcp  open     tcpwrapped
+1234/tcp  open     tcpwrapped
+1236/tcp  open     tcpwrapped
+1244/tcp  open     tcpwrapped
+1247/tcp  open     tcpwrapped
+1248/tcp  open     hermes?
+1259/tcp  open     tcpwrapped
+1271/tcp  open     tcpwrapped
+1272/tcp  open     tcpwrapped
+1277/tcp  open     tcpwrapped
+1287/tcp  open     tcpwrapped
+1296/tcp  open     tcpwrapped
+1300/tcp  open     tcpwrapped
+1301/tcp  open     tcpwrapped
+1309/tcp  open     tcpwrapped
+1310/tcp  open     tcpwrapped
+1311/tcp  open     tcpwrapped
+1322/tcp  open     tcpwrapped
+1328/tcp  open     tcpwrapped
+1334/tcp  open     tcpwrapped
+1352/tcp  open     tcpwrapped
+1417/tcp  open     tcpwrapped
+1433/tcp  open     tcpwrapped
+1434/tcp  open     tcpwrapped
+1443/tcp  open     tcpwrapped
+1455/tcp  open     tcpwrapped
+1461/tcp  open     tcpwrapped
+1494/tcp  open     tcpwrapped
+1500/tcp  open     tcpwrapped
+1501/tcp  open     tcpwrapped
+1503/tcp  open     tcpwrapped
+1521/tcp  open     tcpwrapped
+1524/tcp  open     tcpwrapped
+1533/tcp  open     tcpwrapped
+1556/tcp  open     tcpwrapped
+1580/tcp  open     tcpwrapped
+1583/tcp  open     tcpwrapped
+1594/tcp  open     tcpwrapped
+1600/tcp  open     tcpwrapped
+1641/tcp  open     tcpwrapped
+1658/tcp  open     tcpwrapped
+1666/tcp  open     tcpwrapped
+1687/tcp  open     tcpwrapped
+1688/tcp  open     tcpwrapped
+1700/tcp  open     tcpwrapped
+1717/tcp  open     tcpwrapped
+1718/tcp  open     tcpwrapped
+1719/tcp  open     tcpwrapped
+1720/tcp  open     tcpwrapped
+1721/tcp  open     tcpwrapped
+1723/tcp  open     tcpwrapped
+1755/tcp  open     tcpwrapped
+1761/tcp  open     tcpwrapped
+1782/tcp  open     tcpwrapped
+1783/tcp  open     tcpwrapped
+1801/tcp  open     tcpwrapped
+1805/tcp  open     tcpwrapped
+1812/tcp  open     tcpwrapped
+1839/tcp  open     tcpwrapped
+1840/tcp  open     tcpwrapped
+1862/tcp  open     tcpwrapped
+1863/tcp  open     tcpwrapped
+1864/tcp  open     tcpwrapped
+1875/tcp  open     tcpwrapped
+1900/tcp  open     tcpwrapped
+1914/tcp  open     tcpwrapped
+1935/tcp  open     tcpwrapped
+1947/tcp  open     tcpwrapped
+1971/tcp  open     tcpwrapped
+1972/tcp  open     tcpwrapped
+1974/tcp  open     tcpwrapped
+1984/tcp  open     tcpwrapped
+1998/tcp  open     tcpwrapped
+1999/tcp  open     tcpwrapped
+2000/tcp  open     tcpwrapped
+2001/tcp  open     tcpwrapped
+2002/tcp  open     tcpwrapped
+2003/tcp  open     tcpwrapped
+2004/tcp  open     tcpwrapped
+2005/tcp  open     tcpwrapped
+2006/tcp  open     tcpwrapped
+2007/tcp  open     tcpwrapped
+2008/tcp  open     tcpwrapped
+2009/tcp  open     tcpwrapped
+2010/tcp  open     tcpwrapped
+2013/tcp  open     tcpwrapped
+2020/tcp  open     tcpwrapped
+2021/tcp  open     tcpwrapped
+2022/tcp  open     tcpwrapped
+2030/tcp  open     tcpwrapped
+2033/tcp  open     tcpwrapped
+2034/tcp  open     tcpwrapped
+2035/tcp  open     tcpwrapped
+2038/tcp  open     tcpwrapped
+2040/tcp  open     tcpwrapped
+2041/tcp  open     tcpwrapped
+2042/tcp  open     tcpwrapped
+2043/tcp  open     tcpwrapped
+2045/tcp  open     tcpwrapped
+2046/tcp  open     tcpwrapped
+2047/tcp  open     tcpwrapped
+2048/tcp  open     tcpwrapped
+2049/tcp  open     tcpwrapped
+2065/tcp  open     tcpwrapped
+2068/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2099/tcp  open     h2250-annex-g?
+2100/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2103/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2105/tcp  open     eklogin?
+2106/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2107/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2111/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2119/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2121/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2126/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2135/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2144/tcp  open     tcpwrapped
+2160/tcp  open     tcpwrapped
+2161/tcp  open     tcpwrapped
+2170/tcp  open     tcpwrapped
+2179/tcp  open     tcpwrapped
+2190/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2191/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2196/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2200/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2222/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2251/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2260/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2288/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2301/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2323/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2366/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2381/tcp  open     compaq-https?
+2382/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2383/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2393/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2394/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2399/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2401/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2492/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2500/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2522/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2525/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2557/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2601/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2602/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2604/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2605/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2607/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2608/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2638/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2701/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2702/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2710/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2717/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2718/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2725/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2800/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2809/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2811/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2869/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2875/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2909/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2910/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2920/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2967/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2968/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+2998/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3000/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3001/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3003/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3005/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3006/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3011/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3017/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3030/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3031/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3052/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3071/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3077/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3128/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3168/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3211/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3221/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3260/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3261/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3268/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3269/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3283/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3300/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3301/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3306/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3322/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3323/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3324/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3325/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3333/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3351/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3367/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3369/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3370/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3371/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3372/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3389/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3390/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3404/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3476/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3493/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3517/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3527/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3546/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3551/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3580/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3659/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3689/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3690/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3703/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3737/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3766/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3784/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3800/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3801/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3809/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3814/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3826/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3827/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3828/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3851/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3869/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3871/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3878/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3880/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3889/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3905/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3914/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3918/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3920/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3945/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3971/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3986/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3995/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+3998/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4000/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4001/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4002/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4003/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4004/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4005/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4006/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4045/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4111/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4125/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4126/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4129/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4224/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4242/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4279/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4321/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4343/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4443/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4444/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4445/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4446/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4449/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4550/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4567/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4662/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4848/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4899/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4900/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+4998/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5000/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5001/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5002/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5003/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5004/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5009/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5030/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5033/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5050/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5051/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5054/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5060/tcp  open     sip?
+5061/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5080/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5087/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5100/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5101/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5102/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5120/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5190/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5200/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5214/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5221/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5222/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5225/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5226/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5269/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5280/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5298/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5357/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5405/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5414/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5431/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5432/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5440/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5500/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5510/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5544/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5550/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5555/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5560/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5566/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5631/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5633/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5666/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5678/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5679/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5718/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5730/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5800/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5801/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5802/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5810/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5811/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5815/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5822/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5825/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5850/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5859/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5862/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5877/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5900/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5901/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5902/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5903/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5904/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5906/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5907/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5910/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5911/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5915/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5922/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5925/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5950/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5952/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5959/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5960/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5961/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5962/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5963/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5985/tcp  filtered wsman
+5986/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5987/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5988/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5989/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5998/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+5999/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6000/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6001/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6002/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6003/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6004/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6005/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6006/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6007/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6009/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6025/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6059/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6100/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6101/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6106/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6112/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6123/tcp  open     tcpwrapped
+6129/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6156/tcp  open     unknown
+6346/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6389/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6502/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6510/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6543/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6547/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6565/tcp  open     unknown
+6566/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6567/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6580/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6646/tcp  open     ssl/http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6666/tcp  open     irc?
+6667/tcp  open     tcpwrapped
+6668/tcp  open     irc?
+6669/tcp  open     irc?
+6689/tcp  open     tsa?
+6692/tcp  open     unknown
+6699/tcp  open     ssl/napster?
+6779/tcp  open     unknown
+6788/tcp  open     smc-http?
+6789/tcp  open     ibm-db2-admin?
+6792/tcp  open     unknown
+6839/tcp  open     unknown
+6881/tcp  open     bittorrent-tracker?
+6901/tcp  open     jetstream?
+6969/tcp  open     acmsoda?
+7000/tcp  open     afs3-fileserver?
+7001/tcp  open     afs3-callback?
+7002/tcp  open     afs3-prserver?
+7004/tcp  open     afs3-kaserver?
+7007/tcp  open     afs3-bos?
+7019/tcp  open     doceri-ctl?
+7025/tcp  open     vmsvc-2?
+7070/tcp  open     realserver?
+7100/tcp  open     font-service?
+7103/tcp  open     unknown
+7106/tcp  open     unknown
+7200/tcp  open     fodms?
+7201/tcp  open     dlip?
+7402/tcp  open     rtps-dd-mt?
+7435/tcp  open     unknown
+7443/tcp  open     oracleas-https?
+7496/tcp  open     unknown
+7512/tcp  open     unknown
+7625/tcp  open     unknown
+7627/tcp  open     soap-http?
+7676/tcp  open     imqbrokerd?
+7741/tcp  open     scriptview?
+7777/tcp  open     tcpwrapped
+7778/tcp  open     tcpwrapped
+7800/tcp  open     tcpwrapped
+7911/tcp  open     tcpwrapped
+7920/tcp  open     tcpwrapped
+7921/tcp  open     tcpwrapped
+7937/tcp  open     tcpwrapped
+7938/tcp  open     tcpwrapped
+7999/tcp  open     tcpwrapped
+8000/tcp  open     tcpwrapped
+8001/tcp  open     tcpwrapped
+8002/tcp  open     tcpwrapped
+8007/tcp  open     tcpwrapped
+8008/tcp  open     tcpwrapped
+8009/tcp  open     tcpwrapped
+8010/tcp  open     tcpwrapped
+8011/tcp  open     tcpwrapped
+8021/tcp  open     tcpwrapped
+8022/tcp  open     tcpwrapped
+8031/tcp  open     tcpwrapped
+8042/tcp  open     tcpwrapped
+8045/tcp  open     tcpwrapped
+8080/tcp  open     ssl/tcpwrapped
+8081/tcp  open     tcpwrapped
+8082/tcp  open     tcpwrapped
+8083/tcp  open     tcpwrapped
+8084/tcp  open     tcpwrapped
+8085/tcp  open     tcpwrapped
+8086/tcp  open     tcpwrapped
+8087/tcp  open     tcpwrapped
+8088/tcp  open     tcpwrapped
+8089/tcp  open     tcpwrapped
+8090/tcp  open     tcpwrapped
+8093/tcp  open     tcpwrapped
+8099/tcp  open     tcpwrapped
+8100/tcp  open     tcpwrapped
+8180/tcp  open     tcpwrapped
+8181/tcp  open     tcpwrapped
+8192/tcp  open     tcpwrapped
+8193/tcp  open     tcpwrapped
+8194/tcp  open     tcpwrapped
+8200/tcp  open     tcpwrapped
+8222/tcp  open     tcpwrapped
+8254/tcp  open     tcpwrapped
+8290/tcp  open     tcpwrapped
+8291/tcp  open     tcpwrapped
+8292/tcp  open     tcpwrapped
+8300/tcp  open     tcpwrapped
+8333/tcp  open     tcpwrapped
+8383/tcp  open     tcpwrapped
+8400/tcp  open     tcpwrapped
+8402/tcp  open     tcpwrapped
+8443/tcp  open     tcpwrapped
+8500/tcp  open     tcpwrapped
+8600/tcp  open     tcpwrapped
+8649/tcp  open     tcpwrapped
+8651/tcp  open     tcpwrapped
+8652/tcp  open     tcpwrapped
+8654/tcp  open     tcpwrapped
+8701/tcp  open     tcpwrapped
+8800/tcp  open     tcpwrapped
+8873/tcp  open     tcpwrapped
+8888/tcp  open     tcpwrapped
+8899/tcp  open     tcpwrapped
+8994/tcp  open     tcpwrapped
+9000/tcp  open     tcpwrapped
+9001/tcp  open     tcpwrapped
+9002/tcp  open     tcpwrapped
+9003/tcp  open     tcpwrapped
+9009/tcp  open     tcpwrapped
+9010/tcp  open     tcpwrapped
+9011/tcp  open     tcpwrapped
+9040/tcp  open     tcpwrapped
+9050/tcp  open     tcpwrapped
+9071/tcp  open     tcpwrapped
+9080/tcp  open     tcpwrapped
+9081/tcp  open     tcpwrapped
+9090/tcp  open     tcpwrapped
+9091/tcp  open     tcpwrapped
+9099/tcp  open     tcpwrapped
+9100/tcp  open     jetdirect?
+9101/tcp  open     jetdirect?
+9102/tcp  open     jetdirect?
+9103/tcp  open     jetdirect?
+9110/tcp  open     tcpwrapped
+9111/tcp  open     tcpwrapped
+9200/tcp  open     tcpwrapped
+9207/tcp  open     tcpwrapped
+9220/tcp  open     tcpwrapped
+9290/tcp  open     tcpwrapped
+9415/tcp  open     tcpwrapped
+9418/tcp  open     tcpwrapped
+9485/tcp  open     tcpwrapped
+9500/tcp  open     tcpwrapped
+9502/tcp  open     tcpwrapped
+9503/tcp  open     tcpwrapped
+9535/tcp  open     tcpwrapped
+9575/tcp  open     tcpwrapped
+9593/tcp  open     tcpwrapped
+9594/tcp  open     tcpwrapped
+9595/tcp  open     tcpwrapped
+9618/tcp  open     tcpwrapped
+9666/tcp  open     tcpwrapped
+9876/tcp  open     tcpwrapped
+9877/tcp  open     tcpwrapped
+9878/tcp  open     tcpwrapped
+9898/tcp  open     tcpwrapped
+9900/tcp  open     tcpwrapped
+9917/tcp  open     tcpwrapped
+9929/tcp  open     tcpwrapped
+9943/tcp  open     tcpwrapped
+9944/tcp  open     tcpwrapped
+9968/tcp  open     tcpwrapped
+9998/tcp  open     tcpwrapped
+9999/tcp  open     tcpwrapped
+10000/tcp open     tcpwrapped
+10001/tcp open     tcpwrapped
+10002/tcp open     tcpwrapped
+10003/tcp open     tcpwrapped
+10004/tcp open     tcpwrapped
+10009/tcp open     tcpwrapped
+10010/tcp open     tcpwrapped
+10012/tcp open     tcpwrapped
+10024/tcp open     tcpwrapped
+10025/tcp open     tcpwrapped
+10082/tcp open     tcpwrapped
+10180/tcp open     tcpwrapped
+10215/tcp open     tcpwrapped
+10243/tcp open     tcpwrapped
+10566/tcp open     tcpwrapped
+10616/tcp open     tcpwrapped
+10617/tcp open     tcpwrapped
+10621/tcp open     tcpwrapped
+10626/tcp open     tcpwrapped
+10628/tcp open     tcpwrapped
+10629/tcp open     tcpwrapped
+10778/tcp open     tcpwrapped
+11110/tcp open     tcpwrapped
+11111/tcp open     tcpwrapped
+11967/tcp open     tcpwrapped
+12000/tcp open     tcpwrapped
+12174/tcp open     tcpwrapped
+12265/tcp open     tcpwrapped
+12345/tcp open     tcpwrapped
+13456/tcp open     tcpwrapped
+13722/tcp open     tcpwrapped
+13782/tcp open     tcpwrapped
+13783/tcp open     tcpwrapped
+14000/tcp open     tcpwrapped
+14238/tcp open     tcpwrapped
+14441/tcp open     tcpwrapped
+14442/tcp open     tcpwrapped
+15000/tcp open     tcpwrapped
+15002/tcp open     tcpwrapped
+15003/tcp open     tcpwrapped
+15004/tcp open     tcpwrapped
+15660/tcp open     tcpwrapped
+15742/tcp open     tcpwrapped
+16000/tcp open     tcpwrapped
+16001/tcp open     tcpwrapped
+16012/tcp open     tcpwrapped
+16016/tcp open     tcpwrapped
+16018/tcp open     tcpwrapped
+16080/tcp open     tcpwrapped
+16113/tcp open     tcpwrapped
+16992/tcp open     tcpwrapped
+16993/tcp open     tcpwrapped
+17877/tcp open     tcpwrapped
+17988/tcp open     tcpwrapped
+18040/tcp open     tcpwrapped
+18101/tcp open     tcpwrapped
+18988/tcp open     tcpwrapped
+19101/tcp open     tcpwrapped
+19283/tcp open     tcpwrapped
+19315/tcp open     tcpwrapped
+19350/tcp open     tcpwrapped
+19780/tcp open     tcpwrapped
+19801/tcp open     tcpwrapped
+19842/tcp open     tcpwrapped
+20000/tcp open     tcpwrapped
+20005/tcp open     tcpwrapped
+20031/tcp open     tcpwrapped
+20221/tcp open     tcpwrapped
+20222/tcp open     tcpwrapped
+20828/tcp open     tcpwrapped
+21571/tcp open     tcpwrapped
+22939/tcp open     tcpwrapped
+23502/tcp open     tcpwrapped
+24444/tcp open     tcpwrapped
+24800/tcp open     tcpwrapped
+25734/tcp open     tcpwrapped
+25735/tcp open     tcpwrapped
+26214/tcp open     tcpwrapped
+27000/tcp open     tcpwrapped
+27352/tcp open     tcpwrapped
+27353/tcp open     tcpwrapped
+27355/tcp open     tcpwrapped
+27356/tcp open     tcpwrapped
+27715/tcp open     tcpwrapped
+28201/tcp open     tcpwrapped
+30000/tcp open     tcpwrapped
+30718/tcp open     tcpwrapped
+30951/tcp open     tcpwrapped
+31038/tcp open     tcpwrapped
+31337/tcp open     tcpwrapped
+32768/tcp open     tcpwrapped
+32769/tcp open     tcpwrapped
+32770/tcp open     tcpwrapped
+32771/tcp open     tcpwrapped
+32772/tcp open     tcpwrapped
+32773/tcp open     tcpwrapped
+32774/tcp open     tcpwrapped
+32775/tcp open     tcpwrapped
+32776/tcp open     tcpwrapped
+32777/tcp open     tcpwrapped
+32778/tcp open     tcpwrapped
+32779/tcp open     tcpwrapped
+32780/tcp open     tcpwrapped
+32781/tcp open     tcpwrapped
+32782/tcp open     tcpwrapped
+32783/tcp open     tcpwrapped
+32784/tcp open     tcpwrapped
+32785/tcp open     tcpwrapped
+33354/tcp open     tcpwrapped
+33899/tcp open     tcpwrapped
+34571/tcp open     tcpwrapped
+34572/tcp open     tcpwrapped
+34573/tcp open     tcpwrapped
+35500/tcp open     tcpwrapped
+38292/tcp open     tcpwrapped
+40193/tcp open     tcpwrapped
+40911/tcp open     tcpwrapped
+41511/tcp open     tcpwrapped
+42510/tcp open     tcpwrapped
+44176/tcp open     tcpwrapped
+44442/tcp open     tcpwrapped
+44443/tcp open     tcpwrapped
+44501/tcp open     tcpwrapped
+45100/tcp open     tcpwrapped
+48080/tcp open     tcpwrapped
+49152/tcp open     tcpwrapped
+49153/tcp open     tcpwrapped
+49154/tcp open     tcpwrapped
+49155/tcp open     tcpwrapped
+49156/tcp open     tcpwrapped
+49157/tcp open     tcpwrapped
+49158/tcp open     tcpwrapped
+49159/tcp open     tcpwrapped
+49160/tcp open     tcpwrapped
+49161/tcp open     tcpwrapped
+49163/tcp open     tcpwrapped
+49165/tcp open     tcpwrapped
+49167/tcp open     tcpwrapped
+49175/tcp open     tcpwrapped
+49176/tcp open     tcpwrapped
+49400/tcp open     tcpwrapped
+49999/tcp open     tcpwrapped
+50000/tcp open     tcpwrapped
+50001/tcp open     tcpwrapped
+50002/tcp open     tcpwrapped
+50003/tcp open     tcpwrapped
+50006/tcp open     tcpwrapped
+50300/tcp open     tcpwrapped
+50389/tcp open     tcpwrapped
+50500/tcp open     tcpwrapped
+50636/tcp open     tcpwrapped
+50800/tcp open     tcpwrapped
+51103/tcp open     tcpwrapped
+51493/tcp open     tcpwrapped
+52673/tcp open     tcpwrapped
+52822/tcp open     tcpwrapped
+52848/tcp open     tcpwrapped
+52869/tcp open     tcpwrapped
+54045/tcp open     tcpwrapped
+54328/tcp open     tcpwrapped
+55055/tcp open     tcpwrapped
+55056/tcp open     tcpwrapped
+55555/tcp open     tcpwrapped
+55600/tcp open     tcpwrapped
+56737/tcp open     tcpwrapped
+56738/tcp open     tcpwrapped
+57294/tcp open     tcpwrapped
+57797/tcp open     tcpwrapped
+58080/tcp open     tcpwrapped
+60020/tcp open     tcpwrapped
+60443/tcp open     tcpwrapped
+61532/tcp open     tcpwrapped
+61900/tcp open     tcpwrapped
+62078/tcp open     tcpwrapped
+63331/tcp open     tcpwrapped
+64623/tcp open     tcpwrapped
+64680/tcp open     tcpwrapped
+65000/tcp filtered unknown
+65129/tcp open     tcpwrapped
+65389/tcp open     tcpwrapped
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for lms.nmu.edu.eg (102.223.94.20)
+Host is up (0.016s latency).
+Not shown: 981 filtered tcp ports (no-response)
+PORT      STATE  SERVICE        VERSION
+25/tcp    open   tcpwrapped
+37/tcp    closed time
+749/tcp   closed kerberos-adm
+873/tcp   closed rsync
+1027/tcp  closed IIS
+1065/tcp  closed syscomlan
+1080/tcp  closed socks
+1718/tcp  closed h323gatedisc
+1862/tcp  closed mysql-cm-agent
+1998/tcp  closed x25-svc-port
+2046/tcp  closed sdfunc
+3703/tcp  closed adobeserver-3
+4900/tcp  closed hfcs
+5009/tcp  closed airport-admin
+5269/tcp  closed xmpp-server
+8400/tcp  closed cvd
+9500/tcp  closed ismserver
+32781/tcp closed unknown
+49156/tcp closed unknown
+
+Nmap scan report for nlms.nmu.edu.eg (41.33.2.169)
+Host is up (0.044s latency).
+Not shown: 995 filtered tcp ports (no-response)
+PORT     STATE SERVICE    VERSION
+25/tcp   open  tcpwrapped
+80/tcp   open  tcpwrapped
+443/tcp  open  tcpwrapped
+2000/tcp open  tcpwrapped
+5060/tcp open  tcpwrapped
+
+Nmap scan report for nmu.edu.eg (41.33.2.168)
+Host is up (0.018s latency).
+Not shown: 989 filtered tcp ports (no-response)
+PORT      STATE  SERVICE       VERSION
+25/tcp    open   tcpwrapped
+80/tcp    open   tcpwrapped
+443/tcp   open   tcpwrapped
+749/tcp   closed kerberos-adm
+873/tcp   closed rsync
+1998/tcp  closed x25-svc-port
+2000/tcp  open   tcpwrapped
+3703/tcp  closed adobeserver-3
+5060/tcp  open   tcpwrapped
+32781/tcp closed unknown
+49156/tcp closed unknown
+
+Nmap scan report for sis.nmu.edu.eg (41.33.2.164)
+Host is up (0.023s latency).
+
+PORT      STATE    SERVICE                VERSION
+1/tcp     open     tcpwrapped
+3/tcp     open     tcpwrapped
+4/tcp     open     tcpwrapped
+6/tcp     open     tcpwrapped
+7/tcp     open     tcpwrapped
+9/tcp     open     tcpwrapped
+13/tcp    open     tcpwrapped
+17/tcp    open     tcpwrapped
+19/tcp    open     tcpwrapped
+20/tcp    open     tcpwrapped
+21/tcp    open     tcpwrapped
+22/tcp    open     tcpwrapped
+23/tcp    open     tcpwrapped
+24/tcp    open     tcpwrapped
+25/tcp    open     tcpwrapped
+26/tcp    open     tcpwrapped
+30/tcp    open     tcpwrapped
+32/tcp    open     tcpwrapped
+33/tcp    open     tcpwrapped
+37/tcp    open     tcpwrapped
+42/tcp    open     tcpwrapped
+43/tcp    open     tcpwrapped
+49/tcp    open     tcpwrapped
+53/tcp    open     tcpwrapped
+70/tcp    open     tcpwrapped
+79/tcp    open     tcpwrapped
+80/tcp    open     http?
+81/tcp    open     hosts2-ns?
+82/tcp    open     xfer?
+83/tcp    open     mit-ml-dev?
+84/tcp    open     ctf?
+85/tcp    open     tcpwrapped
+88/tcp    open     kerberos-sec?
+89/tcp    open     tcpwrapped
+90/tcp    open     tcpwrapped
+99/tcp    open     tcpwrapped
+100/tcp   open     tcpwrapped
+106/tcp   open     pop3pw?
+109/tcp   open     pop2?
+110/tcp   open     pop3?
+111/tcp   open     rpcbind?
+113/tcp   open     ident?
+119/tcp   open     nntp?
+125/tcp   open     locus-map?
+135/tcp   open     msrpc?
+139/tcp   open     netbios-ssn?
+143/tcp   open     imap?
+144/tcp   open     news?
+146/tcp   open     iso-tp0?
+161/tcp   open     tcpwrapped
+163/tcp   open     cmip-man?
+179/tcp   open     tcpwrapped
+199/tcp   open     smux?
+211/tcp   open     tcpwrapped
+212/tcp   open     tcpwrapped
+222/tcp   open     tcpwrapped
+254/tcp   open     tcpwrapped
+255/tcp   open     tcpwrapped
+256/tcp   open     tcpwrapped
+259/tcp   open     tcpwrapped
+264/tcp   open     bgmp?
+280/tcp   open     tcpwrapped
+301/tcp   open     unknown
+306/tcp   open     unknown
+311/tcp   open     asip-webadmin?
+340/tcp   open     tcpwrapped
+366/tcp   open     odmr?
+389/tcp   open     tcpwrapped
+406/tcp   open     tcpwrapped
+407/tcp   open     tcpwrapped
+416/tcp   open     tcpwrapped
+417/tcp   open     onmux?
+425/tcp   open     icad-el?
+427/tcp   open     svrloc?
+443/tcp   open     ssl/https?
+444/tcp   open     ssl/snpp?
+445/tcp   open     microsoft-ds?
+458/tcp   open     appleqtc?
+464/tcp   open     kpasswd5?
+465/tcp   open     ssl/smtps?
+481/tcp   open     dvs?
+497/tcp   open     retrospect?
+500/tcp   open     isakmp?
+512/tcp   open     exec?
+513/tcp   open     login?
+514/tcp   open     shell?
+515/tcp   open     tcpwrapped
+524/tcp   open     tcpwrapped
+541/tcp   open     uucp-rlogin?
+543/tcp   open     klogin?
+544/tcp   open     kshell?
+545/tcp   open     tcpwrapped
+548/tcp   open     tcpwrapped
+554/tcp   open     tcpwrapped
+555/tcp   open     tcpwrapped
+563/tcp   open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+587/tcp   open     submission?
+593/tcp   open     tcpwrapped
+616/tcp   open     ssl/sco-sysmgr?
+617/tcp   open     sco-dtmgr?
+625/tcp   open     ssl/apple-xsrvr-admin?
+631/tcp   open     tcpwrapped
+636/tcp   open     tcpwrapped
+646/tcp   open     tcpwrapped
+648/tcp   open     tcpwrapped
+666/tcp   open     tcpwrapped
+667/tcp   open     disclose?
+668/tcp   open     tcpwrapped
+683/tcp   open     corba-iiop?
+687/tcp   open     asipregistry?
+691/tcp   open     resvc?
+700/tcp   open     tcpwrapped
+705/tcp   open     tcpwrapped
+711/tcp   open     tcpwrapped
+714/tcp   open     tcpwrapped
+720/tcp   open     tcpwrapped
+722/tcp   open     unknown
+726/tcp   open     unknown
+749/tcp   open     tcpwrapped
+765/tcp   open     tcpwrapped
+777/tcp   open     tcpwrapped
+783/tcp   open     tcpwrapped
+787/tcp   open     tcpwrapped
+800/tcp   open     tcpwrapped
+801/tcp   open     tcpwrapped
+808/tcp   open     tcpwrapped
+843/tcp   open     unknown
+873/tcp   open     tcpwrapped
+880/tcp   open     tcpwrapped
+888/tcp   open     accessbuilder?
+898/tcp   open     sun-manageconsole?
+900/tcp   open     omginitialrefs?
+901/tcp   open     samba-swat?
+902/tcp   open     iss-realsecure?
+903/tcp   open     iss-console-mgr?
+911/tcp   open     tcpwrapped
+912/tcp   open     apex-mesh?
+981/tcp   open     unknown
+987/tcp   open     ssl/unknown
+990/tcp   open     ssl/ftps?
+992/tcp   open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+993/tcp   open     tcpwrapped
+995/tcp   open     tcpwrapped
+999/tcp   open     garcon?
+1000/tcp  open     cadlock?
+1001/tcp  open     webpush?
+1002/tcp  open     windows-icfw?
+1007/tcp  open     unknown
+1009/tcp  open     unknown
+1010/tcp  open     surf?
+1011/tcp  open     unknown
+1021/tcp  open     tcpwrapped
+1022/tcp  open     tcpwrapped
+1023/tcp  open     netvenuechat?
+1024/tcp  open     kdm?
+1025/tcp  open     NFS-or-IIS?
+1026/tcp  open     tcpwrapped
+1027/tcp  open     IIS?
+1028/tcp  open     unknown
+1029/tcp  open     ms-lsa?
+1030/tcp  open     iad1?
+1031/tcp  open     iad2?
+1032/tcp  open     tcpwrapped
+1033/tcp  open     netinfo?
+1034/tcp  open     zincite-a?
+1035/tcp  open     multidropper?
+1036/tcp  open     tcpwrapped
+1037/tcp  open     tcpwrapped
+1038/tcp  open     mtqp?
+1039/tcp  open     tcpwrapped
+1040/tcp  open     netsaint?
+1041/tcp  open     danf-ak2?
+1042/tcp  open     tcpwrapped
+1043/tcp  open     tcpwrapped
+1044/tcp  open     tcpwrapped
+1045/tcp  open     tcpwrapped
+1046/tcp  open     wfremotertm?
+1047/tcp  open     tcpwrapped
+1048/tcp  open     tcpwrapped
+1049/tcp  open     tcpwrapped
+1050/tcp  open     tcpwrapped
+1051/tcp  open     tcpwrapped
+1052/tcp  open     tcpwrapped
+1053/tcp  open     tcpwrapped
+1054/tcp  open     tcpwrapped
+1055/tcp  open     ansyslmd?
+1056/tcp  open     vfo?
+1057/tcp  open     startron?
+1058/tcp  open     tcpwrapped
+1059/tcp  open     tcpwrapped
+1060/tcp  open     tcpwrapped
+1061/tcp  open     tcpwrapped
+1062/tcp  open     tcpwrapped
+1063/tcp  open     tcpwrapped
+1064/tcp  open     tcpwrapped
+1065/tcp  open     tcpwrapped
+1066/tcp  open     tcpwrapped
+1067/tcp  open     tcpwrapped
+1068/tcp  open     tcpwrapped
+1069/tcp  open     tcpwrapped
+1070/tcp  open     gmrupdateserv?
+1071/tcp  open     tcpwrapped
+1072/tcp  open     tcpwrapped
+1073/tcp  open     ssl/bridgecontrol?
+1074/tcp  open     tcpwrapped
+1075/tcp  open     rdrmshc?
+1076/tcp  open     tcpwrapped
+1077/tcp  open     tcpwrapped
+1078/tcp  open     avocent-proxy?
+1079/tcp  open     tcpwrapped
+1080/tcp  open     socks?
+1081/tcp  open     pvuniwien?
+1082/tcp  open     tcpwrapped
+1083/tcp  open     ansoft-lm-1?
+1084/tcp  open     ansoft-lm-2?
+1085/tcp  open     tcpwrapped
+1086/tcp  open     tcpwrapped
+1087/tcp  open     tcpwrapped
+1088/tcp  open     cplscrambler-al?
+1089/tcp  open     tcpwrapped
+1090/tcp  open     ff-fms?
+1091/tcp  open     ff-sm?
+1092/tcp  open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+1093/tcp  open     proofd?
+1094/tcp  open     tcpwrapped
+1095/tcp  open     nicelink?
+1096/tcp  open     cnrprotocol?
+1097/tcp  open     tcpwrapped
+1098/tcp  open     rmiactivation?
+1099/tcp  open     tcpwrapped
+1100/tcp  open     mctp?
+1102/tcp  open     tcpwrapped
+1104/tcp  open     xrl?
+1105/tcp  open     tcpwrapped
+1106/tcp  open     isoipsigport-1?
+1107/tcp  open     tcpwrapped
+1108/tcp  open     ratio-adp?
+1110/tcp  open     nfsd-status?
+1111/tcp  open     lmsocialserver?
+1112/tcp  open     msql?
+1113/tcp  open     tcpwrapped
+1114/tcp  open     mini-sql?
+1117/tcp  filtered ardus-mtrns
+1119/tcp  open     bnetgame?
+1121/tcp  open     tcpwrapped
+1122/tcp  open     tcpwrapped
+1123/tcp  open     murray?
+1124/tcp  open     hpvmmcontrol?
+1126/tcp  open     hpvmmdata?
+1130/tcp  open     casp?
+1131/tcp  open     caspssl?
+1132/tcp  open     tcpwrapped
+1137/tcp  open     tcpwrapped
+1138/tcp  open     encrypted_admin?
+1141/tcp  open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+1145/tcp  open     x9-icue?
+1147/tcp  open     tcpwrapped
+1148/tcp  open     tcpwrapped
+1149/tcp  open     tcpwrapped
+1151/tcp  open     tcpwrapped
+1152/tcp  open     tcpwrapped
+1154/tcp  open     tcpwrapped
+1163/tcp  open     tcpwrapped
+1164/tcp  open     tcpwrapped
+1165/tcp  open     qsm-gui?
+1166/tcp  open     tcpwrapped
+1169/tcp  open     tcpwrapped
+1174/tcp  open     fnet-remote-ui?
+1175/tcp  open     dossier?
+1183/tcp  open     tcpwrapped
+1185/tcp  open     tcpwrapped
+1186/tcp  open     tcpwrapped
+1187/tcp  open     tcpwrapped
+1192/tcp  open     tcpwrapped
+1198/tcp  open     tcpwrapped
+1199/tcp  open     tcpwrapped
+1201/tcp  open     tcpwrapped
+1213/tcp  open     tcpwrapped
+1216/tcp  open     etebac5?
+1217/tcp  open     hpss-ndapi?
+1218/tcp  open     aeroflight-ads?
+1233/tcp  open     univ-appserver?
+1234/tcp  open     hotline?
+1236/tcp  open     bvcontrol?
+1244/tcp  open     isbconference1?
+1247/tcp  open     visionpyramid?
+1248/tcp  open     hermes?
+1259/tcp  open     opennl-voice?
+1271/tcp  open     excw?
+1272/tcp  open     cspmlockmgr?
+1277/tcp  open     tcpwrapped
+1287/tcp  open     routematch?
+1296/tcp  open     dproxy?
+1300/tcp  open     tcpwrapped
+1301/tcp  open     ci3-software-1?
+1309/tcp  open     jtag-server?
+1310/tcp  open     husky?
+1311/tcp  open     tcpwrapped
+1322/tcp  open     tcpwrapped
+1328/tcp  open     ewall?
+1334/tcp  open     writesrv?
+1352/tcp  open     lotusnotes?
+1417/tcp  open     timbuktu-srv1?
+1433/tcp  open     tcpwrapped
+1434/tcp  open     ms-sql-m?
+1443/tcp  open     tcpwrapped
+1455/tcp  open     esl-lm?
+1461/tcp  open     tcpwrapped
+1494/tcp  open     citrix-ica?
+1500/tcp  open     vlsi-lm?
+1501/tcp  open     sas-3?
+1503/tcp  open     imtc-mcs?
+1521/tcp  open     oracle?
+1524/tcp  open     ingreslock?
+1533/tcp  open     virtual-places?
+1556/tcp  open     tcpwrapped
+1580/tcp  open     tn-tl-r1?
+1583/tcp  open     tcpwrapped
+1594/tcp  open     sixtrak?
+1600/tcp  open     tcpwrapped
+1641/tcp  open     invision?
+1658/tcp  open     tcpwrapped
+1666/tcp  open     tcpwrapped
+1687/tcp  open     tcpwrapped
+1688/tcp  open     nsjtp-data?
+1700/tcp  open     mps-raft?
+1717/tcp  open     fj-hdnet?
+1718/tcp  open     h323gatedisc?
+1719/tcp  open     h323gatestat?
+1720/tcp  open     tcpwrapped
+1721/tcp  open     caicci?
+1723/tcp  open     pptp?
+1755/tcp  open     wms?
+1761/tcp  open     landesk-rc?
+1782/tcp  open     tcpwrapped
+1783/tcp  open     tcpwrapped
+1801/tcp  open     msmq?
+1805/tcp  open     enl-name?
+1812/tcp  open     tcpwrapped
+1839/tcp  open     netopia-vo1?
+1840/tcp  open     netopia-vo2?
+1862/tcp  open     tcpwrapped
+1863/tcp  open     tcpwrapped
+1864/tcp  open     paradym-31?
+1875/tcp  open     westell-stats?
+1900/tcp  open     upnp?
+1914/tcp  open     elm-momentum?
+1935/tcp  open     rtmp?
+1947/tcp  open     sentinelsrm?
+1971/tcp  open     netop-school?
+1972/tcp  open     intersys-cache?
+1974/tcp  open     drp?
+1984/tcp  open     bigbrother?
+1998/tcp  open     tcpwrapped
+1999/tcp  open     tcpwrapped
+2000/tcp  open     ssl/cisco-sccp?
+2001/tcp  open     tcpwrapped
+2002/tcp  open     tcpwrapped
+2003/tcp  open     finger?
+2004/tcp  open     mailbox?
+2005/tcp  open     deslogin?
+2006/tcp  open     invokator?
+2007/tcp  open     dectalk?
+2008/tcp  open     conf?
+2009/tcp  open     news?
+2010/tcp  open     search?
+2013/tcp  open     raid-am?
+2020/tcp  open     xinupageserver?
+2021/tcp  open     servexec?
+2022/tcp  open     tcpwrapped
+2030/tcp  open     tcpwrapped
+2033/tcp  open     glogger?
+2034/tcp  open     scoremgr?
+2035/tcp  open     imsldoc?
+2038/tcp  open     objectmanager?
+2040/tcp  open     tcpwrapped
+2041/tcp  open     interbase?
+2042/tcp  open     isis?
+2043/tcp  open     tcpwrapped
+2045/tcp  open     cdfunc?
+2046/tcp  open     tcpwrapped
+2047/tcp  open     tcpwrapped
+2048/tcp  open     dls-monitor?
+2049/tcp  open     nfs?
+2065/tcp  open     dlsrpn?
+2068/tcp  open     avocentkvm?
+2099/tcp  open     tcpwrapped
+2100/tcp  open     tcpwrapped
+2103/tcp  open     zephyr-clt?
+2105/tcp  open     tcpwrapped
+2106/tcp  open     tcpwrapped
+2107/tcp  open     tcpwrapped
+2111/tcp  open     kx?
+2119/tcp  open     tcpwrapped
+2121/tcp  open     tcpwrapped
+2126/tcp  open     tcpwrapped
+2135/tcp  open     tcpwrapped
+2144/tcp  open     tcpwrapped
+2160/tcp  open     apc-2160?
+2161/tcp  open     apc-agent?
+2170/tcp  open     eyetv?
+2179/tcp  open     tcpwrapped
+2190/tcp  open     tivoconnect?
+2191/tcp  open     tvbus?
+2196/tcp  open     tcpwrapped
+2200/tcp  open     ici?
+2222/tcp  open     EtherNetIP-1?
+2251/tcp  open     tcpwrapped
+2260/tcp  open     tcpwrapped
+2288/tcp  open     tcpwrapped
+2301/tcp  open     compaqdiag?
+2323/tcp  open     tcpwrapped
+2366/tcp  open     qip-login?
+2381/tcp  open     compaq-https?
+2382/tcp  open     tcpwrapped
+2383/tcp  open     ms-olap4?
+2393/tcp  open     tcpwrapped
+2394/tcp  open     tcpwrapped
+2399/tcp  open     tcpwrapped
+2401/tcp  open     cvspserver?
+2492/tcp  open     tcpwrapped
+2500/tcp  open     tcpwrapped
+2522/tcp  open     windb?
+2525/tcp  open     tcpwrapped
+2557/tcp  open     tcpwrapped
+2601/tcp  open     zebra?
+2602/tcp  open     tcpwrapped
+2604/tcp  open     tcpwrapped
+2605/tcp  open     tcpwrapped
+2607/tcp  open     connection?
+2608/tcp  open     tcpwrapped
+2638/tcp  open     tcpwrapped
+2701/tcp  open     sms-rcinfo?
+2702/tcp  open     sms-xfer?
+2710/tcp  open     sso-service?
+2717/tcp  open     pn-requester?
+2718/tcp  open     tcpwrapped
+2725/tcp  open     msolap-ptp2?
+2800/tcp  open     acc-raid?
+2809/tcp  open     corbaloc?
+2811/tcp  open     gsiftp?
+2869/tcp  open     tcpwrapped
+2875/tcp  open     tcpwrapped
+2909/tcp  open     tcpwrapped
+2910/tcp  open     tdaccess?
+2920/tcp  filtered roboeda
+2967/tcp  open     tcpwrapped
+2968/tcp  open     tcpwrapped
+2998/tcp  open     tcpwrapped
+3000/tcp  open     tcpwrapped
+3001/tcp  open     tcpwrapped
+3003/tcp  open     cgms?
+3005/tcp  open     tcpwrapped
+3006/tcp  open     tcpwrapped
+3011/tcp  open     tcpwrapped
+3017/tcp  open     tcpwrapped
+3030/tcp  open     arepa-cas?
+3031/tcp  open     tcpwrapped
+3052/tcp  open     powerchute?
+3071/tcp  open     csd-mgmt-port?
+3077/tcp  open     tcpwrapped
+3128/tcp  open     squid-http?
+3168/tcp  open     poweronnud?
+3211/tcp  open     avsecuremgmt?
+3221/tcp  open     tcpwrapped
+3260/tcp  open     iscsi?
+3261/tcp  open     tcpwrapped
+3268/tcp  open     tcpwrapped
+3269/tcp  open     tcpwrapped
+3283/tcp  open     tcpwrapped
+3300/tcp  open     ceph?
+3301/tcp  open     tarantool?
+3306/tcp  open     tcpwrapped
+3322/tcp  open     tcpwrapped
+3323/tcp  open     tcpwrapped
+3324/tcp  open     active-net?
+3325/tcp  open     active-net?
+3333/tcp  open     tcpwrapped
+3351/tcp  open     tcpwrapped
+3367/tcp  open     tcpwrapped
+3369/tcp  open     satvid-datalnk?
+3370/tcp  open     satvid-datalnk?
+3371/tcp  open     tcpwrapped
+3372/tcp  open     msdtc?
+3389/tcp  open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+3390/tcp  open     tcpwrapped
+3404/tcp  open     unknown
+3476/tcp  open     tcpwrapped
+3493/tcp  open     nut?
+3517/tcp  open     802-11-iapp?
+3527/tcp  open     tcpwrapped
+3546/tcp  open     unknown
+3551/tcp  open     tcpwrapped
+3580/tcp  open     tcpwrapped
+3659/tcp  open     apple-sasl?
+3689/tcp  open     rendezvous?
+3690/tcp  open     tcpwrapped
+3703/tcp  open     tcpwrapped
+3737/tcp  open     xpanel?
+3766/tcp  open     sitewatch-s?
+3784/tcp  open     bfd-control?
+3800/tcp  open     tcpwrapped
+3801/tcp  open     tcpwrapped
+3809/tcp  open     apocd?
+3814/tcp  open     tcpwrapped
+3826/tcp  open     wormux?
+3827/tcp  open     tcpwrapped
+3828/tcp  open     neteh?
+3851/tcp  open     tcpwrapped
+3869/tcp  open     ovsam-mgmt?
+3871/tcp  open     avocent-adsap?
+3878/tcp  open     tcpwrapped
+3880/tcp  open     igrs?
+3889/tcp  open     dandv-tester?
+3905/tcp  open     tcpwrapped
+3914/tcp  open     tcpwrapped
+3918/tcp  open     pktcablemmcops?
+3920/tcp  open     exasoftport1?
+3945/tcp  open     emcads?
+3971/tcp  open     lanrevserver?
+3986/tcp  open     tcpwrapped
+3995/tcp  open     iss-mgmt-ssl?
+3998/tcp  open     tcpwrapped
+4000/tcp  open     remoteanything?
+4001/tcp  open     newoak?
+4002/tcp  open     mlchat-proxy?
+4003/tcp  open     tcpwrapped
+4004/tcp  open     pxc-roid?
+4005/tcp  open     pxc-pin?
+4006/tcp  open     tcpwrapped
+4045/tcp  open     lockd?
+4111/tcp  open     xgrid?
+4125/tcp  open     tcpwrapped
+4126/tcp  open     ddrepl?
+4129/tcp  open     tcpwrapped
+4224/tcp  open     xtell?
+4242/tcp  open     tcpwrapped
+4279/tcp  open     vrml-multi-use?
+4321/tcp  open     rwhois?
+4343/tcp  open     tcpwrapped
+4443/tcp  open     tcpwrapped
+4444/tcp  open     krb524?
+4445/tcp  open     tcpwrapped
+4446/tcp  open     n1-fwp?
+4449/tcp  open     privatewire?
+4550/tcp  open     gds-adppiw-db?
+4567/tcp  open     tcpwrapped
+4662/tcp  open     tcpwrapped
+4848/tcp  open     tcpwrapped
+4899/tcp  open     radmin?
+4900/tcp  open     hfcs?
+4998/tcp  open     tcpwrapped
+5000/tcp  open     upnp?
+5001/tcp  open     commplex-link?
+5002/tcp  open     rfe?
+5003/tcp  open     tcpwrapped
+5004/tcp  open     tcpwrapped
+5009/tcp  open     tcpwrapped
+5030/tcp  open     surfpass?
+5033/tcp  open     tcpwrapped
+5050/tcp  open     tcpwrapped
+5051/tcp  open     tcpwrapped
+5054/tcp  open     rlm-admin?
+5060/tcp  open     sip?
+5061/tcp  open     ssl/sip-tls?
+5080/tcp  open     onscreen?
+5087/tcp  open     tcpwrapped
+5100/tcp  open     tcpwrapped
+5101/tcp  open     tcpwrapped
+5102/tcp  open     tcpwrapped
+5120/tcp  open     barracuda-bbs?
+5190/tcp  open     aol?
+5200/tcp  open     tcpwrapped
+5214/tcp  open     unknown
+5221/tcp  open     tcpwrapped
+5222/tcp  open     xmpp-client?
+5225/tcp  open     tcpwrapped
+5226/tcp  open     tcpwrapped
+5269/tcp  open     xmpp-server?
+5280/tcp  open     tcpwrapped
+5298/tcp  open     tcpwrapped
+5357/tcp  open     tcpwrapped
+5405/tcp  open     tcpwrapped
+5414/tcp  open     statusd?
+5431/tcp  open     park-agent?
+5432/tcp  open     postgresql?
+5440/tcp  open     tcpwrapped
+5500/tcp  open     hotline?
+5510/tcp  open     tcpwrapped
+5544/tcp  open     tcpwrapped
+5550/tcp  open     ssl/sdadmind?
+5555/tcp  open     tcpwrapped
+5560/tcp  open     tcpwrapped
+5566/tcp  open     tcpwrapped
+5631/tcp  open     pcanywheredata?
+5633/tcp  open     beorl?
+5666/tcp  open     nrpe?
+5678/tcp  open     tcpwrapped
+5679/tcp  open     activesync?
+5718/tcp  open     tcpwrapped
+5730/tcp  open     tcpwrapped
+5800/tcp  open     tcpwrapped
+5801/tcp  open     tcpwrapped
+5802/tcp  open     tcpwrapped
+5810/tcp  open     tcpwrapped
+5811/tcp  open     unknown
+5815/tcp  open     tcpwrapped
+5822/tcp  open     tcpwrapped
+5825/tcp  open     unknown
+5850/tcp  open     tcpwrapped
+5859/tcp  open     wherehoo?
+5862/tcp  open     tcpwrapped
+5877/tcp  open     tcpwrapped
+5900/tcp  open     tcpwrapped
+5901/tcp  filtered vnc-1
+5902/tcp  open     tcpwrapped
+5903/tcp  open     vnc-3?
+5904/tcp  open     tcpwrapped
+5906/tcp  open     rpas-c2?
+5907/tcp  open     dsd?
+5910/tcp  open     tcpwrapped
+5911/tcp  open     cpdlc?
+5915/tcp  open     tcpwrapped
+5922/tcp  open     unknown
+5925/tcp  open     unknown
+5950/tcp  open     tcpwrapped
+5952/tcp  open     ssl/unknown
+5959/tcp  open     unknown
+5960/tcp  open     tcpwrapped
+5961/tcp  open     tcpwrapped
+5962/tcp  open     unknown
+5963/tcp  open     indy?
+5985/tcp  open     tcpwrapped
+5986/tcp  open     tcpwrapped
+5987/tcp  open     wbem-rmi?
+5988/tcp  open     wbem-http?
+5989/tcp  open     tcpwrapped
+5998/tcp  open     ncd-diag?
+5999/tcp  open     ncd-conf?
+6000/tcp  open     X11?
+6001/tcp  open     tcpwrapped
+6002/tcp  open     X11:2?
+6003/tcp  open     tcpwrapped
+6004/tcp  open     tcpwrapped
+6005/tcp  open     tcpwrapped
+6006/tcp  open     tcpwrapped
+6007/tcp  open     tcpwrapped
+6009/tcp  open     tcpwrapped
+6025/tcp  open     x11?
+6059/tcp  open     tcpwrapped
+6100/tcp  open     tcpwrapped
+6101/tcp  open     backupexec?
+6106/tcp  open     isdninfo?
+6112/tcp  open     tcpwrapped
+6123/tcp  open     tcpwrapped
+6129/tcp  open     tcpwrapped
+6156/tcp  open     tcpwrapped
+6346/tcp  open     gnutella?
+6389/tcp  open     clariion-evr01?
+6502/tcp  open     tcpwrapped
+6510/tcp  open     mcer-port?
+6543/tcp  open     tcpwrapped
+6547/tcp  open     tcpwrapped
+6565/tcp  open     tcpwrapped
+6566/tcp  open     tcpwrapped
+6567/tcp  open     tcpwrapped
+6580/tcp  open     tcpwrapped
+6646/tcp  open     tcpwrapped
+6666/tcp  open     irc?
+6667/tcp  open     tcpwrapped
+6668/tcp  open     tcpwrapped
+6669/tcp  open     tcpwrapped
+6689/tcp  open     tsa?
+6692/tcp  open     tcpwrapped
+6699/tcp  open     tcpwrapped
+6779/tcp  open     tcpwrapped
+6788/tcp  open     tcpwrapped
+6789/tcp  open     tcpwrapped
+6792/tcp  open     unknown
+6839/tcp  open     tcpwrapped
+6881/tcp  open     tcpwrapped
+6901/tcp  open     tcpwrapped
+6969/tcp  open     tcpwrapped
+7000/tcp  open     afs3-fileserver?
+7001/tcp  open     tcpwrapped
+7002/tcp  open     tcpwrapped
+7004/tcp  open     tcpwrapped
+7007/tcp  open     tcpwrapped
+7019/tcp  open     doceri-ctl?
+7025/tcp  open     tcpwrapped
+7070/tcp  open     tcpwrapped
+7100/tcp  open     tcpwrapped
+7103/tcp  open     unknown
+7106/tcp  open     unknown
+7200/tcp  open     tcpwrapped
+7201/tcp  open     tcpwrapped
+7402/tcp  open     tcpwrapped
+7435/tcp  open     unknown
+7443/tcp  open     tcpwrapped
+7496/tcp  open     tcpwrapped
+7512/tcp  open     tcpwrapped
+7625/tcp  open     tcpwrapped
+7627/tcp  open     tcpwrapped
+7676/tcp  open     tcpwrapped
+7741/tcp  open     scriptview?
+7777/tcp  open     cbt?
+7778/tcp  open     interwise?
+7800/tcp  open     tcpwrapped
+7911/tcp  open     tcpwrapped
+7920/tcp  open     tcpwrapped
+7921/tcp  open     unknown
+7937/tcp  open     nsrexecd?
+7938/tcp  open     lgtomapper?
+7999/tcp  open     tcpwrapped
+8000/tcp  open     http-alt?
+8001/tcp  open     tcpwrapped
+8002/tcp  open     tcpwrapped
+8007/tcp  open     ajp12?
+8008/tcp  open     tcpwrapped
+8009/tcp  open     tcpwrapped
+8010/tcp  open     tcpwrapped
+8011/tcp  open     unknown
+8021/tcp  open     ftp-proxy?
+8022/tcp  open     tcpwrapped
+8031/tcp  open     unknown
+8042/tcp  open     tcpwrapped
+8045/tcp  open     tcpwrapped
+8080/tcp  open     tcpwrapped
+8081/tcp  open     tcpwrapped
+8082/tcp  open     tcpwrapped
+8083/tcp  open     us-srv?
+8084/tcp  open     tcpwrapped
+8085/tcp  open     tcpwrapped
+8086/tcp  open     tcpwrapped
+8087/tcp  open     tcpwrapped
+8088/tcp  open     tcpwrapped
+8089/tcp  open     unknown
+8090/tcp  open     tcpwrapped
+8093/tcp  open     tcpwrapped
+8099/tcp  open     unknown
+8100/tcp  open     tcpwrapped
+8180/tcp  open     unknown
+8181/tcp  open     tcpwrapped
+8192/tcp  open     tcpwrapped
+8193/tcp  open     tcpwrapped
+8194/tcp  open     tcpwrapped
+8200/tcp  open     trivnet1?
+8222/tcp  open     tcpwrapped
+8254/tcp  open     tcpwrapped
+8290/tcp  open     tcpwrapped
+8291/tcp  open     tcpwrapped
+8292/tcp  open     tcpwrapped
+8300/tcp  open     tmi?
+8333/tcp  open     tcpwrapped
+8383/tcp  open     m2mservices?
+8400/tcp  open     tcpwrapped
+8402/tcp  open     abarsd?
+8443/tcp  open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+8500/tcp  open     fmtp?
+8600/tcp  open     asterix?
+8649/tcp  open     unknown
+8651/tcp  open     tcpwrapped
+8652/tcp  open     tcpwrapped
+8654/tcp  open     unknown
+8701/tcp  open     unknown
+8800/tcp  open     tcpwrapped
+8873/tcp  open     tcpwrapped
+8888/tcp  open     tcpwrapped
+8899/tcp  open     ospf-lite?
+8994/tcp  open     unknown
+9000/tcp  open     tcpwrapped
+9001/tcp  open     tcpwrapped
+9002/tcp  open     ssl/dynamid?
+9003/tcp  open     tcpwrapped
+9009/tcp  open     pichat?
+9010/tcp  open     sdr?
+9011/tcp  open     tcpwrapped
+9040/tcp  open     tcpwrapped
+9050/tcp  open     tcpwrapped
+9071/tcp  open     unknown
+9080/tcp  open     tcpwrapped
+9081/tcp  open     tcpwrapped
+9090/tcp  open     tcpwrapped
+9091/tcp  open     tcpwrapped
+9099/tcp  open     tcpwrapped
+9100/tcp  open     jetdirect?
+9101/tcp  open     jetdirect?
+9102/tcp  open     jetdirect?
+9103/tcp  open     jetdirect?
+9110/tcp  open     unknown
+9111/tcp  open     tcpwrapped
+9200/tcp  open     tcpwrapped
+9207/tcp  open     wap-vcal-s?
+9220/tcp  open     tcpwrapped
+9290/tcp  open     tcpwrapped
+9415/tcp  open     unknown
+9418/tcp  open     git?
+9485/tcp  open     unknown
+9500/tcp  open     tcpwrapped
+9502/tcp  open     tcpwrapped
+9503/tcp  open     tcpwrapped
+9535/tcp  open     man?
+9575/tcp  open     tcpwrapped
+9593/tcp  open     tcpwrapped
+9594/tcp  open     tcpwrapped
+9595/tcp  open     tcpwrapped
+9618/tcp  open     condor?
+9666/tcp  open     tcpwrapped
+9876/tcp  open     sd?
+9877/tcp  open     tcpwrapped
+9878/tcp  open     tcpwrapped
+9898/tcp  open     monkeycom?
+9900/tcp  open     tcpwrapped
+9917/tcp  open     tcpwrapped
+9929/tcp  open     tcpwrapped
+9943/tcp  open     unknown
+9944/tcp  open     unknown
+9968/tcp  open     tcpwrapped
+9998/tcp  open     tcpwrapped
+9999/tcp  open     tcpwrapped
+10000/tcp open     snet-sensor-mgmt?
+10001/tcp open     tcpwrapped
+10002/tcp open     documentum?
+10003/tcp open     documentum_s?
+10004/tcp open     emcrmirccd?
+10009/tcp open     swdtp-sv?
+10010/tcp open     rxapi?
+10012/tcp open     tcpwrapped
+10024/tcp open     tcpwrapped
+10025/tcp open     unknown
+10082/tcp open     tcpwrapped
+10180/tcp open     tcpwrapped
+10215/tcp open     tcpwrapped
+10243/tcp open     tcpwrapped
+10566/tcp open     unknown
+10616/tcp open     unknown
+10617/tcp open     unknown
+10621/tcp open     tcpwrapped
+10626/tcp open     unknown
+10628/tcp open     unknown
+10629/tcp open     unknown
+10778/tcp open     unknown
+11110/tcp open     sgi-soap?
+11111/tcp open     vce?
+11967/tcp open     tcpwrapped
+12000/tcp open     tcpwrapped
+12174/tcp open     unknown
+12265/tcp open     tcpwrapped
+12345/tcp open     netbus?
+13456/tcp open     tcpwrapped
+13722/tcp open     netbackup?
+13782/tcp open     netbackup?
+13783/tcp open     netbackup?
+14000/tcp open     scotty-ft?
+14238/tcp open     tcpwrapped
+14441/tcp open     unknown
+14442/tcp open     unknown
+15000/tcp open     hydap?
+15002/tcp open     tcpwrapped
+15003/tcp open     unknown
+15004/tcp open     unknown
+15660/tcp open     bex-xr?
+15742/tcp open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+16000/tcp open     tcpwrapped
+16001/tcp open     tcpwrapped
+16012/tcp open     tcpwrapped
+16016/tcp open     tcpwrapped
+16018/tcp open     unknown
+16080/tcp open     osxwebadmin?
+16113/tcp open     tcpwrapped
+16992/tcp open     amt-soap-http?
+16993/tcp open     amt-soap-https?
+17877/tcp open     unknown
+17988/tcp open     unknown
+18040/tcp open     unknown
+18101/tcp open     unknown
+18988/tcp open     unknown
+19101/tcp open     ssl/unknown
+19283/tcp open     keysrvr?
+19315/tcp open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+19350/tcp open     ssl/unknown
+19780/tcp open     tcpwrapped
+19801/tcp open     ssl/unknown
+19842/tcp open     unknown
+20000/tcp open     tcpwrapped
+20005/tcp open     tcpwrapped
+20031/tcp open     unknown
+20221/tcp open     tcpwrapped
+20222/tcp open     tcpwrapped
+20828/tcp open     tcpwrapped
+21571/tcp open     unknown
+22939/tcp open     tcpwrapped
+23502/tcp open     tcpwrapped
+24444/tcp open     unknown
+24800/tcp open     unknown
+25734/tcp open     unknown
+25735/tcp open     ssl/unknown
+26214/tcp open     unknown
+27000/tcp open     tcpwrapped
+27352/tcp open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+27353/tcp open     unknown
+27355/tcp open     unknown
+27356/tcp open     unknown
+27715/tcp open     unknown
+28201/tcp open     unknown
+30000/tcp open     ndmps?
+30718/tcp open     unknown
+30951/tcp open     tcpwrapped
+31038/tcp open     unknown
+31337/tcp open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+32768/tcp open     filenet-tms?
+32769/tcp open     filenet-rpc?
+32770/tcp open     tcpwrapped
+32771/tcp open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+32772/tcp open     sometimes-rpc7?
+32773/tcp open     sometimes-rpc9?
+32774/tcp open     tcpwrapped
+32775/tcp open     tcpwrapped
+32776/tcp open     sometimes-rpc15?
+32777/tcp open     sometimes-rpc17?
+32778/tcp open     tcpwrapped
+32779/tcp open     tcpwrapped
+32780/tcp open     sometimes-rpc23?
+32781/tcp open     unknown
+32782/tcp open     unknown
+32783/tcp open     unknown
+32784/tcp open     unknown
+32785/tcp open     tcpwrapped
+33354/tcp open     unknown
+33899/tcp open     unknown
+34571/tcp open     unknown
+34572/tcp open     tcpwrapped
+34573/tcp open     unknown
+35500/tcp open     unknown
+38292/tcp open     landesk-cba?
+40193/tcp open     tcpwrapped
+40911/tcp open     unknown
+41511/tcp open     tcpwrapped
+42510/tcp open     caerpc?
+44176/tcp open     unknown
+44442/tcp open     coldfusion-auth?
+44443/tcp open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+44501/tcp open     unknown
+45100/tcp open     unknown
+48080/tcp open     ssl/unknown
+49152/tcp open     unknown
+49153/tcp open     tcpwrapped
+49154/tcp open     tcpwrapped
+49155/tcp open     tcpwrapped
+49156/tcp open     unknown
+49157/tcp open     tcpwrapped
+49158/tcp open     tcpwrapped
+49159/tcp open     tcpwrapped
+49160/tcp open     unknown
+49161/tcp open     tcpwrapped
+49163/tcp open     tcpwrapped
+49165/tcp open     unknown
+49167/tcp open     unknown
+49175/tcp open     unknown
+49176/tcp open     tcpwrapped
+49400/tcp open     tcpwrapped
+49999/tcp open     tcpwrapped
+50000/tcp open     tcpwrapped
+50001/tcp open     unknown
+50002/tcp open     tcpwrapped
+50003/tcp open     unknown
+50006/tcp open     tcpwrapped
+50300/tcp open     unknown
+50389/tcp open     tcpwrapped
+50500/tcp open     unknown
+50636/tcp open     unknown
+50800/tcp open     unknown
+51103/tcp open     unknown
+51493/tcp open     tcpwrapped
+52673/tcp open     unknown
+52822/tcp open     unknown
+52848/tcp open     unknown
+52869/tcp open     tcpwrapped
+54045/tcp open     unknown
+54328/tcp open     unknown
+55055/tcp open     unknown
+55056/tcp open     tcpwrapped
+55555/tcp open     ssl/http-proxy         HAProxy http proxy 1.3.1 - 1.9.0
+55600/tcp open     unknown
+56737/tcp open     unknown
+56738/tcp open     unknown
+57294/tcp open     unknown
+57797/tcp open     tcpwrapped
+58080/tcp open     tcpwrapped
+60020/tcp open     tcpwrapped
+60443/tcp open     ssl/unknown
+61532/tcp open     tcpwrapped
+61900/tcp open     tcpwrapped
+62078/tcp open     tcpwrapped
+63331/tcp open     unknown
+64623/tcp open     unknown
+64680/tcp open     unknown
+65000/tcp open     unknown
+65129/tcp open     tcpwrapped
+65389/tcp open     unknown
+9 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port465-TCP:V=7.95%T=SSL%I=7%D=4/19%Time=69E57C7C%P=x86_64-pc-linux-gnu
+SF:%r(Hello,BB,"HTTP/1\.0\x20400\x20Bad\x20request\r\nCache-Control:\x20no
+SF:-cache\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\n\r\n<ht
+SF:ml><body><h1>400\x20Bad\x20request</h1>\nYour\x20browser\x20sent\x20an\
+SF:x20invalid\x20request\.\n</body></html>\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port625-TCP:V=7.95%T=SSL%I=7%D=4/19%Time=69E57C9B%P=x86_64-pc-linux-gnu
+SF:%r(GenericLines,D4,"HTTP/1\.0\x20408\x20Request\x20Time-out\r\nCache-Co
+SF:ntrol:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x20text/htm
+SF:l\r\n\r\n<html><body><h1>408\x20Request\x20Time-out</h1>\nYour\x20brows
+SF:er\x20didn't\x20send\x20a\x20complete\x20request\x20in\x20time\.\n</bod
+SF:y></html>\n")%r(GetRequest,706,"HTTP/1\.1\x20200\x20OK\r\nConnection:\x
+SF:20close\r\nDate:\x20Mon,\x2020\x20Apr\x202026\x2001:08:44\x20GMT\r\nCon
+SF:tent-Length:\x201584\r\nContent-Type:\x20text/html;charset=utf-8\r\nLas
+SF:t-Modified:\x20Sun,\x2005\x20Jun\x202022\x2010:17:46\x20GMT\r\nSet-Cook
+SF:ie:\x20SRVNAME=S1;\x20path=/\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-/
+SF:/W3C//DTD\x20HTML\x203\.2//EN\">\n<html><head><meta\x20http-equiv=\"Con
+SF:tent-Type\"\x20content=\"text/html;CHARSET=iso-8859-1\">\n<!--\n\*\x20\
+SF:*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+SF:\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\n\*\x20\x20This\
+SF:x20software\x20and\x20related\x20documentation\x20are\x20provided\x20un
+SF:der\x20a\n\*\x20\x20license\x20agreement\x20containing\x20restrictions\
+SF:x20on\x20use\x20and\n\*\x20\x20disclosure\x20and\x20are\x20protected\x2
+SF:0by\x20intellectual\x20property\n\*\x20\x20laws\.\x20Except\x20as\x20ex
+SF:pressly\x20permitted\x20in\x20your\x20license\x20agreement\n\*\x20\x20o
+SF:r\x20allowed\x20by\x20law,\x20you\x20may\x20not\x20use,\x20copy,\x20rep
+SF:roduce,\n\*\x20\x20translate,\x20broadcast,\x20modify,\x20license,\x20t
+SF:ransmit,\x20distribute,\n\*\x20\x20exhibit,\x20perform,\x20publish\x20o
+SF:r\x20display\x20any\x20part,\x20in\x20any\x20form\x20or\n\*\x20\x20by\x
+SF:20any\x20means\.\x20Reverse\x20engineering,\x20disassembly,\x20or\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port987-TCP:V=7.95%T=SSL%I=7%D=4/19%Time=69E57CAA%P=x86_64-pc-linux-gnu
+SF:%r(GenericLines,D4,"HTTP/1\.0\x20408\x20Request\x20Time-out\r\nCache-Co
+SF:ntrol:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x20text/htm
+SF:l\r\n\r\n<html><body><h1>408\x20Request\x20Time-out</h1>\nYour\x20brows
+SF:er\x20didn't\x20send\x20a\x20complete\x20request\x20in\x20time\.\n</bod
+SF:y></html>\n")%r(GetRequest,706,"HTTP/1\.1\x20200\x20OK\r\nConnection:\x
+SF:20close\r\nDate:\x20Mon,\x2020\x20Apr\x202026\x2001:08:59\x20GMT\r\nCon
+SF:tent-Length:\x201584\r\nContent-Type:\x20text/html;charset=utf-8\r\nLas
+SF:t-Modified:\x20Sun,\x2005\x20Jun\x202022\x2010:23:20\x20GMT\r\nSet-Cook
+SF:ie:\x20SRVNAME=S2;\x20path=/\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-/
+SF:/W3C//DTD\x20HTML\x203\.2//EN\">\n<html><head><meta\x20http-equiv=\"Con
+SF:tent-Type\"\x20content=\"text/html;CHARSET=iso-8859-1\">\n<!--\n\*\x20\
+SF:*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+SF:\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\n\*\x20\x20This\
+SF:x20software\x20and\x20related\x20documentation\x20are\x20provided\x20un
+SF:der\x20a\n\*\x20\x20license\x20agreement\x20containing\x20restrictions\
+SF:x20on\x20use\x20and\n\*\x20\x20disclosure\x20and\x20are\x20protected\x2
+SF:0by\x20intellectual\x20property\n\*\x20\x20laws\.\x20Except\x20as\x20ex
+SF:pressly\x20permitted\x20in\x20your\x20license\x20agreement\n\*\x20\x20o
+SF:r\x20allowed\x20by\x20law,\x20you\x20may\x20not\x20use,\x20copy,\x20rep
+SF:roduce,\n\*\x20\x20translate,\x20broadcast,\x20modify,\x20license,\x20t
+SF:ransmit,\x20distribute,\n\*\x20\x20exhibit,\x20perform,\x20publish\x20o
+SF:r\x20display\x20any\x20part,\x20in\x20any\x20form\x20or\n\*\x20\x20by\x
+SF:20any\x20means\.\x20Reverse\x20engineering,\x20disassembly,\x20or\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port990-TCP:V=7.95%T=SSL%I=7%D=4/19%Time=69E57C98%P=x86_64-pc-linux-gnu
+SF:%r(GenericLines,D4,"HTTP/1\.0\x20408\x20Request\x20Time-out\r\nCache-Co
+SF:ntrol:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x20text/htm
+SF:l\r\n\r\n<html><body><h1>408\x20Request\x20Time-out</h1>\nYour\x20brows
+SF:er\x20didn't\x20send\x20a\x20complete\x20request\x20in\x20time\.\n</bod
+SF:y></html>\n")%r(Help,BB,"HTTP/1\.0\x20400\x20Bad\x20request\r\nCache-Co
+SF:ntrol:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x20text/htm
+SF:l\r\n\r\n<html><body><h1>400\x20Bad\x20request</h1>\nYour\x20browser\x2
+SF:0sent\x20an\x20invalid\x20request\.\n</body></html>\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port1073-TCP:V=7.95%T=SSL%I=7%D=4/19%Time=69E57CC3%P=x86_64-pc-linux-gn
+SF:u%r(GenericLines,D4,"HTTP/1\.0\x20408\x20Request\x20Time-out\r\nCache-C
+SF:ontrol:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x20text/ht
+SF:ml\r\n\r\n<html><body><h1>408\x20Request\x20Time-out</h1>\nYour\x20brow
+SF:ser\x20didn't\x20send\x20a\x20complete\x20request\x20in\x20time\.\n</bo
+SF:dy></html>\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port2000-TCP:V=7.95%T=SSL%I=7%D=4/19%Time=69E57CF9%P=x86_64-pc-linux-gn
+SF:u%r(GenericLines,D4,"HTTP/1\.0\x20408\x20Request\x20Time-out\r\nCache-C
+SF:ontrol:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x20text/ht
+SF:ml\r\n\r\n<html><body><h1>408\x20Request\x20Time-out</h1>\nYour\x20brow
+SF:ser\x20didn't\x20send\x20a\x20complete\x20request\x20in\x20time\.\n</bo
+SF:dy></html>\n")%r(GetRequest,706,"HTTP/1\.1\x20200\x20OK\r\nConnection:\
+SF:x20close\r\nDate:\x20Mon,\x2020\x20Apr\x202026\x2001:10:25\x20GMT\r\nCo
+SF:ntent-Length:\x201584\r\nContent-Type:\x20text/html;charset=utf-8\r\nLa
+SF:st-Modified:\x20Sun,\x2005\x20Jun\x202022\x2010:17:46\x20GMT\r\nSet-Coo
+SF:kie:\x20SRVNAME=S1;\x20path=/\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-
+SF://W3C//DTD\x20HTML\x203\.2//EN\">\n<html><head><meta\x20http-equiv=\"Co
+SF:ntent-Type\"\x20content=\"text/html;CHARSET=iso-8859-1\">\n<!--\n\*\x20
+SF:\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\
+SF:*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\n\*\x20\x20This
+SF:\x20software\x20and\x20related\x20documentation\x20are\x20provided\x20u
+SF:nder\x20a\n\*\x20\x20license\x20agreement\x20containing\x20restrictions
+SF:\x20on\x20use\x20and\n\*\x20\x20disclosure\x20and\x20are\x20protected\x
+SF:20by\x20intellectual\x20property\n\*\x20\x20laws\.\x20Except\x20as\x20e
+SF:xpressly\x20permitted\x20in\x20your\x20license\x20agreement\n\*\x20\x20
+SF:or\x20allowed\x20by\x20law,\x20you\x20may\x20not\x20use,\x20copy,\x20re
+SF:produce,\n\*\x20\x20translate,\x20broadcast,\x20modify,\x20license,\x20
+SF:transmit,\x20distribute,\n\*\x20\x20exhibit,\x20perform,\x20publish\x20
+SF:or\x20display\x20any\x20part,\x20in\x20any\x20form\x20or\n\*\x20\x20by\
+SF:x20any\x20means\.\x20Reverse\x20engineering,\x20disassembly,\x20or\n")%
+SF:r(HTTPOptions,9F,"HTTP/1\.1\x20200\x20OK\r\nConnection:\x20close\r\nDat
+SF:e:\x20Mon,\x2020\x20Apr\x202026\x2001:10:32\x20GMT\r\nContent-Length:\x
+SF:200\r\nAllow:\x20GET,\x20HEAD,\x20OPTIONS,\x20POST\r\nSet-Cookie:\x20SR
+SF:VNAME=S2;\x20path=/\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port5550-TCP:V=7.95%T=SSL%I=7%D=4/19%Time=69E57D57%P=x86_64-pc-linux-gn
+SF:u%r(GenericLines,D4,"HTTP/1\.0\x20408\x20Request\x20Time-out\r\nCache-C
+SF:ontrol:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x20text/ht
+SF:ml\r\n\r\n<html><body><h1>408\x20Request\x20Time-out</h1>\nYour\x20brow
+SF:ser\x20didn't\x20send\x20a\x20complete\x20request\x20in\x20time\.\n</bo
+SF:dy></html>\n")%r(GetRequest,706,"HTTP/1\.1\x20200\x20OK\r\nConnection:\
+SF:x20close\r\nDate:\x20Mon,\x2020\x20Apr\x202026\x2001:11:55\x20GMT\r\nCo
+SF:ntent-Length:\x201584\r\nContent-Type:\x20text/html;charset=utf-8\r\nLa
+SF:st-Modified:\x20Sun,\x2005\x20Jun\x202022\x2010:17:46\x20GMT\r\nSet-Coo
+SF:kie:\x20SRVNAME=S1;\x20path=/\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-
+SF://W3C//DTD\x20HTML\x203\.2//EN\">\n<html><head><meta\x20http-equiv=\"Co
+SF:ntent-Type\"\x20content=\"text/html;CHARSET=iso-8859-1\">\n<!--\n\*\x20
+SF:\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\
+SF:*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\n\*\x20\x20This
+SF:\x20software\x20and\x20related\x20documentation\x20are\x20provided\x20u
+SF:nder\x20a\n\*\x20\x20license\x20agreement\x20containing\x20restrictions
+SF:\x20on\x20use\x20and\n\*\x20\x20disclosure\x20and\x20are\x20protected\x
+SF:20by\x20intellectual\x20property\n\*\x20\x20laws\.\x20Except\x20as\x20e
+SF:xpressly\x20permitted\x20in\x20your\x20license\x20agreement\n\*\x20\x20
+SF:or\x20allowed\x20by\x20law,\x20you\x20may\x20not\x20use,\x20copy,\x20re
+SF:produce,\n\*\x20\x20translate,\x20broadcast,\x20modify,\x20license,\x20
+SF:transmit,\x20distribute,\n\*\x20\x20exhibit,\x20perform,\x20publish\x20
+SF:or\x20display\x20any\x20part,\x20in\x20any\x20form\x20or\n\*\x20\x20by\
+SF:x20any\x20means\.\x20Reverse\x20engineering,\x20disassembly,\x20or\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port5952-TCP:V=7.95%T=SSL%I=7%D=4/19%Time=69E57D70%P=x86_64-pc-linux-gn
+SF:u%r(GenericLines,D4,"HTTP/1\.0\x20408\x20Request\x20Time-out\r\nCache-C
+SF:ontrol:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x20text/ht
+SF:ml\r\n\r\n<html><body><h1>408\x20Request\x20Time-out</h1>\nYour\x20brow
+SF:ser\x20didn't\x20send\x20a\x20complete\x20request\x20in\x20time\.\n</bo
+SF:dy></html>\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9002-TCP:V=7.95%T=SSL%I=7%D=4/19%Time=69E57D9F%P=x86_64-pc-linux-gn
+SF:u%r(tor-versions,BB,"HTTP/1\.0\x20400\x20Bad\x20request\r\nCache-Contro
+SF:l:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\
+SF:n\r\n<html><body><h1>400\x20Bad\x20request</h1>\nYour\x20browser\x20sen
+SF:t\x20an\x20invalid\x20request\.\n</body></html>\n")%r(GetRequest,706,"H
+SF:TTP/1\.1\x20200\x20OK\r\nConnection:\x20close\r\nDate:\x20Mon,\x2020\x2
+SF:0Apr\x202026\x2001:13:09\x20GMT\r\nContent-Length:\x201584\r\nContent-T
+SF:ype:\x20text/html;charset=utf-8\r\nLast-Modified:\x20Sun,\x2005\x20Jun\
+SF:x202022\x2010:17:46\x20GMT\r\nSet-Cookie:\x20SRVNAME=S1;\x20path=/\r\n\
+SF:r\n<!DOCTYPE\x20HTML\x20PUBLIC\x20\"-//W3C//DTD\x20HTML\x203\.2//EN\">\
+SF:n<html><head><meta\x20http-equiv=\"Content-Type\"\x20content=\"text/htm
+SF:l;CHARSET=iso-8859-1\">\n<!--\n\*\x20\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+SF:\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\
+SF:*\*\*\*\*\*\*\*\*\*\*\n\*\x20\x20This\x20software\x20and\x20related\x20
+SF:documentation\x20are\x20provided\x20under\x20a\n\*\x20\x20license\x20ag
+SF:reement\x20containing\x20restrictions\x20on\x20use\x20and\n\*\x20\x20di
+SF:sclosure\x20and\x20are\x20protected\x20by\x20intellectual\x20property\n
+SF:\*\x20\x20laws\.\x20Except\x20as\x20expressly\x20permitted\x20in\x20you
+SF:r\x20license\x20agreement\n\*\x20\x20or\x20allowed\x20by\x20law,\x20you
+SF:\x20may\x20not\x20use,\x20copy,\x20reproduce,\n\*\x20\x20translate,\x20
+SF:broadcast,\x20modify,\x20license,\x20transmit,\x20distribute,\n\*\x20\x
+SF:20exhibit,\x20perform,\x20publish\x20or\x20display\x20any\x20part,\x20i
+SF:n\x20any\x20form\x20or\n\*\x20\x20by\x20any\x20means\.\x20Reverse\x20en
+SF:gineering,\x20disassembly,\x20or\n");
+Service Info: Device: load balancer
+
+Nmap scan report for em.nmu.edu.eg (41.33.2.163)
+Host is up (0.067s latency).
+Not shown: 996 filtered tcp ports (no-response)
+PORT     STATE  SERVICE       VERSION
+25/tcp   open   tcpwrapped
+443/tcp  open   tcpwrapped
+749/tcp  closed kerberos-adm
+3703/tcp closed adobeserver-3
+
+Nmap scan report for www.nmu.edu.eg (41.33.2.168)
+Host is up (0.064s latency).
+Not shown: 997 filtered tcp ports (no-response)
+PORT    STATE SERVICE    VERSION
+25/tcp  open  tcpwrapped
+80/tcp  open  tcpwrapped
+443/tcp open  tcpwrapped
+
+Nmap scan report for ep.nmu.edu.eg (41.33.2.163)
+Host is up.
+All 1000 scanned ports on ep.nmu.edu.eg (41.33.2.163) are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+
+Nmap scan report for qb.nmu.edu.eg (41.33.2.163)
+Host is up.
+All 1000 scanned ports on qb.nmu.edu.eg (41.33.2.163) are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Apr 19 21:37:56 2026 -- 12 IP addresses (12 hosts up) scanned in 3762.08 seconds

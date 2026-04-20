@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-04-13T19:46:10.862879+00:00",
+  "executed": false,
+  "mode": "sequential",
+  "total_steps": 1,
+  "success_count": 0,
+  "failed_count": 0,
+  "dry_run_count": 1,
+  "results": [
+    {
+      "step": 1,
+      "tool": "subfinder",
+      "command_source": "static",
+      "primary_command": "subfinder -d nmu.edu.eg -silent -o data/raw/subfinder.txt",
+      "fallback_used": false,
+      "mode": "sequential",
+      "batch": 1,
+      "status": "dry_run",
+      "attempts": 0,
+      "command": "subfinder -d nmu.edu.eg -silent -o data/raw/subfinder.txt",
+      "return_code": 0,
+      "started_at": "",
+      "finished_at": "",
+      "duration_seconds": null,
+      "output_summary": "Dry run: command not executed",
+      "stdout": "",
+      "stderr": "",
+      "errors": null
+    }
+  ]
+}

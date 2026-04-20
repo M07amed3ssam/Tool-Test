@@ -1,0 +1,8 @@
+required_tools:
+  - nmap
+  - masscan
+  - subfinder
+  - amass
+  - nuclei
+  - ffuf
+  - gobuster

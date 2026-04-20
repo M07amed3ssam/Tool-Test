@@ -1,0 +1,89 @@
+{
+  "target": "nmu.edu.eg",
+  "target_type": "domain",
+  "source": "fallback",
+  "warning": "LLM planning fallback active: ollama: Ollama connection error: [Errno 111] Connection refused; huggingface_router: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}; google_ai: [Errno -3] Temporary failure in name resolution",
+  "is_live_llm": false,
+  "generated_at": "2026-04-20T01:17:27.592438+00:00",
+  "llm_output": {
+    "generated_at": "2026-04-20T01:17:27.592438+00:00",
+    "provider": "huggingface_router",
+    "model": "",
+    "raw_response": "",
+    "parsed_json_raw": {
+      "analyze_target_type": {
+        "agent": "analyze_target_type",
+        "target_type": "domain",
+        "confidence": 0.95,
+        "reason": "Local fallback decision based on validated target type."
+      },
+      "select_recon_tools": {
+        "agent": "select_recon_tools",
+        "strategy": "domain_to_subdomain_port_and_vuln",
+        "selected_tools": [
+          "subfinder",
+          "amass",
+          "nmap",
+          "nuclei",
+          "ffuf",
+          "gobuster"
+        ],
+        "command_overrides": {}
+      },
+      "parameter_optimization": {
+        "agent": "parameter_optimization",
+        "web_wordlist": "/usr/share/seclists/Discovery/Web-Content/common.txt",
+        "nmap_timing": "-T4",
+        "masscan_rate": 1000,
+        "ffuf_match_codes": "200,204,301,302,307,401,403",
+        "ffuf_threads": 40,
+        "gobuster_threads": 30
+      },
+      "execution_orchestration": {
+        "agent": "orchestrator",
+        "mode": "parallel",
+        "max_parallel": 3,
+        "reason": "Local fallback orchestration policy based on target type."
+      }
+    },
+    "parsed_json_normalized": {
+      "analyze_target_type": {
+        "agent": "analyze_target_type",
+        "target_type": "domain",
+        "confidence": 0.95,
+        "reason": "Local fallback decision based on validated target type."
+      },
+      "select_recon_tools": {
+        "agent": "select_recon_tools",
+        "strategy": "domain_to_subdomain_port_and_vuln",
+        "selected_tools": [
+          "subfinder",
+          "amass",
+          "nmap",
+          "nuclei",
+          "ffuf",
+          "gobuster"
+        ],
+        "command_overrides": {}
+      },
+      "parameter_optimization": {
+        "agent": "parameter_optimization",
+        "web_wordlist": "/usr/share/seclists/Discovery/Web-Content/common.txt",
+        "nmap_timing": "-T4",
+        "masscan_rate": 1000,
+        "ffuf_match_codes": "200,204,301,302,307,401,403",
+        "ffuf_threads": 40,
+        "gobuster_threads": 30
+      },
+      "execution_orchestration": {
+        "agent": "orchestrator",
+        "mode": "parallel",
+        "max_parallel": 3,
+        "reason": "Local fallback orchestration policy based on target type."
+      }
+    },
+    "is_live_llm": false,
+    "status": "fallback",
+    "error": "ollama: Ollama connection error: [Errno 111] Connection refused; huggingface_router: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}; google_ai: [Errno -3] Temporary failure in name resolution"
+  }
+}

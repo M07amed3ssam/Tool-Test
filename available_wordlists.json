@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-04-02T11:27:32-04:00",
+  "source": "SecLists",
+  "seclists_root": "/usr/share/seclists",
+  "exists": true,
+  "wordlist_file_extensions": [
+    ".txt",
+    ".lst",
+    ".dic",
+    ".list",
+    ".wordlist"
+  ],
+  "total_wordlist_files": 6012,
+  "category_counts": {
+    "Discovery": 405,
+    "Fuzzing": 4630,
+    "Miscellaneous": 241,
+    "Passwords": 708,
+    "Pattern-Matching": 9,
+    "Payloads": 5,
+    "Usernames": 13,
+    "Web-Shells": 1
+  },
+  "recommended_for_recon": {
+    "dns_subdomains": [
+      "/usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt",
+      "/usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt"
+    ],
+    "web_content": [
+      "/usr/share/seclists/Discovery/Web-Content/common.txt",
+      "/usr/share/seclists/Discovery/Web-Content/raft-small-words.txt",
+      "/usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt",
+      "/usr/share/seclists/Discovery/Web-Content/big.txt"
+    ],
+    "usernames": [
+      "/usr/share/seclists/Usernames/Names/names.txt"
+    ]
+  },
+  "notes": [
+    "directory-list-2.3-medium.txt was not found under SecLists on this host",
+    "Use only authorized targets and legal scope"
+  ]
+}

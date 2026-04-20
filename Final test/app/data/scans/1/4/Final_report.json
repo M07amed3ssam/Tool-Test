@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "domain": "sis.nmu.edu.eg",
+    "target_type": "domain",
+    "scan_start": "2026-04-19T23:07:55.165580+00:00",
+    "planner": "rules_engine_v1",
+    "orchestration_mode": "parallel"
+  },
+  "summary": {
+    "counts": {
+      "total_subdomains": 0,
+      "live_hosts": 0,
+      "open_ports": 0,
+      "unique_urls": 0,
+      "vulnerabilities_total": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0,
+      "info": 0
+    }
+  },
+  "critical_severity_vulnerabilities": [],
+  "high_severity_vulnerabilities": [],
+  "medium_severity_vulnerabilities": [],
+  "low_severity_vulnerabilities": [],
+  "subdomains": [],
+  "ports": [],
+  "recommendations": {
+    "immediate": [
+      "Review and remediate high-risk findings first."
+    ],
+    "short_term": [
+      "Validate medium-risk findings and tighten exposure controls."
+    ],
+    "medium_term": [
+      "Automate recurring authorized scans and trend risk over time."
+    ]
+  }
+}

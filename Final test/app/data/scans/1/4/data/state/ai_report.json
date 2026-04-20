@@ -1,0 +1,44 @@
+{
+  "summary": "Target sis.nmu.edu.eg produced no findings in this run. Assets discovered: 0. Execution errors recorded: 0.",
+  "findings": [],
+  "risk_scores": [],
+  "visualization_recommendations": [
+    {
+      "chart": "severity_distribution_bar",
+      "purpose": "Show scanner severity distribution (info/low/medium/high/critical).",
+      "data": [
+        "findings.severity"
+      ]
+    },
+    {
+      "chart": "risk_level_donut",
+      "purpose": "Highlight actionable risk levels (low/medium/high).",
+      "data": [
+        "risk_scores.risk"
+      ]
+    },
+    {
+      "chart": "open_ports_histogram",
+      "purpose": "Visualize exposed ports to prioritize service hardening.",
+      "data": [
+        "findings where category=service -> evidence.port"
+      ]
+    },
+    {
+      "chart": "findings_by_tool_stacked_bar",
+      "purpose": "Compare which tools generated findings and their risk levels.",
+      "data": [
+        "findings.source_tool",
+        "risk_scores.risk"
+      ]
+    },
+    {
+      "chart": "execution_status_timeline",
+      "purpose": "Track execution failures/timeouts by step and duration.",
+      "data": [
+        "execution_history.status",
+        "execution_history.duration_seconds"
+      ]
+    }
+  ]
+}

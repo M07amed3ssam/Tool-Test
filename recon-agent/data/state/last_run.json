@@ -1,0 +1,80 @@
+{
+  "phase": "planning",
+  "available_tools": [
+    "amass",
+    "ffuf",
+    "gobuster",
+    "masscan",
+    "nmap",
+    "nuclei",
+    "subfinder"
+  ],
+  "target": {
+    "value": "nmu.edu.eg",
+    "type": "domain"
+  },
+  "execution_options": {
+    "execute": false,
+    "max_steps": 1,
+    "only_tools": [],
+    "planner_engine": "rules",
+    "orchestration_mode": "sequential",
+    "max_parallel": 1,
+    "ignore_completed": true,
+    "retries": 2,
+    "timeout": 9000
+  },
+  "planner": {
+    "engine": "rules",
+    "source": "local",
+    "warning": "",
+    "decision_phases": {},
+    "llm_output": {}
+  },
+  "tool_status": {
+    "nuclei": {
+      "planned": false,
+      "executed": false,
+      "findings_file": "data/raw/nuclei.txt",
+      "findings_count": 0,
+      "stale_previous_findings_count": 8,
+      "state": "not_planned",
+      "message": "Nuclei was not part of this run plan.",
+      "return_code": null,
+      "summary": "",
+      "errors": null
+    }
+  },
+  "plan": [
+    {
+      "step": 1,
+      "tool": "subfinder",
+      "command": "subfinder -d nmu.edu.eg -silent -o data/raw/subfinder.txt",
+      "status": "pending",
+      "reason": "Passive subdomain enumeration.",
+      "signature": "a4c13bbf9685682eb3a7be22d66777ed11cfa4a14eb158ccdecb792653f4d4b1"
+    }
+  ],
+  "execution_log": [
+    {
+      "step": 1,
+      "tool": "subfinder",
+      "command": "subfinder -d nmu.edu.eg -silent -o data/raw/subfinder.txt",
+      "command_source": "static",
+      "primary_command": "subfinder -d nmu.edu.eg -silent -o data/raw/subfinder.txt",
+      "fallback_used": false,
+      "status": "dry_run",
+      "attempts": 0,
+      "mode": "sequential",
+      "batch": 1,
+      "output_summary": "Dry run: command not executed",
+      "errors": null
+    }
+  ],
+  "execution_results_path": "data/state/execution_results.json",
+  "ai_report_path": "data/state/ai_report.json",
+  "next_actions": [
+    "Run nmap against discovered subdomains/hosts",
+    "Run nuclei against discovered web services"
+  ]
+}

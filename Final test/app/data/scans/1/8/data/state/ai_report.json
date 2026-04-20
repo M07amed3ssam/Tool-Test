@@ -1,0 +1,741 @@
+{
+  "summary": "Target nmu.edu.eg produced 52 findings across 23 assets. Vulnerability findings: 0. Open ports: 0 (none). Severity distribution: info=52, low=0, medium=0, high=0, critical=0. Actionable risk levels: high=0, medium=0, low=52. Execution errors recorded: 0.",
+  "findings": [
+    {
+      "finding_id": "29bccc47ea3e3b8743a3109b2dbf92287f0ebc8a3994e63d5ffff3e743eaee3f",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/about-us",
+      "risk": "low",
+      "details": "{\"status\": 302, \"length\": 366}"
+    },
+    {
+      "finding_id": "13eeca04cd1f2fc289fc901c6e5c12d637a6cd20fd97fa9d752370a0bf9f9e39",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/admin",
+      "risk": "low",
+      "details": "{\"status\": 302, \"length\": 354}"
+    },
+    {
+      "finding_id": "70cbd1f3535a736c9c2c020f0379ff4ac46a30c26164bd1cbffe034d6f849822",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/attachs",
+      "risk": "low",
+      "details": "{\"status\": 301, \"length\": 312}"
+    },
+    {
+      "finding_id": "ff8bd467c8ce915f8508415dba85c6a8ccd2a7c6ea53d6114b2079d32ffd9412",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/ar",
+      "risk": "low",
+      "details": "{\"status\": 200, \"length\": 187632}"
+    },
+    {
+      "finding_id": "cb64a1e8e16317c6e78227be8df512332aea5385f2ef6f6b307b3cfa45cce672",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/careers",
+      "risk": "low",
+      "details": "{\"status\": 302, \"length\": 362}"
+    },
+    {
+      "finding_id": "d6b1beb1a845c964cd86a141ec82e91ed66c97edc7a4de7c859b3edcdce8082e",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/cgi-bin/",
+      "risk": "low",
+      "details": "{\"status\": 301, \"length\": 311}"
+    },
+    {
+      "finding_id": "35d7c3d4868000809c04e462ee7c88c3e6d13feccc3695620d41407e046d64d9",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/contact-us",
+      "risk": "low",
+      "details": "{\"status\": 302, \"length\": 374}"
+    },
+    {
+      "finding_id": "3f15d6498075a952fe663a66338931d2bc70530dc06e266c4026cbbf18f9efb1",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/dashboard",
+      "risk": "low",
+      "details": "{\"status\": 301, \"length\": 314}"
+    },
+    {
+      "finding_id": "790bf7b37d685c51747fc761af828c08b6158f70c29be1baf62530e2375334fa",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/downloads",
+      "risk": "low",
+      "details": "{\"status\": 301, \"length\": 314}"
+    },
+    {
+      "finding_id": "bd60aa0ef3164343a2d6168cc6d41fd674dd715fc3316824fe41dd731e4f9f87",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/events",
+      "risk": "low",
+      "details": "{\"status\": 302, \"length\": 358}"
+    },
+    {
+      "finding_id": "467f67e0539985b36d519edae8e5e080eef34e578da7a524d47b28a7fe7b3b6e",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/favicon.ico",
+      "risk": "low",
+      "details": "{\"status\": 200, \"length\": 0}"
+    },
+    {
+      "finding_id": "4f501336d7face3a203a5cace781e60a1e98de7ef50ea6deb3462e9ece9408d5",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/frontend",
+      "risk": "low",
+      "details": "{\"status\": 301, \"length\": 313}"
+    },
+    {
+      "finding_id": "56de0f47f3bea2a2268a511766b5f268d61dba54788e82c0dd149593071152e1",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/en",
+      "risk": "low",
+      "details": "{\"status\": 200, \"length\": 147296}"
+    },
+    {
+      "finding_id": "9fd9d5a6d52b740988123360c850fa0514bd42bedc6566ef515d8ed58937fca8",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/images",
+      "risk": "low",
+      "details": "{\"status\": 301, \"length\": 311}"
+    },
+    {
+      "finding_id": "b0f8590e175d349c696c7afe674043e6eb153c5a0f2afcde62783af45cf162db",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/index.php",
+      "risk": "low",
+      "details": "{\"status\": 302, \"length\": 370}"
+    },
+    {
+      "finding_id": "96675202cc71a72ced2cb1b2fa836cdb924338dc1caa8fd229627ab9213536d6",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/javascript",
+      "risk": "low",
+      "details": "{\"status\": 301, \"length\": 315}"
+    },
+    {
+      "finding_id": "dca844eb1c862ea166994945f45a526728f58b166f43f2e61dd272d5fb310298",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/js",
+      "risk": "low",
+      "details": "{\"status\": 301, \"length\": 307}"
+    },
+    {
+      "finding_id": "b8337a4b66ab794adcde8830aa072c457c3fcbd3be720b4a4c1d99304136d768",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/news",
+      "risk": "low",
+      "details": "{\"status\": 302, \"length\": 350}"
+    },
+    {
+      "finding_id": "72cfe67ba1238f3c07ffbed004757f33526a69f075440b77b2adf1bc1e062316",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/page-not-found",
+      "risk": "low",
+      "details": "{\"status\": 302, \"length\": 390}"
+    },
+    {
+      "finding_id": "0be85156a0810798497aa36f1481bc5afb7d52d8366a3ddc45dc651c9214fbd6",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/phpmyadmin",
+      "risk": "low",
+      "details": "{\"status\": 403, \"length\": 276}"
+    },
+    {
+      "finding_id": "161206124eadf0d6f931e80dc1f20707ecac8ec0d031250b8f6e8441eeb918f0",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/server-status",
+      "risk": "low",
+      "details": "{\"status\": 403, \"length\": 276}"
+    },
+    {
+      "finding_id": "f7d170658ae68682e3ffca462d3928d28710a572b1d7b251b616e85bfe93c366",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/student",
+      "risk": "low",
+      "details": "{\"status\": 302, \"length\": 362}"
+    },
+    {
+      "finding_id": "5cdc85b2c2e3a3d1610def15267221de6d895312fc5ee2d34aee83ebb879cfff",
+      "title": "path via ffuf",
+      "asset": "https://nmu.edu.eg/vendor",
+      "risk": "low",
+      "details": "{\"status\": 301, \"length\": 311}"
+    },
+    {
+      "finding_id": "6f9726c89a7a19c0a543f6a79534ebce3bf0fbb120ac83984c39a5b741d3c1e4",
+      "title": "path via gobuster",
+      "asset": "/.env",
+      "risk": "low",
+      "details": "{\"status\": 403}"
+    },
+    {
+      "finding_id": "1eb11a37d43730d0ce7e463e2f0f4beaa9409d612600fb3b825e4d37b6e4a003",
+      "title": "path via gobuster",
+      "asset": "/.git/logs/",
+      "risk": "low",
+      "details": "{\"status\": 301}"
+    }
+  ],
+  "risk_scores": [
+    {
+      "finding_id": "29bccc47ea3e3b8743a3109b2dbf92287f0ebc8a3994e63d5ffff3e743eaee3f",
+      "asset": "https://nmu.edu.eg/about-us",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302, \"length\": 366}"
+    },
+    {
+      "finding_id": "13eeca04cd1f2fc289fc901c6e5c12d637a6cd20fd97fa9d752370a0bf9f9e39",
+      "asset": "https://nmu.edu.eg/admin",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302, \"length\": 354}"
+    },
+    {
+      "finding_id": "70cbd1f3535a736c9c2c020f0379ff4ac46a30c26164bd1cbffe034d6f849822",
+      "asset": "https://nmu.edu.eg/attachs",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301, \"length\": 312}"
+    },
+    {
+      "finding_id": "ff8bd467c8ce915f8508415dba85c6a8ccd2a7c6ea53d6114b2079d32ffd9412",
+      "asset": "https://nmu.edu.eg/ar",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 200.",
+      "evidence_preview": "{\"status\": 200, \"length\": 187632}"
+    },
+    {
+      "finding_id": "cb64a1e8e16317c6e78227be8df512332aea5385f2ef6f6b307b3cfa45cce672",
+      "asset": "https://nmu.edu.eg/careers",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302, \"length\": 362}"
+    },
+    {
+      "finding_id": "d6b1beb1a845c964cd86a141ec82e91ed66c97edc7a4de7c859b3edcdce8082e",
+      "asset": "https://nmu.edu.eg/cgi-bin/",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301, \"length\": 311}"
+    },
+    {
+      "finding_id": "35d7c3d4868000809c04e462ee7c88c3e6d13feccc3695620d41407e046d64d9",
+      "asset": "https://nmu.edu.eg/contact-us",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302, \"length\": 374}"
+    },
+    {
+      "finding_id": "3f15d6498075a952fe663a66338931d2bc70530dc06e266c4026cbbf18f9efb1",
+      "asset": "https://nmu.edu.eg/dashboard",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301, \"length\": 314}"
+    },
+    {
+      "finding_id": "790bf7b37d685c51747fc761af828c08b6158f70c29be1baf62530e2375334fa",
+      "asset": "https://nmu.edu.eg/downloads",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301, \"length\": 314}"
+    },
+    {
+      "finding_id": "bd60aa0ef3164343a2d6168cc6d41fd674dd715fc3316824fe41dd731e4f9f87",
+      "asset": "https://nmu.edu.eg/events",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302, \"length\": 358}"
+    },
+    {
+      "finding_id": "467f67e0539985b36d519edae8e5e080eef34e578da7a524d47b28a7fe7b3b6e",
+      "asset": "https://nmu.edu.eg/favicon.ico",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 200.",
+      "evidence_preview": "{\"status\": 200, \"length\": 0}"
+    },
+    {
+      "finding_id": "4f501336d7face3a203a5cace781e60a1e98de7ef50ea6deb3462e9ece9408d5",
+      "asset": "https://nmu.edu.eg/frontend",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301, \"length\": 313}"
+    },
+    {
+      "finding_id": "56de0f47f3bea2a2268a511766b5f268d61dba54788e82c0dd149593071152e1",
+      "asset": "https://nmu.edu.eg/en",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 200.",
+      "evidence_preview": "{\"status\": 200, \"length\": 147296}"
+    },
+    {
+      "finding_id": "9fd9d5a6d52b740988123360c850fa0514bd42bedc6566ef515d8ed58937fca8",
+      "asset": "https://nmu.edu.eg/images",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301, \"length\": 311}"
+    },
+    {
+      "finding_id": "b0f8590e175d349c696c7afe674043e6eb153c5a0f2afcde62783af45cf162db",
+      "asset": "https://nmu.edu.eg/index.php",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302, \"length\": 370}"
+    },
+    {
+      "finding_id": "96675202cc71a72ced2cb1b2fa836cdb924338dc1caa8fd229627ab9213536d6",
+      "asset": "https://nmu.edu.eg/javascript",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301, \"length\": 315}"
+    },
+    {
+      "finding_id": "dca844eb1c862ea166994945f45a526728f58b166f43f2e61dd272d5fb310298",
+      "asset": "https://nmu.edu.eg/js",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301, \"length\": 307}"
+    },
+    {
+      "finding_id": "b8337a4b66ab794adcde8830aa072c457c3fcbd3be720b4a4c1d99304136d768",
+      "asset": "https://nmu.edu.eg/news",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302, \"length\": 350}"
+    },
+    {
+      "finding_id": "72cfe67ba1238f3c07ffbed004757f33526a69f075440b77b2adf1bc1e062316",
+      "asset": "https://nmu.edu.eg/page-not-found",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302, \"length\": 390}"
+    },
+    {
+      "finding_id": "0be85156a0810798497aa36f1481bc5afb7d52d8366a3ddc45dc651c9214fbd6",
+      "asset": "https://nmu.edu.eg/phpmyadmin",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 403.",
+      "evidence_preview": "{\"status\": 403, \"length\": 276}"
+    },
+    {
+      "finding_id": "161206124eadf0d6f931e80dc1f20707ecac8ec0d031250b8f6e8441eeb918f0",
+      "asset": "https://nmu.edu.eg/server-status",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 403.",
+      "evidence_preview": "{\"status\": 403, \"length\": 276}"
+    },
+    {
+      "finding_id": "f7d170658ae68682e3ffca462d3928d28710a572b1d7b251b616e85bfe93c366",
+      "asset": "https://nmu.edu.eg/student",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302, \"length\": 362}"
+    },
+    {
+      "finding_id": "5cdc85b2c2e3a3d1610def15267221de6d895312fc5ee2d34aee83ebb879cfff",
+      "asset": "https://nmu.edu.eg/vendor",
+      "source_tool": "ffuf",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301, \"length\": 311}"
+    },
+    {
+      "finding_id": "6f9726c89a7a19c0a543f6a79534ebce3bf0fbb120ac83984c39a5b741d3c1e4",
+      "asset": "/.env",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 403.",
+      "evidence_preview": "{\"status\": 403}"
+    },
+    {
+      "finding_id": "1eb11a37d43730d0ce7e463e2f0f4beaa9409d612600fb3b825e4d37b6e4a003",
+      "asset": "/.git/logs/",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301}"
+    },
+    {
+      "finding_id": "964b0524861bf9ab9f5ac1c0ed21aedb2f7ed25bb0b8f9b66d2c928c21a0ad0f",
+      "asset": "/.hta",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 403.",
+      "evidence_preview": "{\"status\": 403}"
+    },
+    {
+      "finding_id": "30c8a79ed3681522faa6054afdfdb1e7a9eacbcdc5f43ae3b2c19dc17a4a3c9b",
+      "asset": "/.htaccess",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 403.",
+      "evidence_preview": "{\"status\": 403}"
+    },
+    {
+      "finding_id": "f0a77b3363a5dd76958e492b86564074c78b18c31575ac0519b962ba489d9243",
+      "asset": "/.htpasswd",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 403.",
+      "evidence_preview": "{\"status\": 403}"
+    },
+    {
+      "finding_id": "a625d2e437656b5db35ba9c256a8581e9ea488a02cf6b3a776a9583da5e31e55",
+      "asset": "/about-us",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302}"
+    },
+    {
+      "finding_id": "aceb95e2b8d5934e58e543da87ec9042aaa97d868e8e429edf2b1473fb09d385",
+      "asset": "/admin",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302}"
+    },
+    {
+      "finding_id": "c0d65e61190451217a025e225a0482d428b863d3fb214b89dabc58355e6ad765",
+      "asset": "/attachs",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301}"
+    },
+    {
+      "finding_id": "9375339a1203f48dc250ba9fd1d257ef558b616c914e3d1f0cac8c40f5e0a886",
+      "asset": "/ar",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 200.",
+      "evidence_preview": "{\"status\": 200}"
+    },
+    {
+      "finding_id": "12891ece1dc9860feacd61c3e24f857d81529615604f40bfdd9302cec13807ae",
+      "asset": "/careers",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302}"
+    },
+    {
+      "finding_id": "d60b2d74f5727cf9f1570cc638274ee456a81526f20c3f6432445bebcb918ea0",
+      "asset": "/cgi-bin/",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301}"
+    },
+    {
+      "finding_id": "e5a8b7570e51ff670b9889ebc0044b6e3fcf53325c7810aa2cdc408b41ffc0eb",
+      "asset": "/contact-us",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302}"
+    },
+    {
+      "finding_id": "a7fa19cd617d3bc0ac4c0ef2e7d8b06124845bc1e1b1b714d9ba61bf1e8bf2a8",
+      "asset": "/dashboard",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301}"
+    },
+    {
+      "finding_id": "b778f6d1364af7bdd3f1f8e079e924adb36806b634982263d00bfe5a45253bec",
+      "asset": "/downloads",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301}"
+    },
+    {
+      "finding_id": "0d19c6383258417f04d4d2bae1ee9db93852f235ee54c75107040701d886d583",
+      "asset": "/events",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302}"
+    },
+    {
+      "finding_id": "535d9e35f5eb75bc63623b888f176ea089aec55f55ad2796db9d506549fc8077",
+      "asset": "/favicon.ico",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 200.",
+      "evidence_preview": "{\"status\": 200}"
+    },
+    {
+      "finding_id": "62c0d83f9fc51787292d719db3988e9554863e46c6f8da5f9af12f0b02ae8153",
+      "asset": "/en",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 200.",
+      "evidence_preview": "{\"status\": 200}"
+    },
+    {
+      "finding_id": "35608bda83cc5abbc393b829bac158465a6953263de0c1fc787562e3b447792c",
+      "asset": "/frontend",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301}"
+    },
+    {
+      "finding_id": "76fda5a5097f90ca374014ee9529668b65fbd05c082fe94a5660bafa977e1169",
+      "asset": "/images",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301}"
+    },
+    {
+      "finding_id": "225b7e58130833165947b8f6f3e9f13b092f01920f4378797a2d7c2bb41b3e82",
+      "asset": "/index.php",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302}"
+    },
+    {
+      "finding_id": "7107faa9be4d208aaccc294fc8aa8a37f1477617627b55a8acb0febdbfacdd70",
+      "asset": "/javascript",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301}"
+    },
+    {
+      "finding_id": "763b289ba47b448fdb5c54bdeb7a862e21629d24a617e9c92753fbd058899c8d",
+      "asset": "/js",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301}"
+    },
+    {
+      "finding_id": "837a5a9803a8a75bdbf10f7ac3f564a652b375c096af7be0a87a0cb19514a6e0",
+      "asset": "/news",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302}"
+    },
+    {
+      "finding_id": "d7f141daba65760840b2aeeb9722bad3379a2805c9a4b879e46b3193cc7dc2ab",
+      "asset": "/offline",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 500}"
+    },
+    {
+      "finding_id": "9d8d83004c9005e4c6bbff03ccc2532036c5186387c4d5052c36286097182459",
+      "asset": "/page-not-found",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302}"
+    },
+    {
+      "finding_id": "b1b96249e6bc38a7de9429c32daf6c9e24772cf397ebca3149173dc2f979636d",
+      "asset": "/phpmyadmin",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 403.",
+      "evidence_preview": "{\"status\": 403}"
+    },
+    {
+      "finding_id": "19a768629882b77b8435ba4a33ee41c96e9415aa19cd6362bd28fc5dbcd8aca8",
+      "asset": "/server-status",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path responded with status 403.",
+      "evidence_preview": "{\"status\": 403}"
+    },
+    {
+      "finding_id": "bcbff4a91018775104f674de0256594e428292576898dcaf042a10f28597b026",
+      "asset": "/student",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 302}"
+    },
+    {
+      "finding_id": "3cadfa25bdc9debc37050347e5f7e11ec2cda7c45b03ed550bdb590f49f86958",
+      "asset": "/vendor",
+      "source_tool": "gobuster",
+      "category": "path",
+      "severity": "info",
+      "risk": "low",
+      "rationale": "Web path discovery is informational by default.",
+      "evidence_preview": "{\"status\": 301}"
+    }
+  ],
+  "visualization_recommendations": [
+    {
+      "chart": "severity_distribution_bar",
+      "purpose": "Show scanner severity distribution (info/low/medium/high/critical).",
+      "data": [
+        "findings.severity"
+      ]
+    },
+    {
+      "chart": "risk_level_donut",
+      "purpose": "Highlight actionable risk levels (low/medium/high).",
+      "data": [
+        "risk_scores.risk"
+      ]
+    },
+    {
+      "chart": "open_ports_histogram",
+      "purpose": "Visualize exposed ports to prioritize service hardening.",
+      "data": [
+        "findings where category=service -> evidence.port"
+      ]
+    },
+    {
+      "chart": "findings_by_tool_stacked_bar",
+      "purpose": "Compare which tools generated findings and their risk levels.",
+      "data": [
+        "findings.source_tool",
+        "risk_scores.risk"
+      ]
+    },
+    {
+      "chart": "execution_status_timeline",
+      "purpose": "Track execution failures/timeouts by step and duration.",
+      "data": [
+        "execution_history.status",
+        "execution_history.duration_seconds"
+      ]
+    }
+  ]
+}

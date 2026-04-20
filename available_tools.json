@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-04-02T11:24:04-04:00",
+  "host": "linux",
+  "tools": [
+    {
+      "name": "nmap",
+      "available": true,
+      "path": "/usr/bin/nmap"
+    },
+    {
+      "name": "masscan",
+      "available": true,
+      "path": "/usr/bin/masscan"
+    },
+    {
+      "name": "subfinder",
+      "available": true,
+      "path": "/usr/bin/subfinder"
+    },
+    {
+      "name": "amass",
+      "available": true,
+      "path": "/usr/bin/amass"
+    },
+    {
+      "name": "nuclei",
+      "available": true,
+      "path": "/usr/local/bin/nuclei"
+    },
+    {
+      "name": "ffuf",
+      "available": true,
+      "path": "/usr/bin/ffuf"
+    },
+    {
+      "name": "gobuster",
+      "available": true,
+      "path": "/usr/bin/gobuster"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "planned": false,
+  "executed": false,
+  "findings_file": "data/raw/nuclei.txt",
+  "findings_count": 0,
+  "stale_previous_findings_count": 0,
+  "state": "not_planned",
+  "message": "Nuclei was not part of this run plan.",
+  "return_code": null,
+  "summary": "",
+  "errors": null
+}

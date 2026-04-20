@@ -1,0 +1,565 @@
+{
+  "metadata": {
+    "report_name": "recon_nmu.edu.eg_20250911_231341",
+    "domain": "nmu.edu.eg",
+    "scan_start": "2025-09-11T23:42:24Z",
+    "scan_end": "2025-09-11T23:44:48Z",
+    "tool_versions": {
+      "nmap": "7.80"
+    },
+    "source_files": [
+      "nmap_vuln.xml"
+    ]
+  },
+  "summary": {
+    "counts": {
+      "total_subdomains": 7,
+      "live_hosts": 9,
+      "open_ports": 24,
+      "unique_urls": 4,
+      "vulnerabilities_total": 8,
+      "vulnerabilities_by_severity": {
+        "critical": 1,
+        "high": 3,
+        "medium": 2,
+        "low": 2
+      }
+    }
+  },
+  "critical_severity_vulnerabilities": [
+    {
+      "title": "Oracle WebLogic Server Deserialization Vulnerability (CVE-2020-2551)",
+      "description": "An Oracle WebLogic Server vulnerability (CVE-2020-2551) exists in the WLS Core Components, which can allow an unauthenticated attacker with network access via T3 to compromise Oracle WebLogic Server.",
+      "severity": "Critical",
+      "affected_hosts": [
+        "https://sis.nmu.edu.eg/console/login/LoginForm.jsp"
+      ],
+      "remediation": "Apply the latest security patches from Oracle for WebLogic Server to address CVE-2020-2551. Restrict T3 protocol access to trusted hosts only."
+    }
+  ],
+  "high_severity_vulnerabilities": [
+    {
+      "id": "CVE-2022-21371",
+      "title": "Oracle WebLogic Server Information Disclosure (CVE-2022-21371)",
+      "description": "An Oracle WebLogic Server vulnerability (CVE-2022-21371) exists in the Web Container component, allowing an unauthenticated attacker with network access via HTTP to disclose sensitive information.",
+      "severity": "High",
+      "cvss": null,
+      "cve": [
+        "CVE-2022-21371"
+      ],
+      "mitre_link": [
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21371"
+      ],
+      "cwe": null,
+      "affected_hosts": [
+        "https://sis.nmu.edu.eg"
+      ],
+      "evidence": "path=\".//WEB-INF/weblogic.xml\"",
+      "tool": "nuclei",
+      "first_seen": null,
+      "impact": {
+        "confidentiality": "High",
+        "integrity": "None",
+        "availability": "None"
+      },
+      "remediation": "Apply the latest security patches from Oracle for WebLogic Server to address CVE-2022-21371. Ensure sensitive configuration files like WEB-INF/weblogic.xml are not publicly accessible.",
+      "references": []
+      
+    },
+    {
+      "id": "CVE-2023-22047",
+      "title": "Oracle WebLogic Server Remote File Inclusion (CVE-2023-22047)",
+      "description": "An Oracle WebLogic Server vulnerability (CVE-2023-22047) in the WSRP component can lead to remote file inclusion via an unauthenticated HTTP request.",
+      "severity": "High",
+      "cvss": null,
+      "cve": [
+        "CVE-2023-22047"
+      ],
+      "mitre_link": [
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22047"
+      ],
+      "cwe": null,
+      "affected_hosts": [
+        "https://sis.nmu.edu.eg/RP?wsrp-url=file:///etc/passwd"
+      ],
+      "evidence": "https://sis.nmu.edu.eg/RP?wsrp-url=file:///etc/passwd",
+      "tool": "nuclei",
+      "first_seen": null,
+      "impact": {
+        "confidentiality": "High",
+        "integrity": "High",
+        "availability": "High"
+      },
+      "remediation": "Apply the latest security patches from Oracle for WebLogic Server to address CVE-2023-22047. Ensure proper input validation and restrict access to the WSRP component.",
+      "references": [],
+      "raw": "[\u001b[92mCVE-2023-22047\u001b[0m] [\u001b[94mhttp\u001b[0m] [\u001b[38;5;208mhigh\u001b[0m] https://sis.nmu.edu.eg/RP?wsrp-url=file:///etc/passwd"
+    },
+    {
+      "id": "CVE-2011-3192",
+      "title": "Apache byterange filter DoS",
+      "description": "The Apache web server is vulnerable to a denial of service attack when numerous overlapping byte ranges are requested.",
+      "severity": "High",
+      "cvss": null,
+      "cve": [
+        "CVE-2011-3192"
+      ],
+      "mitre_link": [
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192"
+      ],
+      "cwe": null,
+      "affected_hosts": [
+        "ep.nmu.edu.eg",
+        "qb.nmu.edu.eg"
+      ],
+      "evidence": "VULNERABLE: Apache byterange filter DoS",
+      "tool": "nmap",
+      "first_seen": "2025-09-11T23:42:24Z",
+      "impact": {
+        "confidentiality": "None",
+        "integrity": "None",
+        "availability": "High"
+      },
+      "remediation": "Upgrade Apache HTTP Server to a version that fixes CVE-2011-3192 or apply the recommended mitigation (e.g., mod_reqtimeout).",
+      "references": [
+        "https://www.tenable.com/plugins/nessus/55976",
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192",
+        "https://seclists.org/fulldisclosure/2011/Aug/175",
+        "https://www.securityfocus.com/bid/49303"
+      ],
+      "raw": "http-vuln-cve2011-3192: \n  VULNERABLE:\n  Apache byterange filter DoS\n    State: VULNERABLE\n    IDs:  BID:49303  CVE:CVE-2011-3192\n      The Apache web server is vulnerable to a denial of service attack when numerous\n      overlapping byte ranges are requested.\n    Disclosure date: 2011-08-19\n    References:\n      https://www.tenable.com/plugins/nessus/55976\n      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192\n      https://seclists.org/fulldisclosure/2011/Aug/175\n      https://www.securityfocus.com/bid/49303\n"
+    }
+  ],
+  "medium_severity_vulnerabilities": [
+    {
+      "id": "CVE-2014-3566",
+      "title": "SSL POODLE information leak",
+      "description": "The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other products, uses nondeterministic CBC padding, which makes it easier for man-in-the-middle attackers to obtain cleartext data via a padding-oracle attack, aka the \"POODLE\" issue.",
+      "severity": "Medium",
+      "cvss": null,
+      "cve": [
+        "CVE-2014-3566"
+      ],
+      "mitre_link": [
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566"
+      ],
+      "cwe": null,
+      "affected_hosts": [
+        "sis.nmu.edu.eg"
+      ],
+      "evidence": "State: LIKELY VULNERABLE",
+      "tool": "nmap",
+      "first_seen": "2014-10-14",
+      "impact": {
+        "confidentiality": "High",
+        "integrity": "None",
+        "availability": "None"
+      },
+      "remediation": "Disable SSL 3.0 support on affected systems and prioritize TLS 1.2 or higher. Ensure all clients also support newer TLS versions.",
+      "references": [
+        "https://www.imperialviolet.org/2014/10/14/poodle.html",
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566",
+        "https://www.openssl.org/~bodo/ssl-poodle.pdf",
+        "https://www.securityfocus.com/bid/70574"
+      ],
+      "raw": "ssl-poodle: \n  VULNERABLE:\n  SSL POODLE information leak\n    State: LIKELY VULNERABLE\n    IDs:  BID:70574  CVE:CVE-2014-3566\n          The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other\n          products, uses nondeterministic CBC padding, which makes it easier\n          for man-in-the-middle attackers to obtain cleartext data via a\n          padding-oracle attack, aka the \"POODLE\" issue.\n    Disclosure date: 2014-10-14\n    Check results:\n      TLS_DHE_RSA_WITH_AES_256_CBC_SHA\n      TLS_FALLBACK_SCSV properly implemented\n    References:\n      https://www.imperialviolet.org/2014/10/14/poodle.html\n      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566\n      https://www.openssl.org/~bodo/ssl-poodle.pdf\n      https://www.securityfocus.com/bid/70574\n"
+    },
+    {
+      "id": "behat-config",
+      "title": "Exposure of Behat Configuration File",
+      "description": "A publicly accessible Behat configuration file (behat.yml.dist) was discovered, which may contain sensitive information about the application's testing environment, paths, or credentials.",
+      "severity": "Medium",
+      "cvss": null,
+      "cve": [],
+      "mitre_link": [],
+      "cwe": null,
+      "affected_hosts": [
+        "https://nlms.nmu.edu.eg/behat.yml.dist"
+      ],
+      "evidence": "https://nlms.nmu.edu.eg/behat.yml.dist",
+      "tool": "nuclei",
+      "first_seen": null,
+      "impact": {
+        "confidentiality": "Medium",
+        "integrity": "None",
+        "availability": "None"
+      },
+      "remediation": "Remove the publicly exposed Behat configuration file (behat.yml.dist) or restrict access to it. Review its contents for any sensitive data that might have been disclosed.",
+      "references": [],
+      "raw": "[\u001b[92mbehat-config\u001b[0m] [\u001b[94mhttp\u001b[0m] [\u001b[33mmedium\u001b[0m] https://nlms.nmu.edu.eg/behat.yml.dist"
+    }
+  ],
+  "low_severity_vulnerabilities": [
+    {
+      "id": "firewall-bypass",
+      "title": "Firewall bypass through FTP helper",
+      "description": "The firewall is vulnerable to bypass through its FTP helper functionality (IPv4), potentially allowing unauthorized access or circumvention of network controls.",
+      "severity": "Low",
+      "cvss": null,
+      "cve": [],
+      "mitre_link": [],
+      "cwe": null,
+      "affected_hosts": [
+        "sis.nmu.edu.eg"
+      ],
+      "evidence": "Firewall vulnerable to bypass through ftp helper. (IPv4)",
+      "tool": "nmap",
+      "first_seen": "2025-09-11T23:42:24Z",
+      "impact": {
+        "confidentiality": "Low",
+        "integrity": "Low",
+        "availability": "Low"
+      },
+      "remediation": "Review firewall rules and configurations related to FTP helpers. Ensure that FTP connections are properly inspected and that bypasses are not possible. Consider disabling FTP helper if not critically needed.",
+      "references": [],
+      "raw": "firewall-bypass: \n  Firewall vulnerable to bypass through ftp helper. (IPv4)\n"
+    },
+    {
+      "id": "http-vuln-cve2010-0738",
+      "title": "JMX Console Authentication Not Required",
+      "description": "The JMX console is accessible without authentication, potentially allowing unauthorized users to manage and monitor Java applications, leading to information disclosure or remote code execution.",
+      "severity": "Low",
+      "cvss": null,
+      "cve": [
+        "CVE-2010-0738"
+      ],
+      "mitre_link": [
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0738"
+      ],
+      "cwe": null,
+      "affected_hosts": [
+        "qb.nmu.edu.eg"
+      ],
+      "evidence": "/jmx-console/: Authentication was not required",
+      "tool": "nmap",
+      "first_seen": null,
+      "impact": {
+        "confidentiality": "Medium",
+        "integrity": "Medium",
+        "availability": "Medium"
+      },
+      "remediation": "Secure the JMX console with strong authentication and authorization mechanisms. Restrict network access to the JMX console to trusted administrative networks only.",
+      "references": [],
+      "raw": "http-vuln-cve2010-0738: \n  /jmx-console/: Authentication was not required\n"
+    }
+  ],
+  "subdomains": [
+    {
+      "domain": "em.nmu.edu.eg",
+      "resolved_ip": "41.33.2.163",
+      "cname": null,
+      "tags": []
+    },
+    {
+      "domain": "erp.nmu.edu.eg",
+      "resolved_ip": "41.33.2.165",
+      "cname": null,
+      "tags": []
+    },
+    {
+      "domain": "es.nmu.edu.eg",
+      "resolved_ip": "41.33.2.167",
+      "cname": null,
+      "tags": []
+    },
+    {
+      "domain": "library.nmu.edu.eg",
+      "resolved_ip": "41.33.2.166",
+      "cname": null,
+      "tags": []
+    },
+    {
+      "domain": "nlms.nmu.edu.eg",
+      "resolved_ip": "41.33.2.169",
+      "cname": null,
+      "tags": []
+    },
+    {
+      "domain": "sis.nmu.edu.eg",
+      "resolved_ip": "41.33.2.164",
+      "cname": null,
+      "tags": []
+    },
+    {
+      "domain": "www.nmu.edu.eg",
+      "resolved_ip": "41.33.2.168",
+      "cname": null,
+      "tags": []
+    },
+    {
+      "domain": "ep.nmu.edu.eg",
+      "resolved_ip": "41.33.2.163",
+      "cname": null,
+      "tags": []
+    },
+    {
+      "domain": "qb.nmu.edu.eg",
+      "resolved_ip": "41.33.2.163",
+      "cname": null,
+      "tags": []
+    }
+  ],
+  "technologies": [],
+  "ports": [
+    {
+      "host": "em.nmu.edu.eg",
+      "ip": "41.33.2.163",
+      "port": 80,
+      "protocol": "tcp",
+      "service": "http",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "em.nmu.edu.eg",
+      "ip": "41.33.2.163",
+      "port": 443,
+      "protocol": "tcp",
+      "service": "https",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "erp.nmu.edu.eg",
+      "ip": "41.33.2.165",
+      "port": 80,
+      "protocol": "tcp",
+      "service": "http",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "erp.nmu.edu.eg",
+      "ip": "41.33.2.165",
+      "port": 443,
+      "protocol": "tcp",
+      "service": "https",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "es.nmu.edu.eg",
+      "ip": "41.33.2.167",
+      "port": 21,
+      "protocol": "tcp",
+      "service": "ftp",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "es.nmu.edu.eg",
+      "ip": "41.33.2.167",
+      "port": 80,
+      "protocol": "tcp",
+      "service": "http",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "es.nmu.edu.eg",
+      "ip": "41.33.2.167",
+      "port": 443,
+      "protocol": "tcp",
+      "service": "https",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "es.nmu.edu.eg",
+      "ip": "41.33.2.167",
+      "port": 3306,
+      "protocol": "tcp",
+      "service": "mysql",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "library.nmu.edu.eg",
+      "ip": "41.33.2.166",
+      "port": 21,
+      "protocol": "tcp",
+      "service": "ftp",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "library.nmu.edu.eg",
+      "ip": "41.33.2.166",
+      "port": 443,
+      "protocol": "tcp",
+      "service": "https",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "nlms.nmu.edu.eg",
+      "ip": "41.33.2.169",
+      "port": 80,
+      "protocol": "tcp",
+      "service": "http",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "nlms.nmu.edu.eg",
+      "ip": "41.33.2.169",
+      "port": 443,
+      "protocol": "tcp",
+      "service": "https",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "sis.nmu.edu.eg",
+      "ip": "41.33.2.164",
+      "port": 21,
+      "protocol": "tcp",
+      "service": "ftp",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "sis.nmu.edu.eg",
+      "ip": "41.33.2.164",
+      "port": 80,
+      "protocol": "tcp",
+      "service": "http",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "sis.nmu.edu.eg",
+      "ip": "41.33.2.164",
+      "port": 443,
+      "protocol": "tcp",
+      "service": "https",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "sis.nmu.edu.eg",
+      "ip": "41.33.2.164",
+      "port": 3306,
+      "protocol": "tcp",
+      "service": "mysql",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "www.nmu.edu.eg",
+      "ip": "41.33.2.168",
+      "port": 80,
+      "protocol": "tcp",
+      "service": "http",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "www.nmu.edu.eg",
+      "ip": "41.33.2.168",
+      "port": 443,
+      "protocol": "tcp",
+      "service": "https",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "ep.nmu.edu.eg",
+      "ip": "41.33.2.163",
+      "port": 80,
+      "protocol": "tcp",
+      "service": "http",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "ep.nmu.edu.eg",
+      "ip": "41.33.2.163",
+      "port": 443,
+      "protocol": "tcp",
+      "service": "https",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "qb.nmu.edu.eg",
+      "ip": "41.33.2.163",
+      "port": 80,
+      "protocol": "tcp",
+      "service": "http",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    },
+    {
+      "host": "qb.nmu.edu.eg",
+      "ip": "41.33.2.163",
+      "port": 443,
+      "protocol": "tcp",
+      "service": "https",
+      "product": null,
+      "version": null,
+      "state": "open",
+      "banner": null
+    }
+  ],
+  "recommendations": {
+    "immediate": [
+      "Address Oracle WebLogic Server Critical vulnerability (CVE-2020-2551) by applying vendor patches and restricting T3 protocol access.",
+      "Patch Oracle WebLogic Server for high-severity information disclosure (CVE-2022-21371) and remote file inclusion (CVE-2023-22047) vulnerabilities. Ensure no sensitive configuration files are publicly exposed.",
+      "Update Apache HTTP Server to a version not vulnerable to the byterange filter DoS (CVE-2011-3192) or implement recommended mitigations."
+    ],
+    "short_term": [
+      "Disable SSL 3.0 on affected hosts (sis.nmu.edu.eg) to mitigate the POODLE vulnerability (CVE-2014-3566) and enforce TLS 1.2 or higher.",
+      "Remove or secure the publicly accessible Behat configuration file (behat.yml.dist) from nlms.nmu.edu.eg to prevent information leakage.",
+      "Secure the JMX console on qb.nmu.edu.eg with strong authentication and restrict network access to trusted administrative networks.",
+      "Review and harden firewall rules, particularly concerning FTP helpers, on sis.nmu.edu.eg to prevent potential bypasses."
+    ],
+    "medium_term": [
+      "Implement a regular vulnerability scanning and patching program for all public-facing assets.",
+      "Conduct a comprehensive review of all publicly accessible configuration files and development artifacts to prevent information disclosure.",
+      "Enhance network segmentation and access controls to limit lateral movement and reduce the attack surface.",
+      "Develop and implement a security awareness training program for developers to prevent common misconfigurations and vulnerabilities."
+    ]
+  }
+}

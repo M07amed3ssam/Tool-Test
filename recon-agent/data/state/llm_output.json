@@ -1,0 +1,99 @@
+{
+  "target": "nmu.edu.eg",
+  "target_type": "domain",
+  "source": "google_ai",
+  "warning": "",
+  "is_live_llm": true,
+  "generated_at": "2026-04-13T19:03:42.646034+00:00",
+  "llm_output": {
+    "generated_at": "2026-04-13T19:03:42.646034+00:00",
+    "provider": "google_ai",
+    "model": "gemini-3-flash-preview",
+    "raw_response": "{\"selection_pass\": \"{\\n  \\\"analyze_target_type\\\": {\\n    \\\"agent\\\": \\\"analyze_target_type\\\",\\n    \\\"target_type\\\": \\\"domain\\\",\\n    \\\"confidence\\\": 1.0,\\n    \\\"reason\\\": \\\"Target provided is a fully qualified domain name (FQDN) in the .edu.eg TLD.\\\"\\n  },\\n  \\\"select_recon_tools\\\": {\\n    \\\"agent\\\": \\\"select_recon_tools\\\",\\n    \\\"strategy\\\": \\\"Domain -> Subdomain Enum -> Port Scan -> Vuln Scan\\\",\\n    \\\"selected_tools\\\": [\\n      \\\"subfinder\\\",\\n      \\\"amass\\\",\\n      \\\"nmap\\\",\\n      \\\"ffuf\\\"\\n    ]\\n  },\\n  \\\"execution_orchestration\\\": {\\n    \\\"agent\\\": \\\"orchestrator\\\",\\n    \\\"mode\\\": \\\"sequential\\\",\\n    \\\"max_parallel\\\": 2,\\n    \\\"reason\\\": \\\"Subdomain enumeration tools (subfinder, amass) must complete to define the attack surface before port scanning (nmap) and directory fuzzing/vulnerability scanning (ffuf) can be performed.\\\"\\n  }\\n}\", \"command_pass\": \"{\\n  \\\"parameter_optimization\\\": {\\n    \\\"agent\\\": \\\"parameter_optimization\\\",\\n    \\\"web_wordlist\\\": \\\"/usr/share/seclists/Discovery/Web-Content/common.txt\\\",\\n    \\\"nmap_timing\\\": \\\"-T4\\\",\\n    \\\"masscan_rate\\\": 1000,\\n    \\\"ffuf_match_codes\\\": \\\"200,204,301,302,307,401,403\\\",\\n    \\\"ffuf_threads\\\": 50,\\n    \\\"gobuster_threads\\\": 30\\n  },\\n  \\\"command_overrides\\\": {\\n    \\\"subfinder\\\": \\\"subfinder -d nmu.edu.eg -all -o data/raw/subfinder.txt\\\",\\n    \\\"amass\\\": \\\"amass enum -d nmu.edu.eg -o data/raw/amass.txt\\\",\\n    \\\"nmap\\\": \\\"nmap -T4 -sV -sC nmu.edu.eg -oN data/raw/nmap.txt -oX data/raw/nmap.xml\\\",\\n    \\\"ffuf\\\": \\\"ffuf -w /usr/share/seclists/Discovery/Web-Content/common.txt -u https://nmu.edu.eg/FUZZ -t 50 -mc 200,204,301,302,307,401,403 -o data/raw/ffuf.json\\\",\\n    \\\"gobuster\\\": \\\"gobuster dir -u https://nmu.edu.eg -w /usr/share/seclists/Discovery/Web-Content/common.txt -t 30 -o data/raw/gobuster.txt\\\"\\n  }\\n}\"}",
+    "parsed_json_raw": {
+      "analyze_target_type": {
+        "agent": "analyze_target_type",
+        "target_type": "domain",
+        "confidence": 1.0,
+        "reason": "Target provided is a fully qualified domain name (FQDN) in the .edu.eg TLD."
+      },
+      "select_recon_tools": {
+        "agent": "select_recon_tools",
+        "strategy": "Domain -> Subdomain Enum -> Port Scan -> Vuln Scan",
+        "selected_tools": [
+          "subfinder",
+          "amass",
+          "nmap",
+          "ffuf",
+          "gobuster"
+        ],
+        "command_overrides": {
+          "subfinder": "subfinder -d nmu.edu.eg -all -o data/raw/subfinder.txt",
+          "amass": "amass enum -d nmu.edu.eg -o data/raw/amass.txt",
+          "nmap": "nmap -T4 -sV -sC nmu.edu.eg -oN data/raw/nmap.txt -oX data/raw/nmap.xml",
+          "ffuf": "ffuf -w /usr/share/seclists/Discovery/Web-Content/common.txt -u https://nmu.edu.eg/FUZZ -t 50 -mc 200,204,301,302,307,401,403 -o data/raw/ffuf.json",
+          "gobuster": "gobuster dir -u https://nmu.edu.eg -w /usr/share/seclists/Discovery/Web-Content/common.txt -t 30 -o data/raw/gobuster.txt"
+        }
+      },
+      "parameter_optimization": {
+        "agent": "parameter_optimization",
+        "web_wordlist": "/usr/share/seclists/Discovery/Web-Content/common.txt",
+        "nmap_timing": "-T4",
+        "masscan_rate": 1000,
+        "ffuf_match_codes": "200,204,301,302,307,401,403",
+        "ffuf_threads": 50,
+        "gobuster_threads": 30
+      },
+      "execution_orchestration": {
+        "agent": "orchestrator",
+        "mode": "sequential",
+        "max_parallel": 1,
+        "reason": "Subdomain enumeration tools (subfinder, amass) must complete to define the attack surface before port scanning (nmap) and directory fuzzing/vulnerability scanning (ffuf) can be performed."
+      }
+    },
+    "parsed_json_normalized": {
+      "analyze_target_type": {
+        "agent": "analyze_target_type",
+        "target_type": "domain",
+        "confidence": 1.0,
+        "reason": "Target provided is a fully qualified domain name (FQDN) in the .edu.eg TLD."
+      },
+      "select_recon_tools": {
+        "agent": "select_recon_tools",
+        "strategy": "Domain -> Subdomain Enum -> Port Scan -> Vuln Scan",
+        "selected_tools": [
+          "subfinder",
+          "amass",
+          "nmap",
+          "ffuf",
+          "gobuster"
+        ],
+        "command_overrides": {
+          "subfinder": "subfinder -d nmu.edu.eg -all -o data/raw/subfinder.txt",
+          "amass": "amass enum -d nmu.edu.eg -o data/raw/amass.txt",
+          "nmap": "nmap -T4 -sV -sC nmu.edu.eg -oN data/raw/nmap.txt -oX data/raw/nmap.xml",
+          "ffuf": "ffuf -w /usr/share/seclists/Discovery/Web-Content/common.txt -u https://nmu.edu.eg/FUZZ -t 50 -mc 200,204,301,302,307,401,403 -o data/raw/ffuf.json",
+          "gobuster": "gobuster dir -u https://nmu.edu.eg -w /usr/share/seclists/Discovery/Web-Content/common.txt -t 30 -o data/raw/gobuster.txt"
+        }
+      },
+      "parameter_optimization": {
+        "agent": "parameter_optimization",
+        "web_wordlist": "/usr/share/seclists/Discovery/Web-Content/common.txt",
+        "nmap_timing": "-T4",
+        "masscan_rate": 1000,
+        "ffuf_match_codes": "200,204,301,302,307,401,403",
+        "ffuf_threads": 50,
+        "gobuster_threads": 30
+      },
+      "execution_orchestration": {
+        "agent": "orchestrator",
+        "mode": "sequential",
+        "max_parallel": 1,
+        "reason": "Subdomain enumeration tools (subfinder, amass) must complete to define the attack surface before port scanning (nmap) and directory fuzzing/vulnerability scanning (ffuf) can be performed."
+      }
+    },
+    "is_live_llm": true,
+    "status": "ok",
+    "error": ""
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "planned": true,
+  "executed": true,
+  "findings_file": "data/raw/nuclei.txt",
+  "findings_count": 0,
+  "stale_previous_findings_count": 0,
+  "state": "completed_no_matches",
+  "message": "Nuclei completed successfully with zero matches. Empty findings file is expected.",
+  "return_code": 0,
+  "summary": "[\u001b[93mWRN\u001b[0m] Loading 258 unsigned templates for scan. Use with caution.",
+  "errors": "[\u001b[31mERR\u001b[0m] GOOGLE_API_KEY env variable exists but GOOGLE_API_CX does not\n\n                     __     _\n   ____  __  _______/ /__  (_)\n  / __ \\/ / / / ___/ / _ \\/ /\n / / / / /_/ / /__/ /  __/ /\n/_/ /_/\\__,_/\\___/_/\\___/_/   v3.4.10\n\n\t\tprojectdiscovery.io\n\n[\u001b[33mWRN\u001b[0m] Found 181 templates loaded with deprecated protocol syntax, update before v3 for continued support.\n[\u001b[31mWRN\u001b[0m] Found 1 templates with syntax error (use -validate flag for further examination)\n[\u001b[34mINF\u001b[0m] Current nuclei version: v3.4.10 (\u001b[91moutdated\u001b[0m)\n[\u001b[34mINF\u001b[0m] Current nuclei-templates version: v10.4.1 (\u001b[91moutdated\u001b[0m)\n[\u001b[34mINF\u001b[0m] New templates added in latest release: 76\n[\u001b[34mINF\u001b[0m] Templates loaded for current scan: 6799\n[\u001b[34mINF\u001b[0m] Executing 6541 signed templates from projectdiscovery/nuclei-templates\n[\u001b[34mINF\u001b[0m] Targets loaded for current scan: 1\n[\u001b[34mINF\u001b[0m] Templates clustered: 632 (Reduced 557 Requests)\n[\u001b[34mINF\u001b[0m] Using Interactsh Server: oast.site\n[\u001b[34mINF\u001b[0m] Scan completed in 20.547300219s. 0 matches found."
+}

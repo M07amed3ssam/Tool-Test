@@ -1,0 +1,10 @@
+Target: nmu.edu.eg
+Assets discovered: 62
+Findings: 4906
+Severity counts:
+  info: 4898
+  low: 4
+  medium: 1
+  high: 2
+  critical: 1
+Errors: 0

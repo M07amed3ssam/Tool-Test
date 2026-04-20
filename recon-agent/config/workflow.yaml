@@ -1,0 +1,20 @@
+workflow:
+  domain:
+    - subfinder
+    - amass
+    - nmap
+    - nuclei
+    - ffuf
+    - gobuster
+  ip:
+    - masscan
+    - nmap
+    - nuclei
+  application:
+    - nuclei
+    - ffuf
+    - gobuster
+execution:
+  retries: 2
+  backoff_seconds: 2
+  timeout_seconds: 900
