@@ -1,0 +1,60 @@
+# OS/editor clutter
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python caches and test outputs
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+.venv-linux/
+venv/
+env/
+**/.venv/
+**/.venv-linux/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local databases and logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Archives and binary bundles
+*.rar
+*.zip
+*.7z
+*.tar
+*.gz
+
+# JS build artifacts
+node_modules/
+build/
+dist/
+
+# Runtime scan/report artifacts (keep directories via .gitkeep)
+Final test/app/data/scans/**
+!Final test/app/data/scans/.gitkeep
+Final test/app/data/reports/**
+!Final test/app/data/reports/.gitkeep
+Final test/test_output.json
+
+# Recon-agent runtime artifacts
+recon-agent/data/raw/**
+!recon-agent/data/raw/.gitkeep
+recon-agent/data/normalized/**
+!recon-agent/data/normalized/.gitkeep
+recon-agent/data/state/*.json
