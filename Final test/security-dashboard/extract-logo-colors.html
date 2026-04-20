@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Color Extractor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        .upload-area:hover {
+            border-color: #007bff;
+        }
+        .upload-area.dragover {
+            border-color: #007bff;
+            background: #f8f9ff;
+        }
+        #preview {
+            max-width: 100%;
+            max-height: 300px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .color-item {
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .color-swatch {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            margin: 0 auto 10px;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .color-code {
+            font-family: monospace;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 5px 0;
+            padding: 4px 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .color-name {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .css-output {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            font-family: monospace;
+            font-size: 13px;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+        .title {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">🎨 Logo Color Extractor</h1>
+        <p class="subtitle">Upload your logo to extract its color palette for your security dashboard</p>
+        
+        <div class="upload-area" onclick="document.getElementById('imageInput').click()">
+            <p>Click here or drag and drop your logo.png file</p>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+        </div>
+        
+        <img id="preview" class="hidden" alt="Logo preview">
+        <canvas id="canvas" style="display: none;"></canvas>
+        
+        <div id="colorsContainer" class="hidden">
+            <h3>Extracted Colors:</h3>
+            <div id="colorsGrid" class="colors-grid"></div>
+            
+            <h3>CSS Variables for your project:</h3>
+            <div id="cssOutput" class="css-output"></div>
+            
+            <button onclick="copyToClipboard()">📋 Copy CSS Variables</button>
+            <button onclick="downloadColors()">💾 Download Color Scheme</button>
+        </div>
+    </div>
+
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const preview = document.getElementById('preview');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const colorsContainer = document.getElementById('colorsContainer');
+        const colorsGrid = document.getElementById('colorsGrid');
+        const cssOutput = document.getElementById('cssOutput');
+        const uploadArea = document.querySelector('.upload-area');
+
+        let extractedColors = [];
+
+        // Drag and drop functionality
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        imageInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            if (!file.type.startsWith('image/')) {
+                alert('Please select an image file');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                preview.src = e.target.result;
+                preview.classList.remove('hidden');
+                extractColors(e.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function extractColors(imageSrc) {
+            const img = new Image();
+            img.onload = () => {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const colors = getColorPalette(imageData.data);
+                
+                extractedColors = colors;
+                displayColors(colors);
+                generateCSS(colors);
+                colorsContainer.classList.remove('hidden');
+            };
+            img.src = imageSrc;
+        }
+
+        function getColorPalette(data) {
+            const colorMap = new Map();
+            const step = 4; // Sample every 4th pixel for performance
+
+            for (let i = 0; i < data.length; i += step * 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+                const a = data[i + 3];
+
+                // Skip transparent pixels
+                if (a < 128) continue;
+
+                // Group similar colors (quantize)
+                const quantizedR = Math.floor(r / 32) * 32;
+                const quantizedG = Math.floor(g / 32) * 32;
+                const quantizedB = Math.floor(b / 32) * 32;
+
+                const colorKey = `${quantizedR},${quantizedG},${quantizedB}`;
+                colorMap.set(colorKey, (colorMap.get(colorKey) || 0) + 1);
+            }
+
+            // Sort by frequency and get top colors
+            const sortedColors = Array.from(colorMap.entries())
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 8)
+                .map(([color, count]) => {
+                    const [r, g, b] = color.split(',').map(Number);
+                    return {
+                        rgb: [r, g, b],
+                        hex: rgbToHex(r, g, b),
+                        hsl: rgbToHsl(r, g, b),
+                        count
+                    };
+                });
+
+            return sortedColors;
+        }
+
+        function rgbToHex(r, g, b) {
+            return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+        }
+
+        function rgbToHsl(r, g, b) {
+            r /= 255;
+            g /= 255;
+            b /= 255;
+
+            const max = Math.max(r, g, b);
+            const min = Math.min(r, g, b);
+            let h, s, l = (max + min) / 2;
+
+            if (max === min) {
+                h = s = 0;
+            } else {
+                const d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+                switch (max) {
+                    case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                    case g: h = (b - r) / d + 2; break;
+                    case b: h = (r - g) / d + 4; break;
+                }
+                h /= 6;
+            }
+
+            return [
+                Math.round(h * 360),
+                Math.round(s * 100),
+                Math.round(l * 100)
+            ];
+        }
+
+        function getColorName(hsl) {
+            const [h, s, l] = hsl;
+            
+            if (l < 15) return 'Very Dark';
+            if (l > 90) return 'Very Light';
+            if (s < 10) return l > 50 ? 'Light Gray' : 'Dark Gray';
+            
+            if (h < 15 || h > 345) return 'Red';
+            if (h < 45) return 'Orange';
+            if (h < 75) return 'Yellow';
+            if (h < 165) return 'Green';
+            if (h < 195) return 'Cyan';
+            if (h < 255) return 'Blue';
+            if (h < 285) return 'Purple';
+            if (h < 315) return 'Magenta';
+            return 'Pink';
+        }
+
+        function displayColors(colors) {
+            colorsGrid.innerHTML = colors.map((color, index) => `
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: ${color.hex}"></div>
+                    <div class="color-code" onclick="copyColor('${color.hex}')" title="Click to copy">
+                        ${color.hex}
+                    </div>
+                    <div class="color-code" onclick="copyColor('hsl(${color.hsl.join(' ')}%)')" title="Click to copy">
+                        ${color.hsl[0]} ${color.hsl[1]}% ${color.hsl[2]}%
+                    </div>
+                    <div class="color-name">${getColorName(color.hsl)}</div>
+                </div>
+            `).join('');
+        }
+
+        function generateCSS(colors) {
+            const sortedByLightness = [...colors].sort((a, b) => a.hsl[2] - b.hsl[2]);
+            const primary = colors[0]; // Most frequent color
+            const secondary = colors[1] || primary;
+            const accent = colors[2] || secondary;
+            const darkest = sortedByLightness[0];
+            const lightest = sortedByLightness[sortedByLightness.length - 1];
+
+            const css = `/* Light Theme Colors */
+:root {
+  /* Primary colors from your logo */
+  --primary: ${primary.hsl[0]} ${primary.hsl[1]}% ${Math.max(primary.hsl[2], 45)}%;
+  --primary-foreground: ${primary.hsl[2] > 50 ? '0 0% 0%' : '0 0% 100%'};
+  
+  /* Secondary colors */
+  --secondary: ${secondary.hsl[0]} ${Math.max(secondary.hsl[1] - 20, 10)}% ${Math.min(secondary.hsl[2] + 30, 95)}%;
+  --secondary-foreground: ${secondary.hsl[2] > 50 ? '0 0% 20%' : '0 0% 90%'};
+  
+  /* Accent colors */
+  --accent: ${accent.hsl[0]} ${Math.max(accent.hsl[1] - 10, 5)}% ${Math.min(accent.hsl[2] + 20, 90)}%;
+  --accent-foreground: ${accent.hsl[2] > 50 ? '0 0% 20%' : '0 0% 90%'};
+  
+  /* Background and surfaces */
+  --background: 0 0% 98%;
+  --foreground: 0 0% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 15%;
+  
+  /* Borders and inputs */
+  --border: ${primary.hsl[0]} 15% 88%;
+  --input: ${primary.hsl[0]} 15% 88%;
+  --ring: ${primary.hsl[0]} ${primary.hsl[1]}% ${primary.hsl[2]}%;
+  
+  /* Muted elements */
+  --muted: ${primary.hsl[0]} 10% 95%;
+  --muted-foreground: ${primary.hsl[0]} 10% 45%;
+  
+  /* Popover */
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 15%;
+  
+  /* Alert colors (keep security standards) */
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --success: 142 76% 36%;
+  --success-foreground: 0 0% 98%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 0 0% 98%;
+  
+  /* Layout specific */
+  --sidebar-bg: ${darkest.hsl[0]} ${Math.min(darkest.hsl[1] + 10, 30)}% ${Math.max(darkest.hsl[2] - 10, 8)}%;
+  --sidebar-foreground: 0 0% 95%;
+  --topbar-bg: 0 0% 100%;
+  --topbar-border: ${primary.hsl[0]} 15% 88%;
+  
+  /* Vulnerability severity (logo-inspired) */
+  --critical: 0 72% 51%;
+  --high: 24 95% 53%;
+  --medium: 38 92% 50%;
+  --low: 142 76% 36%;
+  --info: ${primary.hsl[0]} ${primary.hsl[1]}% ${primary.hsl[2]}%;
+}
+
+/* Dark Theme Colors */
+.dark {
+  /* Primary colors adapted for dark theme */
+  --primary: ${primary.hsl[0]} ${Math.min(primary.hsl[1] + 10, 100)}% ${Math.min(primary.hsl[2] + 15, 70)}%;
+  --primary-foreground: ${primary.hsl[2] > 50 ? '0 0% 10%' : '0 0% 90%'};
+  
+  /* Secondary colors for dark theme */
+  --secondary: ${secondary.hsl[0]} ${Math.max(secondary.hsl[1] - 10, 5)}% ${Math.max(secondary.hsl[2] - 30, 15)}%;
+  --secondary-foreground: 0 0% 90%;
+  
+  /* Accent colors for dark theme */
+  --accent: ${accent.hsl[0]} ${Math.max(accent.hsl[1] - 5, 5)}% ${Math.max(accent.hsl[2] - 20, 20)}%;
+  --accent-foreground: 0 0% 90%;
+  
+  /* Dark backgrounds */
+  --background: ${darkest.hsl[0]} ${Math.min(darkest.hsl[1] + 5, 20)}% ${Math.max(darkest.hsl[2] - 5, 4)}%;
+  --foreground: 0 0% 95%;
+  --card: ${darkest.hsl[0]} ${Math.min(darkest.hsl[1] + 8, 25)}% ${Math.max(darkest.hsl[2], 8)}%;
+  --card-foreground: 0 0% 95%;
+  
+  /* Dark borders and inputs */
+  --border: ${primary.hsl[0]} ${Math.max(primary.hsl[1] - 20, 5)}% 20%;
+  --input: ${primary.hsl[0]} ${Math.max(primary.hsl[1] - 20, 5)}% 20%;
+  --ring: ${primary.hsl[0]} ${Math.min(primary.hsl[1] + 10, 100)}% ${Math.min(primary.hsl[2] + 15, 70)}%;
+  
+  /* Dark muted elements */
+  --muted: ${primary.hsl[0]} ${Math.max(primary.hsl[1] - 15, 5)}% 18%;
+  --muted-foreground: ${primary.hsl[0]} 8% 65%;
+  
+  /* Dark popover */
+  --popover: ${darkest.hsl[0]} ${Math.min(darkest.hsl[1] + 8, 25)}% ${Math.max(darkest.hsl[2], 8)}%;
+  --popover-foreground: 0 0% 95%;
+  
+  /* Dark layout */
+  --sidebar-bg: ${darkest.hsl[0]} ${Math.min(darkest.hsl[1] + 5, 20)}% ${Math.max(darkest.hsl[2] - 8, 3)}%;
+  --sidebar-foreground: 0 0% 95%;
+  --topbar-bg: ${darkest.hsl[0]} ${Math.min(darkest.hsl[1] + 8, 25)}% ${Math.max(darkest.hsl[2], 8)}%;
+  --topbar-border: ${primary.hsl[0]} ${Math.max(primary.hsl[1] - 20, 5)}% 20%;
+}`;
+
+            cssOutput.textContent = css;
+        }
+
+        function copyColor(color) {
+            navigator.clipboard.writeText(color).then(() => {
+                // Visual feedback
+                event.target.style.background = '#4CAF50';
+                event.target.style.color = 'white';
+                setTimeout(() => {
+                    event.target.style.background = '';
+                    event.target.style.color = '';
+                }, 500);
+            });
+        }
+
+        function copyToClipboard() {
+            navigator.clipboard.writeText(cssOutput.textContent).then(() => {
+                alert('CSS variables copied to clipboard!');
+            });
+        }
+
+        function downloadColors() {
+            const data = {
+                extractedColors,
+                css: cssOutput.textContent,
+                timestamp: new Date().toISOString()
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'logo-color-scheme.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
