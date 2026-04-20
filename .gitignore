@@ -31,6 +31,9 @@ env/
 *.db
 *.sqlite
 *.sqlite3
+!Final test/dev.db
+!Final test/test_scans_api.db
+!Final test/alembic_check.db
 *.log
 
 # Archives and binary bundles
