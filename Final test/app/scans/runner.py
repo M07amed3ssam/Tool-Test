@@ -13,7 +13,7 @@ from app.recon.normalizer.schema import FullData, now_iso
 from app.recon.orchestrator.scheduler import run_plan
 from app.recon.planner.ai_planner import plan_with_ai
 from app.recon.planner.rules_engine import build_plan
-from app.recon.reporting.ai_reporter import generate_ai_report
+from app.recon.reporting.ai_reporter import build_reporting_prompt, generate_ai_report
 from app.recon.reporting.exporter import export_json, export_text
 from app.recon.reporting.summary import generate_summary
 from app.reports import models as report_models
@@ -162,6 +162,7 @@ def _persist_artifacts(db, scan_job: ScanJob, run_root: Path) -> list[ScanArtifa
         "state_last_run": run_root / "data" / "state" / "last_run.json",
         "state_execution_results": run_root / "data" / "state" / "execution_results.json",
         "state_ai_report": run_root / "data" / "state" / "ai_report.json",
+        "state_reporting_prompt": run_root / "data" / "state" / "reporting_prompt.txt",
         "state_summary": run_root / "data" / "state" / "summary.txt",
         "state_llm_output": run_root / "data" / "state" / "llm_output.json",
         "raw_nuclei_status": run_root / "data" / "raw" / "nuclei_status.json",
@@ -402,12 +403,14 @@ def _execute_scan_job(db, scan_job_id: int, cancel_event: threading.Event) -> No
             execution_history=execution_history,
         ).to_dict()
 
+        reporting_prompt = build_reporting_prompt(full_data)
         ai_report = generate_ai_report(full_data)
         final_report = build_final_report_payload(full_data, ai_report)
 
         export_json(run_root / "Full_data.json", full_data)
         export_json(run_root / "Final_report.json", final_report)
         export_text(run_root / "data" / "state" / "summary.txt", summary_text)
+        export_text(run_root / "data" / "state" / "reporting_prompt.txt", reporting_prompt)
         export_json(run_root / "data" / "state" / "ai_report.json", ai_report)
 
         if scan_job.planner_engine == "ai":
@@ -469,6 +472,10 @@ def _execute_scan_job(db, scan_job_id: int, cancel_event: threading.Event) -> No
                 for res in results
             ],
             "next_actions": next_actions,
+            "reporting": {
+                "prompt_file": "data/state/reporting_prompt.txt",
+                "prompt_chars": len(reporting_prompt),
+            },
         }
         export_json(run_root / "data" / "state" / "last_run.json", runtime_payload)
 

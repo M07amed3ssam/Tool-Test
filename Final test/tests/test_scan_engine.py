@@ -59,8 +59,13 @@ class TestScanEngine(unittest.TestCase):
 
         self.assertEqual(payload["metadata"]["domain"], "example.com")
         self.assertEqual(payload["summary"]["counts"]["total_subdomains"], 1)
-        self.assertEqual(payload["summary"]["counts"]["vulnerabilities_total"], 2)
+        self.assertEqual(payload["summary"]["counts"]["vulnerabilities_total"], 1)
         self.assertEqual(len(payload["high_severity_vulnerabilities"]), 1)
+        high_entry = payload["high_severity_vulnerabilities"][0]
+        self.assertIn("affected_hosts", high_entry)
+        self.assertIn("description", high_entry)
+        self.assertIn("remediation", high_entry)
+        self.assertIn("vulnerabilities_by_severity", payload["summary"]["counts"])
 
     def test_build_final_report_payload_has_dashboard_required_keys(self) -> None:
         full_data = {
@@ -119,6 +124,10 @@ class TestScanEngine(unittest.TestCase):
         self.assertIsInstance(payload["low_severity_vulnerabilities"], list)
         self.assertIsInstance(payload["subdomains"], list)
         self.assertIsInstance(payload["ports"], list)
+        self.assertEqual(counts["vulnerabilities_total"], 0)
+        self.assertEqual(counts["open_ports"], 1)
+        self.assertIsInstance(payload["ports"][0], dict)
+        self.assertEqual(payload["ports"][0]["port"], 443)
 
         self.assertIn("recommendations", payload)
         self.assertIn("immediate", payload["recommendations"])

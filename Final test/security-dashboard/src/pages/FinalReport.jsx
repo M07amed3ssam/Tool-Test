@@ -131,6 +131,51 @@ const FinalReport = () => {
     vulnerabilities: summary.counts.vulnerabilities_total || 0
   };
 
+  const getPrimaryAffectedHost = (vuln) => {
+    const firstHost = vuln?.affected_hosts?.[0];
+    if (!firstHost) {
+      return 'Unknown';
+    }
+
+    if (typeof firstHost === 'object') {
+      return firstHost.domain || firstHost.url || firstHost.host || firstHost.ip || 'Unknown';
+    }
+
+    return String(firstHost);
+  };
+
+  const getVulnerabilityLink = (vuln) => {
+    const host = getPrimaryAffectedHost(vuln);
+    if (host.startsWith('http://') || host.startsWith('https://')) {
+      return host;
+    }
+    return '#';
+  };
+
+  const getPortInfo = (item) => {
+    if (typeof item === 'number') {
+      return {
+        port: item,
+        host: 'Discovered host',
+        protocol: 'TCP',
+      };
+    }
+
+    if (typeof item === 'string' && /^\d+$/.test(item)) {
+      return {
+        port: Number(item),
+        host: 'Discovered host',
+        protocol: 'TCP',
+      };
+    }
+
+    return {
+      port: item?.port || 'Unknown',
+      host: item?.host || item?.ip || 'Unknown host',
+      protocol: (item?.protocol || 'tcp').toUpperCase(),
+    };
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
       {/* Subtle background pattern */}
@@ -391,13 +436,13 @@ const FinalReport = () => {
                                 <div className="text-sm break-all">
                                   {vuln?.affected_hosts && vuln.affected_hosts.length > 0 ? (
                                     <a 
-                                      href={typeof vuln.affected_hosts[0] === 'object' ? (vuln.affected_hosts[0].domain || vuln.affected_hosts[0].url || '#') : vuln.affected_hosts[0]} 
+                                      href={getVulnerabilityLink(vuln)} 
                                       target="_blank" 
                                       rel="noopener noreferrer" 
                                       className="text-primary hover:underline font-medium inline-flex items-start sm:items-center gap-1 flex-wrap"
                                     >
                                       <span className="break-all">
-                                        {typeof vuln.affected_hosts[0] === 'object' ? (vuln.affected_hosts[0].domain || vuln.affected_hosts[0].url || 'Unknown') : vuln.affected_hosts[0]}
+                                        {getPrimaryAffectedHost(vuln)}
                                       </span>
                                       <ExternalLink className="h-3 w-3 flex-shrink-0 mt-0.5 sm:mt-0" />
                                     </a>
@@ -479,12 +524,12 @@ const FinalReport = () => {
                                 <div className="text-sm">
                                   {vuln?.affected_hosts && vuln.affected_hosts.length > 0 ? (
                                     <a 
-                                      href={typeof vuln.affected_hosts[0] === 'object' ? (vuln.affected_hosts[0].domain || vuln.affected_hosts[0].url || '#') : vuln.affected_hosts[0]} 
+                                      href={getVulnerabilityLink(vuln)} 
                                       target="_blank" 
                                       rel="noopener noreferrer" 
                                       className="text-primary hover:underline font-medium inline-flex items-center gap-1"
                                     >
-                                      {typeof vuln.affected_hosts[0] === 'object' ? (vuln.affected_hosts[0].domain || vuln.affected_hosts[0].url || 'Unknown') : vuln.affected_hosts[0]}
+                                      {getPrimaryAffectedHost(vuln)}
                                       <ExternalLink className="h-3 w-3" />
                                     </a>
                                   ) : (
@@ -565,12 +610,12 @@ const FinalReport = () => {
                                 <div className="text-sm">
                                   {vuln?.affected_hosts && vuln.affected_hosts.length > 0 ? (
                                     <a 
-                                      href={vuln.affected_hosts[0]} 
+                                      href={getVulnerabilityLink(vuln)} 
                                       target="_blank" 
                                       rel="noopener noreferrer" 
                                       className="text-primary hover:underline font-medium inline-flex items-center gap-1"
                                     >
-                                      {vuln.affected_hosts[0]}
+                                      {getPrimaryAffectedHost(vuln)}
                                       <ExternalLink className="h-3 w-3" />
                                     </a>
                                   ) : (
@@ -651,12 +696,12 @@ const FinalReport = () => {
                                 <div className="text-sm">
                                   {vuln?.affected_hosts && vuln.affected_hosts.length > 0 ? (
                                     <a 
-                                      href={vuln.affected_hosts[0]} 
+                                      href={getVulnerabilityLink(vuln)} 
                                       target="_blank" 
                                       rel="noopener noreferrer" 
                                       className="text-primary hover:underline font-medium inline-flex items-center gap-1"
                                     >
-                                      {vuln.affected_hosts[0]}
+                                      {getPrimaryAffectedHost(vuln)}
                                       <ExternalLink className="h-3 w-3" />
                                     </a>
                                   ) : (
@@ -832,17 +877,20 @@ const FinalReport = () => {
                   <div className="glass rounded-lg p-3 sm:p-4 border border-border/30">
                     {ports && ports.length > 0 ? (
                       <div className="space-y-2">
-                        {ports.slice(0, 8).map((port, index) => (
-                          <div key={index} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-2 bg-card/50 rounded border border-border/20 gap-2">
-                            <div className="flex items-center gap-2 sm:gap-3">
-                              <code className="text-xs bg-accent/20 dark:bg-accent/30 text-accent px-2 py-1 rounded font-mono flex-shrink-0">
-                                {port?.port || 'Unknown'}
-                              </code>
-                              <span className="text-xs text-muted-foreground break-all">{port?.host || 'Unknown host'}</span>
+                        {ports.slice(0, 8).map((port, index) => {
+                          const portInfo = getPortInfo(port);
+                          return (
+                            <div key={index} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-2 bg-card/50 rounded border border-border/20 gap-2">
+                              <div className="flex items-center gap-2 sm:gap-3">
+                                <code className="text-xs bg-accent/20 dark:bg-accent/30 text-accent px-2 py-1 rounded font-mono flex-shrink-0">
+                                  {portInfo.port}
+                                </code>
+                                <span className="text-xs text-muted-foreground break-all">{portInfo.host}</span>
+                              </div>
+                              <Badge variant="outline" className="text-xs self-start sm:self-center">{portInfo.protocol}</Badge>
                             </div>
-                            <Badge variant="outline" className="text-xs self-start sm:self-center">TCP</Badge>
-                          </div>
-                        ))}
+                          );
+                        })}
                         {ports.length > 8 && (
                           <div className="text-xs text-muted-foreground text-center py-2">
                             ... and {ports.length - 8} more ports

@@ -27,14 +27,6 @@ env/
 .env.*
 !.env.example
 
-# Local databases and logs
-*.db
-*.sqlite
-*.sqlite3
-!Final test/dev.db
-!Final test/test_scans_api.db
-!Final test/alembic_check.db
-*.log
 
 # Archives and binary bundles
 *.rar
@@ -42,6 +34,9 @@ env/
 *.7z
 *.tar
 *.gz
+
+# Local archive for moved legacy/unused files
+archive/
 
 # JS build artifacts
 node_modules/
