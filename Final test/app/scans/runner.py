@@ -13,7 +13,12 @@ from app.recon.normalizer.schema import FullData, now_iso
 from app.recon.orchestrator.scheduler import run_plan
 from app.recon.planner.ai_planner import plan_with_ai
 from app.recon.planner.rules_engine import build_plan
-from app.recon.reporting.ai_reporter import build_reporting_prompt, generate_ai_report
+from app.recon.reporting.ai_reporter import (
+    build_reporting_prompt_with_draft,
+    generate_ai_report,
+    generate_llm_report,
+    merge_llm_report,
+)
 from app.recon.reporting.exporter import export_json, export_text
 from app.recon.reporting.summary import generate_summary
 from app.reports import models as report_models
@@ -162,6 +167,7 @@ def _persist_artifacts(db, scan_job: ScanJob, run_root: Path) -> list[ScanArtifa
         "state_last_run": run_root / "data" / "state" / "last_run.json",
         "state_execution_results": run_root / "data" / "state" / "execution_results.json",
         "state_ai_report": run_root / "data" / "state" / "ai_report.json",
+        "state_llm_report": run_root / "data" / "state" / "llm_report.json",
         "state_reporting_prompt": run_root / "data" / "state" / "reporting_prompt.txt",
         "state_summary": run_root / "data" / "state" / "summary.txt",
         "state_llm_output": run_root / "data" / "state" / "llm_output.json",
@@ -403,15 +409,20 @@ def _execute_scan_job(db, scan_job_id: int, cancel_event: threading.Event) -> No
             execution_history=execution_history,
         ).to_dict()
 
-        reporting_prompt = build_reporting_prompt(full_data)
         ai_report = generate_ai_report(full_data)
-        final_report = build_final_report_payload(full_data, ai_report)
+        base_report = build_final_report_payload(full_data, ai_report)
+        reporting_prompt = build_reporting_prompt_with_draft(full_data, base_report)
+        llm_result = generate_llm_report(full_data, base_report)
+        llm_report = llm_result.get("report") if isinstance(llm_result, dict) else None
+        final_report = merge_llm_report(base_report, llm_report)
 
         export_json(run_root / "Full_data.json", full_data)
         export_json(run_root / "Final_report.json", final_report)
         export_text(run_root / "data" / "state" / "summary.txt", summary_text)
         export_text(run_root / "data" / "state" / "reporting_prompt.txt", reporting_prompt)
         export_json(run_root / "data" / "state" / "ai_report.json", ai_report)
+        if isinstance(llm_result, dict) and llm_result.get("enabled"):
+            export_json(run_root / "data" / "state" / "llm_report.json", llm_result)
 
         if scan_job.planner_engine == "ai":
             export_json(
@@ -475,6 +486,11 @@ def _execute_scan_job(db, scan_job_id: int, cancel_event: threading.Event) -> No
             "reporting": {
                 "prompt_file": "data/state/reporting_prompt.txt",
                 "prompt_chars": len(reporting_prompt),
+                "llm_enabled": bool(isinstance(llm_result, dict) and llm_result.get("enabled")),
+                "llm_used": bool(llm_report),
+                "llm_provider": llm_result.get("provider") if isinstance(llm_result, dict) else None,
+                "llm_model": llm_result.get("model") if isinstance(llm_result, dict) else None,
+                "llm_errors": llm_result.get("errors", []) if isinstance(llm_result, dict) else [],
             },
         }
         export_json(run_root / "data" / "state" / "last_run.json", runtime_payload)

@@ -1,8 +1,12 @@
 from __future__ import annotations
 
+from copy import deepcopy
+from datetime import datetime, timezone
 import json
+import os
 
 from .risk_scoring import severity_counts
+from app.recon.planner.ai_planner import _load_env_file, _provider_order, _run_provider
 
 
 _RISK_PRIORITY = {"high": 3, "medium": 2, "low": 1}
@@ -205,16 +209,39 @@ def build_reporting_prompt(full_data: dict) -> str:
     return (
         "You are a cybersecurity reporting AI.\n"
         "- Receive full_data.json with all recon results.\n"
-        "- Summarize vulnerabilities, open ports, and findings.\n"
-        "- Assign risk scores (low, medium, high) for each finding.\n"
-        "- Suggest charts or visualizations for dashboard.\n"
-        "Output JSON:\n"
+        "- Produce a Final_report.json object for the dashboard.\n"
+        "- Preserve metadata, summary.counts, subdomains, ports, and list sizes.\n"
+        "- Enrich vulnerability entries with description, remediation, impact, cve, mitre_link, references.\n"
+        "- Return JSON only (no markdown, no commentary).\n"
+        "Output JSON schema:\n"
         "{\n"
-        '  "summary": "...",\n'
-        '  "findings": [...],\n'
-        '  "risk_scores": [...],\n'
-        '  "visualization_recommendations": [...]\n'
+        '  "metadata": {"domain": "...", "target_type": "...", "scan_start": "..."},\n'
+        '  "summary": {"counts": {...}},\n'
+        '  "critical_severity_vulnerabilities": [...],\n'
+        '  "high_severity_vulnerabilities": [...],\n'
+        '  "medium_severity_vulnerabilities": [...],\n'
+        '  "low_severity_vulnerabilities": [...],\n'
+        '  "subdomains": [...],\n'
+        '  "ports": [...],\n'
+        '  "recommendations": {"immediate": [...], "short_term": [...], "medium_term": [...]}\n'
         "}\n\n"
+        "full_data.json:\n"
+        f"{payload}"
+    )
+
+
+def build_reporting_prompt_with_draft(full_data: dict, draft_report: dict) -> str:
+    payload = json.dumps(full_data, ensure_ascii=False)
+    draft_payload = json.dumps(draft_report, ensure_ascii=False)
+    return (
+        "You are a cybersecurity reporting AI.\n"
+        "- Receive full_data.json and draft_report.json.\n"
+        "- Enrich the draft report with missing context (description, remediation, impact, CVEs).\n"
+        "- Preserve metadata, summary.counts, subdomains, ports, and list ordering.\n"
+        "- Do NOT delete or add items to vulnerability lists; only enhance fields.\n"
+        "- Return JSON only (no markdown).\n\n"
+        "draft_report.json:\n"
+        f"{draft_payload}\n\n"
         "full_data.json:\n"
         f"{payload}"
     )
@@ -230,4 +257,184 @@ def generate_ai_report(full_data: dict, *, max_findings: int = 25) -> dict:
         "findings": _build_key_findings(risk_scores, limit=max_findings),
         "risk_scores": risk_scores,
         "visualization_recommendations": _build_visualization_recommendations(),
+    }
+
+
+def _llm_reporting_enabled() -> bool:
+    flag = os.environ.get("REPORTING_LLM_ENABLED", "").strip().lower()
+    return flag in {"1", "true", "yes", "on"}
+
+
+def _looks_like_final_report(payload: dict) -> bool:
+    if not isinstance(payload, dict):
+        return False
+
+    required_lists = [
+        "critical_severity_vulnerabilities",
+        "high_severity_vulnerabilities",
+        "medium_severity_vulnerabilities",
+        "low_severity_vulnerabilities",
+        "subdomains",
+        "ports",
+    ]
+
+    if "metadata" not in payload or "summary" not in payload:
+        return False
+
+    summary = payload.get("summary")
+    if not isinstance(summary, dict) or not isinstance(summary.get("counts"), dict):
+        return False
+
+    for key in required_lists:
+        if not isinstance(payload.get(key), list):
+            return False
+
+    if not isinstance(payload.get("recommendations"), dict):
+        return False
+
+    return True
+
+
+def _vulnerability_key(item: dict) -> str:
+    if not isinstance(item, dict):
+        return ""
+
+    for key in ("id", "title"):
+        value = str(item.get(key, "")).strip().lower()
+        if value:
+            return value
+    return ""
+
+
+def _merge_vulnerability_entry(base: dict, enriched: dict) -> dict:
+    merged = dict(base)
+    if not isinstance(enriched, dict):
+        return merged
+
+    if not merged.get("id") and enriched.get("id"):
+        merged["id"] = enriched.get("id")
+    if not merged.get("title") and enriched.get("title"):
+        merged["title"] = enriched.get("title")
+
+    for field in [
+        "description",
+        "remediation",
+        "impact",
+        "cve",
+        "mitre_link",
+        "references",
+        "cvss",
+        "cwe",
+        "raw",
+        "evidence",
+    ]:
+        if field in enriched and enriched[field] not in {None, ""}:
+            merged[field] = enriched[field]
+
+    affected_hosts = enriched.get("affected_hosts")
+    if isinstance(affected_hosts, list) and affected_hosts:
+        merged["affected_hosts"] = affected_hosts
+    elif isinstance(affected_hosts, str) and affected_hosts.strip():
+        merged["affected_hosts"] = [affected_hosts.strip()]
+
+    return merged
+
+
+def _merge_vulnerability_lists(base_list: list, llm_list: object) -> list:
+    if not isinstance(llm_list, list):
+        return base_list
+
+    llm_index = {}
+    for item in llm_list:
+        if not isinstance(item, dict):
+            continue
+        key = _vulnerability_key(item)
+        if key:
+            llm_index[key] = item
+
+    merged_list: list = []
+    for base_item in base_list:
+        if not isinstance(base_item, dict):
+            merged_list.append(base_item)
+            continue
+        key = _vulnerability_key(base_item)
+        if key and key in llm_index:
+            merged_list.append(_merge_vulnerability_entry(base_item, llm_index[key]))
+        else:
+            merged_list.append(base_item)
+    return merged_list
+
+
+def _merge_recommendations(base: dict, enriched: object) -> dict:
+    merged = deepcopy(base) if isinstance(base, dict) else {"immediate": [], "short_term": [], "medium_term": []}
+    if not isinstance(enriched, dict):
+        return merged
+
+    for key in ["immediate", "short_term", "medium_term"]:
+        values = enriched.get(key)
+        if isinstance(values, list) and values:
+            merged[key] = values
+    return merged
+
+
+def merge_llm_report(base_report: dict, llm_report: dict | None) -> dict:
+    if not isinstance(base_report, dict):
+        return base_report
+
+    if not isinstance(llm_report, dict):
+        return base_report
+
+    merged = deepcopy(base_report)
+
+    for key in [
+        "critical_severity_vulnerabilities",
+        "high_severity_vulnerabilities",
+        "medium_severity_vulnerabilities",
+        "low_severity_vulnerabilities",
+    ]:
+        merged[key] = _merge_vulnerability_lists(merged.get(key, []), llm_report.get(key))
+
+    merged["recommendations"] = _merge_recommendations(
+        merged.get("recommendations", {}),
+        llm_report.get("recommendations"),
+    )
+
+    return merged
+
+
+def generate_llm_report(full_data: dict, draft_report: dict) -> dict:
+    if not _llm_reporting_enabled():
+        return {
+            "enabled": False,
+            "report": None,
+            "errors": ["REPORTING_LLM_ENABLED is not set"],
+        }
+
+    _load_env_file()
+    prompt = build_reporting_prompt_with_draft(full_data, draft_report)
+    errors: list[str] = []
+
+    for provider in _provider_order():
+        try:
+            response = _run_provider(provider, prompt)
+            report = response.get("phases")
+            if isinstance(report, dict) and _looks_like_final_report(report):
+                return {
+                    "enabled": True,
+                    "report": report,
+                    "provider": response.get("provider"),
+                    "model": response.get("model"),
+                    "raw_response": response.get("raw_response", ""),
+                    "generated_at": datetime.now(timezone.utc).isoformat(),
+                    "errors": errors,
+                }
+            errors.append(f"{provider}: invalid report schema")
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"{provider}: {exc}")
+
+    return {
+        "enabled": True,
+        "report": None,
+        "errors": errors,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
     }

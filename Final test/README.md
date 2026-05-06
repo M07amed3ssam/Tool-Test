@@ -69,6 +69,30 @@ npm install
 npm start
 ```
 
+## Run the Project
+
+Start the backend and frontend in separate terminals.
+
+### Backend (FastAPI)
+
+From the project root (Final test):
+
+```bash
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+### Frontend (React)
+
+From the frontend folder:
+
+```bash
+cd security-dashboard
+npm install
+npm start
+```
+
+Open the dashboard at `http://localhost:3000` and the API at `http://localhost:8000`.
+
 ## API Endpoints
 
 ### Authentication
