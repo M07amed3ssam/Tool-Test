@@ -201,6 +201,8 @@ def _provider_order() -> list[str]:
         "google": "google_ai",
         "google_ai": "google_ai",
         "gemini": "google_ai",
+        "openai": "openai_compat",
+        "zai": "openai_compat",
         "ollama": "ollama",
         "local": "ollama",
     }
@@ -308,6 +310,61 @@ def _run_huggingface(prompt: str) -> dict:
         "model": model,
         "provider": "huggingface_router",
     }
+
+
+def _run_openai_compat(prompt: str) -> dict:
+    """Run an OpenAI-compatible (OpenAI SDK) provider using multiple API keys.
+
+    Env vars supported (in order of preference):
+      - OPENAI_COMPAT_KEYS (comma-separated)
+      - ZAI_API_KEYS (comma-separated)
+      - OPENAI_API_KEYS (comma-separated)
+    Additional optional envs:
+      - OPENAI_COMPAT_BASE_URL or ZAI_BASE_URL
+      - OPENAI_COMPAT_MODEL or ZAI_MODEL
+      - OPENAI_COMPAT_TIMEOUT
+
+    The function will iterate keys and return the first successful parsed JSON decision object.
+    """
+    if OpenAI is None:
+        raise RuntimeError("openai package is not installed")
+
+    keys_raw = (
+        os.environ.get("OPENAI_COMPAT_KEYS")
+        or os.environ.get("ZAI_API_KEYS")
+        or os.environ.get("OPENAI_API_KEYS")
+        or ""
+    )
+    keys = [k.strip() for k in keys_raw.split(",") if k and k.strip()]
+    if not keys:
+        raise RuntimeError("No API keys set for OpenAI-compatible provider (OPENAI_COMPAT_KEYS/ZAI_API_KEYS/OPENAI_API_KEYS)")
+
+    base_url = os.environ.get("OPENAI_COMPAT_BASE_URL") or os.environ.get("ZAI_BASE_URL") or os.environ.get("OPENAI_BASE_URL") or ""
+    model = os.environ.get("OPENAI_COMPAT_MODEL") or os.environ.get("ZAI_MODEL") or os.environ.get("OPENAI_MODEL") or os.environ.get("HF_MODEL", "")
+    timeout = _coerce_int(os.environ.get("OPENAI_COMPAT_TIMEOUT", "45"), 45, 5, 300)
+
+    last_exc: Exception | None = None
+    for key in keys:
+        try:
+            client = OpenAI(api_key=key, base_url=base_url, timeout=timeout)
+            completion = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            content = completion.choices[0].message.content or ""
+            decisions = _extract_json_object(content)
+            return {
+                "phases": decisions,
+                "raw_response": content,
+                "model": model,
+                "provider": "openai_compat",
+            }
+        except Exception as exc:  # noqa: BLE001
+            last_exc = exc
+            # try next key
+            continue
+
+    raise RuntimeError(f"OpenAI-compatible provider calls failed: {last_exc}")
 
 
 def _run_google(prompt: str) -> dict:
