@@ -6,6 +6,8 @@ from hashlib import sha256
 import importlib
 import json
 import os
+import random
+import time
 from pathlib import Path
 from urllib import error as urlerror
 from urllib.parse import urlparse
@@ -208,7 +210,7 @@ def _provider_order() -> list[str]:
     }
 
     if configured in {"", "auto"}:
-        return ["huggingface_router", "google_ai", "ollama"]
+        return ["huggingface_router", "google_ai", "openai_compat", "ollama"]
 
     ordered: list[str] = []
     for item in [part.strip() for part in configured.split(",") if part.strip()]:
@@ -217,9 +219,9 @@ def _provider_order() -> list[str]:
             ordered.append(resolved)
 
     if not ordered:
-        return ["huggingface_router", "google_ai", "ollama"]
+        return ["huggingface_router", "google_ai", "openai_compat", "ollama"]
 
-    for provider in ["huggingface_router", "google_ai", "ollama"]:
+    for provider in ["huggingface_router", "google_ai", "openai_compat", "ollama"]:
         if provider not in ordered:
             ordered.append(provider)
     return ordered
@@ -323,6 +325,7 @@ def _run_openai_compat(prompt: str) -> dict:
       - OPENAI_COMPAT_BASE_URL or ZAI_BASE_URL
       - OPENAI_COMPAT_MODEL or ZAI_MODEL
       - OPENAI_COMPAT_TIMEOUT
+      - OPENAI_COMPAT_RETRIES
 
     The function will iterate keys and return the first successful parsed JSON decision object.
     """
@@ -341,33 +344,57 @@ def _run_openai_compat(prompt: str) -> dict:
 
     base_url = os.environ.get("OPENAI_COMPAT_BASE_URL") or os.environ.get("ZAI_BASE_URL") or os.environ.get("OPENAI_BASE_URL") or ""
     model = os.environ.get("OPENAI_COMPAT_MODEL") or os.environ.get("ZAI_MODEL") or os.environ.get("OPENAI_MODEL") or os.environ.get("HF_MODEL", "")
+    if not model:
+        raise RuntimeError("OPENAI_COMPAT_MODEL/ZAI_MODEL/OPENAI_MODEL is not set")
     timeout = _coerce_int(os.environ.get("OPENAI_COMPAT_TIMEOUT", "45"), 45, 5, 300)
+    max_retries = _coerce_int(os.environ.get("OPENAI_COMPAT_RETRIES", "2"), 2, 0, 8)
+
+    def _should_retry(exc: Exception) -> bool:
+        message = str(exc).lower()
+        return any(token in message for token in (
+            "503",
+            "unavailable",
+            "temporarily",
+            "rate limit",
+            "timeout",
+            "timed out",
+            "connection",
+        ))
+
+    def _sleep_backoff(attempt: int) -> None:
+        delay = min(8, 2 ** attempt)
+        jitter = random.uniform(0, delay * 0.2)
+        time.sleep(delay + jitter)
 
     last_exc: Exception | None = None
     for key in keys:
-        try:
-            client = OpenAI(api_key=key, base_url=base_url, timeout=timeout)
-            completion = client.chat.completions.create(
-                model=model,
-                messages=[{"role": "user", "content": prompt}],
-            )
-            content = completion.choices[0].message.content or ""
-            decisions = _extract_json_object(content)
-            return {
-                "phases": decisions,
-                "raw_response": content,
-                "model": model,
-                "provider": "openai_compat",
-            }
-        except Exception as exc:  # noqa: BLE001
-            last_exc = exc
-            # try next key
-            continue
+        client = OpenAI(api_key=key, base_url=base_url, timeout=timeout)
+        for attempt in range(max_retries + 1):
+            try:
+                completion = client.chat.completions.create(
+                    model=model,
+                    messages=[{"role": "user", "content": prompt}],
+                )
+                content = completion.choices[0].message.content or ""
+                decisions = _extract_json_object(content)
+                return {
+                    "phases": decisions,
+                    "raw_response": content,
+                    "model": model,
+                    "provider": "openai_compat",
+                }
+            except Exception as exc:  # noqa: BLE001
+                last_exc = exc
+                if attempt >= max_retries or not _should_retry(exc):
+                    break
+                _sleep_backoff(attempt)
+        # try next key
 
     raise RuntimeError(f"OpenAI-compatible provider calls failed: {last_exc}")
 
 
 def _run_google(prompt: str) -> dict:
+
     if GoogleGenAI is None:
         raise RuntimeError("google-genai package is not installed")
 
@@ -679,6 +706,8 @@ def _run_provider(provider: str, prompt: str, response_schema: dict | None = Non
         return _run_huggingface(prompt)
     if provider == "google_ai":
         return _run_google(prompt)
+    if provider == "openai_compat":
+        return _run_openai_compat(prompt)
     if provider == "ollama":
         return _run_ollama(prompt, response_schema=response_schema)
     raise RuntimeError(f"Unsupported provider: {provider}")
