@@ -241,20 +241,32 @@ def _required_output_artifacts() -> dict[str, list[str]]:
 
 def _build_selection_prompt(target: str, target_type: str, available_tools: dict[str, str], web_wordlist: str) -> str:
     return (
-        "You are a recon decision engine. Return only JSON for phase-1 tool selection. "
-        "Hard constraints: for domain use flow Domain -> Subdomain Enum -> Port Scan -> Vuln Scan. "
-        "For IP use flow IP -> Nmap -> Masscan -> Vulnerability Check. "
-        "Keep selected_tools subset of available_tools. "
-        "Do not generate commands in this phase. "
-        "JSON schema: {"
-        "\"analyze_target_type\":{\"agent\":\"analyze_target_type\",\"target_type\":\"...\",\"confidence\":0..1,\"reason\":\"...\"},"
-        "\"select_recon_tools\":{\"agent\":\"select_recon_tools\",\"strategy\":\"...\",\"selected_tools\":[\"...\"]},"
-        "\"execution_orchestration\":{\"agent\":\"orchestrator\",\"mode\":\"sequential|parallel\",\"max_parallel\":number,\"reason\":\"...\"}"
-        "}. "
-        f"Input target={target}; target_type={target_type}; available_tools={sorted(list(available_tools.keys()))}; "
-        f"default_web_wordlist={web_wordlist}."
+        f"""You are a recon decision engine. Produce a professional, strict JSON response for phase-1 tool selection.
+Rules:
+- Output JSON only (no markdown, no commentary).
+- Use only the keys in the schema. Do not add extra keys.
+- Keep selected_tools a subset of available_tools.
+- Do not generate shell commands in this phase.
+- If unsure, use safe defaults and still return a valid JSON object.
+- Hard constraints: for domain use flow Domain -> Subdomain Enum -> Port Scan -> Vuln Scan. For IP use flow IP -> Nmap -> Masscan -> Vulnerability Check.
+Schema (required keys, types, allowed values):
+{{
+  "analyze_target_type": {{"agent": "analyze_target_type", "target_type": "domain|ip|application|unknown", "confidence": 0..1, "reason": "..."}},
+  "select_recon_tools": {{"agent": "select_recon_tools", "strategy": "...", "selected_tools": ["..."]}},
+  "execution_orchestration": {{"agent": "orchestrator", "mode": "sequential|parallel", "max_parallel": number, "reason": "..."}}
+}}
+Validation checklist (do NOT output):
+- All required keys present with correct types.
+- confidence is within 0..1.
+- selected_tools is a subset of available_tools.
+- mode is sequential or parallel; max_parallel >= 1.
+- No extra keys.
+Example (correct, DO NOT OUTPUT):
+{{"analyze_target_type":{{"agent":"analyze_target_type","target_type":"domain","confidence":0.78,"reason":"Domain-style target"}},"select_recon_tools":{{"agent":"select_recon_tools","strategy":"domain_to_subdomain_port_and_vuln","selected_tools":["subfinder","nmap","nuclei"]}},"execution_orchestration":{{"agent":"orchestrator","mode":"parallel","max_parallel":3,"reason":"Parallel for domain"}}}}
+Example (incorrect, DO NOT OUTPUT):
+{{"analyze_target_type":{{"agent":"analyze_target_type","target_type":"domain","confidence":"high","reason":"..."}},"select_recon_tools":{{"agent":"select_recon_tools","strategy":"...","selected_tools":"subfinder"}},"execution_orchestration":{{"agent":"orchestrator","mode":"fast","max_parallel":0,"reason":"..."}},"extra_key":"not_allowed"}}
+Input target={target}; target_type={target_type}; available_tools={sorted(list(available_tools.keys()))}; default_web_wordlist={web_wordlist}."""
     )
-
 
 def _build_command_prompt(
     target: str,
@@ -264,18 +276,31 @@ def _build_command_prompt(
 ) -> str:
     output_artifacts = json.dumps(_required_output_artifacts(), sort_keys=True)
     return (
-        "You are a recon command generator. Return only JSON for phase-2 command generation. "
-        "Build parameter_optimization and command_overrides only for selected_tools. "
-        "Each command must be a full shell command and include required output artifact paths exactly as specified. "
-        "Keep commands safe and scoped to reconnaissance only. "
-        "JSON schema: {"
-        "\"parameter_optimization\":{\"agent\":\"parameter_optimization\",\"web_wordlist\":\"...\",\"nmap_timing\":\"-T3|-T4\",\"masscan_rate\":number,\"ffuf_match_codes\":\"...\",\"ffuf_threads\":number,\"gobuster_threads\":number},"
-        "\"command_overrides\":{\"tool\":\"full shell command\"}"
-        "}. "
-        f"Input target={target}; target_type={target_type}; selected_tools={selected_tools}; "
-        f"default_web_wordlist={web_wordlist}; required_output_artifacts={output_artifacts}."
+        f"""You are a recon command generator. Produce a professional, strict JSON response for phase-2 command generation.
+Rules:
+- Output JSON only (no markdown, no commentary).
+- Use only the keys in the schema. Do not add extra keys.
+- Build parameter_optimization and command_overrides only for selected_tools.
+- Each command must be a full shell command and include required output artifact paths exactly as specified.
+- Keep commands safe and scoped to reconnaissance only. Do not add destructive flags (rm, shutdown, curl|sh).
+- If unsure, keep safe defaults and leave command_overrides empty.
+Schema (required keys, types, allowed values):
+{{
+  "parameter_optimization": {{"agent": "parameter_optimization", "web_wordlist": "...", "nmap_timing": "-T3|-T4", "masscan_rate": number, "ffuf_match_codes": "...", "ffuf_threads": number, "gobuster_threads": number}},
+  "command_overrides": {{"tool": "full shell command"}}
+}}
+Validation checklist (do NOT output):
+- All required keys present with correct types.
+- command_overrides keys are a subset of selected_tools.
+- Commands include required output artifact paths.
+- No destructive or unrelated commands.
+- No extra keys.
+Example (correct, DO NOT OUTPUT):
+{{"parameter_optimization":{{"agent":"parameter_optimization","web_wordlist":"/usr/share/wordlists/dirb/common.txt","nmap_timing":"-T4","masscan_rate":1000,"ffuf_match_codes":"200,204,301,302,307,401,403","ffuf_threads":40,"gobuster_threads":30}},"command_overrides":{{}}}}
+Example (incorrect, DO NOT OUTPUT):
+{{"parameter_optimization":{{"agent":"parameter_optimization","web_wordlist":123,"nmap_timing":"fast"}},"command_overrides":{{"nmap":"rm -rf /"}},"extra_key":true}}
+Input target={target}; target_type={target_type}; selected_tools={selected_tools}; default_web_wordlist={web_wordlist}; required_output_artifacts={output_artifacts}."""
     )
-
 
 def _run_huggingface(prompt: str) -> dict:
     if OpenAI is None:

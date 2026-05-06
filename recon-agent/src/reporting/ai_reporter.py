@@ -203,22 +203,30 @@ def _build_summary(full_data: dict, risk_scores: list[dict], open_ports: list[in
 def build_reporting_prompt(full_data: dict) -> str:
     payload = json.dumps(full_data, ensure_ascii=False)
     return (
-        "You are a cybersecurity reporting AI.\n"
-        "- Receive full_data.json with all recon results.\n"
-        "- Summarize vulnerabilities, open ports, and findings.\n"
-        "- Assign risk scores (low, medium, high) for each finding.\n"
-        "- Suggest charts or visualizations for dashboard.\n"
-        "Output JSON:\n"
-        "{\n"
-        '  "summary": "...",\n'
-        '  "findings": [...],\n'
-        '  "risk_scores": [...],\n'
-        '  "visualization_recommendations": [...]\n'
-        "}\n\n"
-        "full_data.json:\n"
-        f"{payload}"
-    )
+        f"""You are a cybersecurity reporting AI. Produce a professional JSON summary.
+Rules:
+- Output JSON only (no markdown, no commentary).
+- Use only the keys in the schema. Do not add extra keys.
+- Keep list sizes stable where possible; do not fabricate data.
+Output JSON schema:
+{{
+  "summary": "...",
+  "findings": [...],
+  "risk_scores": [...],
+  "visualization_recommendations": [...]
+}}
+Validation checklist (do NOT output):
+- All required keys present; no extra keys.
+- summary is a string.
+- findings, risk_scores, visualization_recommendations are arrays.
+Example (correct, DO NOT OUTPUT):
+{{"summary":"2 low severity findings","findings":[],"risk_scores":[],"visualization_recommendations":[]}}
+Example (incorrect, DO NOT OUTPUT):
+{{"summary":{{}},"findings":{{}},"risk_scores":[],"visualization_recommendations":[],"extra_key":true}}
 
+full_data.json:
+{payload}"""
+    )
 
 def generate_ai_report(full_data: dict, *, max_findings: int = 25) -> dict:
     findings = full_data.get("findings", []) if isinstance(full_data.get("findings", []), list) else []

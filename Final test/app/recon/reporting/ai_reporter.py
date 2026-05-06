@@ -207,45 +207,66 @@ def _build_summary(full_data: dict, risk_scores: list[dict], open_ports: list[in
 def build_reporting_prompt(full_data: dict) -> str:
     payload = json.dumps(full_data, ensure_ascii=False)
     return (
-        "You are a cybersecurity reporting AI.\n"
-        "- Receive full_data.json with all recon results.\n"
-        "- Produce a Final_report.json object for the dashboard.\n"
-        "- Preserve metadata, summary.counts, subdomains, ports, and list sizes.\n"
-        "- Enrich vulnerability entries with description, remediation, impact, cve, mitre_link, references.\n"
-        "- Return JSON only (no markdown, no commentary).\n"
-        "Output JSON schema:\n"
-        "{\n"
-        '  "metadata": {"domain": "...", "target_type": "...", "scan_start": "..."},\n'
-        '  "summary": {"counts": {...}},\n'
-        '  "critical_severity_vulnerabilities": [...],\n'
-        '  "high_severity_vulnerabilities": [...],\n'
-        '  "medium_severity_vulnerabilities": [...],\n'
-        '  "low_severity_vulnerabilities": [...],\n'
-        '  "subdomains": [...],\n'
-        '  "ports": [...],\n'
-        '  "recommendations": {"immediate": [...], "short_term": [...], "medium_term": [...]}\n'
-        "}\n\n"
-        "full_data.json:\n"
-        f"{payload}"
-    )
+        f"""You are a cybersecurity reporting AI. Produce a professional Final_report.json for the dashboard.
+Rules:
+- Output JSON only (no markdown, no commentary).
+- Use only the keys in the schema. Do not add extra top-level keys.
+- Preserve metadata, summary.counts, subdomains, ports, and list sizes.
+- Enrich vulnerability entries with description, remediation, impact, cve, mitre_link, references.
+- Do not fabricate CVEs or references; leave empty string or null when unknown.
+- Do NOT add or remove items from vulnerability lists; only enhance fields.
+Output JSON schema (top-level keys only):
+{{
+  "metadata": {{"domain": "...", "target_type": "...", "scan_start": "..."}},
+  "summary": {{"counts": {{...}}}},
+  "critical_severity_vulnerabilities": [...],
+  "high_severity_vulnerabilities": [...],
+  "medium_severity_vulnerabilities": [...],
+  "low_severity_vulnerabilities": [...],
+  "subdomains": [...],
+  "ports": [...],
+  "recommendations": {{"immediate": [...], "short_term": [...], "medium_term": [...]}}
+}}
+Validation checklist (do NOT output):
+- All required top-level keys present; no extra keys.
+- List sizes preserved (do not add/remove items).
+- recommendations contains only immediate, short_term, medium_term.
+- Unknown fields are empty string or null (no fabricated data).
+Example (correct, DO NOT OUTPUT):
+{{"metadata":{{"domain":"example.com","target_type":"domain","scan_start":"2025-01-01T00:00:00Z"}},"summary":{{"counts":{{}}}},"critical_severity_vulnerabilities":[],"high_severity_vulnerabilities":[],"medium_severity_vulnerabilities":[],"low_severity_vulnerabilities":[],"subdomains":[],"ports":[],"recommendations":{{"immediate":[],"short_term":[],"medium_term":[]}}}}
+Example (incorrect, DO NOT OUTPUT):
+{{"metadata":{{}},"summary":{{}},"low_severity_vulnerabilities":[],"extra_key":true}}
 
+full_data.json:
+{payload}"""
+    )
 
 def build_reporting_prompt_with_draft(full_data: dict, draft_report: dict) -> str:
     payload = json.dumps(full_data, ensure_ascii=False)
     draft_payload = json.dumps(draft_report, ensure_ascii=False)
     return (
-        "You are a cybersecurity reporting AI.\n"
-        "- Receive full_data.json and draft_report.json.\n"
-        "- Enrich the draft report with missing context (description, remediation, impact, CVEs).\n"
-        "- Preserve metadata, summary.counts, subdomains, ports, and list ordering.\n"
-        "- Do NOT delete or add items to vulnerability lists; only enhance fields.\n"
-        "- Return JSON only (no markdown).\n\n"
-        "draft_report.json:\n"
-        f"{draft_payload}\n\n"
-        "full_data.json:\n"
-        f"{payload}"
-    )
+        f"""You are a cybersecurity reporting AI. Enrich a draft report using full_data.json.
+Rules:
+- Output JSON only (no markdown, no commentary).
+- Use only the keys in the schema. Do not add extra top-level keys.
+- Preserve metadata, summary.counts, subdomains, ports, and list ordering.
+- Do NOT delete or add items to vulnerability lists; only enhance fields.
+- Do not fabricate CVEs or references; leave empty string or null when unknown.
+Validation checklist (do NOT output):
+- All required top-level keys present; no extra keys.
+- List sizes preserved and in the same order.
+- recommendations contains only immediate, short_term, medium_term.
+Example (correct, DO NOT OUTPUT):
+{{"metadata":{{"domain":"example.com"}},"summary":{{"counts":{{}}}},"critical_severity_vulnerabilities":[],"high_severity_vulnerabilities":[],"medium_severity_vulnerabilities":[],"low_severity_vulnerabilities":[],"subdomains":[],"ports":[],"recommendations":{{"immediate":[],"short_term":[],"medium_term":[]}}}}
+Example (incorrect, DO NOT OUTPUT):
+{{"metadata":{{}},"summary":{{}},"low_severity_vulnerabilities":[],"recommendations":{{}},"extra_key":true}}
 
+draft_report.json:
+{draft_payload}
+
+full_data.json:
+{payload}"""
+    )
 
 def generate_ai_report(full_data: dict, *, max_findings: int = 25) -> dict:
     findings = full_data.get("findings", []) if isinstance(full_data.get("findings", []), list) else []
