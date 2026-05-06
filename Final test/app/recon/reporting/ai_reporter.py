@@ -215,25 +215,23 @@ Rules:
 - Enrich vulnerability entries with description, remediation, impact, cve, mitre_link, references.
 - Do not fabricate CVEs or references; leave empty string or null when unknown.
 - Do NOT add or remove items from vulnerability lists; only enhance fields.
-Output JSON schema (top-level keys only):
+Schema example (valid JSON, use same keys/types):
 {{
-  "metadata": {{"domain": "...", "target_type": "...", "scan_start": "..."}},
-  "summary": {{"counts": {{...}}}},
-  "critical_severity_vulnerabilities": [...],
-  "high_severity_vulnerabilities": [...],
-  "medium_severity_vulnerabilities": [...],
-  "low_severity_vulnerabilities": [...],
-  "subdomains": [...],
-  "ports": [...],
-  "recommendations": {{"immediate": [...], "short_term": [...], "medium_term": [...]}}
+  "metadata": {{"domain": "example.com", "target_type": "domain", "scan_start": "2025-01-01T00:00:00Z"}},
+  "summary": {{"counts": {{"critical": 0, "high": 1, "medium": 0, "low": 0, "info": 2}}}},
+  "critical_severity_vulnerabilities": [],
+  "high_severity_vulnerabilities": [],
+  "medium_severity_vulnerabilities": [],
+  "low_severity_vulnerabilities": [],
+  "subdomains": [],
+  "ports": [],
+  "recommendations": {{"immediate": ["patch critical issues"], "short_term": [], "medium_term": []}}
 }}
 Validation checklist (do NOT output):
 - All required top-level keys present; no extra keys.
 - List sizes preserved (do not add/remove items).
 - recommendations contains only immediate, short_term, medium_term.
 - Unknown fields are empty string or null (no fabricated data).
-Example (correct, DO NOT OUTPUT):
-{{"metadata":{{"domain":"example.com","target_type":"domain","scan_start":"2025-01-01T00:00:00Z"}},"summary":{{"counts":{{}}}},"critical_severity_vulnerabilities":[],"high_severity_vulnerabilities":[],"medium_severity_vulnerabilities":[],"low_severity_vulnerabilities":[],"subdomains":[],"ports":[],"recommendations":{{"immediate":[],"short_term":[],"medium_term":[]}}}}
 Example (incorrect, DO NOT OUTPUT):
 {{"metadata":{{}},"summary":{{}},"low_severity_vulnerabilities":[],"extra_key":true}}
 
@@ -252,12 +250,22 @@ Rules:
 - Preserve metadata, summary.counts, subdomains, ports, and list ordering.
 - Do NOT delete or add items to vulnerability lists; only enhance fields.
 - Do not fabricate CVEs or references; leave empty string or null when unknown.
+Schema example (valid JSON, use same keys/types):
+{{
+  "metadata": {{"domain": "example.com"}},
+  "summary": {{"counts": {{"critical": 0, "high": 1, "medium": 0, "low": 0, "info": 2}}}},
+  "critical_severity_vulnerabilities": [],
+  "high_severity_vulnerabilities": [],
+  "medium_severity_vulnerabilities": [],
+  "low_severity_vulnerabilities": [],
+  "subdomains": [],
+  "ports": [],
+  "recommendations": {{"immediate": [], "short_term": [], "medium_term": []}}
+}}
 Validation checklist (do NOT output):
 - All required top-level keys present; no extra keys.
 - List sizes preserved and in the same order.
 - recommendations contains only immediate, short_term, medium_term.
-Example (correct, DO NOT OUTPUT):
-{{"metadata":{{"domain":"example.com"}},"summary":{{"counts":{{}}}},"critical_severity_vulnerabilities":[],"high_severity_vulnerabilities":[],"medium_severity_vulnerabilities":[],"low_severity_vulnerabilities":[],"subdomains":[],"ports":[],"recommendations":{{"immediate":[],"short_term":[],"medium_term":[]}}}}
 Example (incorrect, DO NOT OUTPUT):
 {{"metadata":{{}},"summary":{{}},"low_severity_vulnerabilities":[],"recommendations":{{}},"extra_key":true}}
 

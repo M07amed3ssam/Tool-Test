@@ -208,19 +208,17 @@ Rules:
 - Output JSON only (no markdown, no commentary).
 - Use only the keys in the schema. Do not add extra keys.
 - Keep list sizes stable where possible; do not fabricate data.
-Output JSON schema:
+Schema example (valid JSON, use same keys/types):
 {{
-  "summary": "...",
-  "findings": [...],
-  "risk_scores": [...],
-  "visualization_recommendations": [...]
+  "summary": "2 low severity findings",
+  "findings": [],
+  "risk_scores": [],
+  "visualization_recommendations": []
 }}
 Validation checklist (do NOT output):
 - All required keys present; no extra keys.
 - summary is a string.
 - findings, risk_scores, visualization_recommendations are arrays.
-Example (correct, DO NOT OUTPUT):
-{{"summary":"2 low severity findings","findings":[],"risk_scores":[],"visualization_recommendations":[]}}
 Example (incorrect, DO NOT OUTPUT):
 {{"summary":{{}},"findings":{{}},"risk_scores":[],"visualization_recommendations":[],"extra_key":true}}
 

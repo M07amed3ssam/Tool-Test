@@ -245,11 +245,12 @@ Rules:
 - Do not generate shell commands in this phase.
 - If unsure, use safe defaults and still return a valid JSON object.
 - Hard constraints: for domain use flow Domain -> Subdomain Enum -> Port Scan -> Vuln Scan. For IP use flow IP -> Nmap -> Masscan -> Vulnerability Check.
-Schema (required keys, types, allowed values):
+- Allowed values: target_type in [domain, ip, application, unknown]; mode in [sequential, parallel].
+Schema example (valid JSON, use same keys/types):
 {{
-  "analyze_target_type": {{"agent": "analyze_target_type", "target_type": "domain|ip|application|unknown", "confidence": 0..1, "reason": "..."}},
-  "select_recon_tools": {{"agent": "select_recon_tools", "strategy": "...", "selected_tools": ["..."]}},
-  "execution_orchestration": {{"agent": "orchestrator", "mode": "sequential|parallel", "max_parallel": number, "reason": "..."}}
+  "analyze_target_type": {{"agent": "analyze_target_type", "target_type": "domain", "confidence": 0.75, "reason": "target looks like a domain"}},
+  "select_recon_tools": {{"agent": "select_recon_tools", "strategy": "domain_to_subdomain_port_and_vuln", "selected_tools": ["subfinder", "nmap", "nuclei"]}},
+  "execution_orchestration": {{"agent": "orchestrator", "mode": "parallel", "max_parallel": 3, "reason": "parallel for domain"}}
 }}
 Validation checklist (do NOT output):
 - All required keys present with correct types.
@@ -257,10 +258,8 @@ Validation checklist (do NOT output):
 - selected_tools is a subset of available_tools.
 - mode is sequential or parallel; max_parallel >= 1.
 - No extra keys.
-Example (correct, DO NOT OUTPUT):
-{{"analyze_target_type":{{"agent":"analyze_target_type","target_type":"domain","confidence":0.78,"reason":"Domain-style target"}},"select_recon_tools":{{"agent":"select_recon_tools","strategy":"domain_to_subdomain_port_and_vuln","selected_tools":["subfinder","nmap","nuclei"]}},"execution_orchestration":{{"agent":"orchestrator","mode":"parallel","max_parallel":3,"reason":"Parallel for domain"}}}}
 Example (incorrect, DO NOT OUTPUT):
-{{"analyze_target_type":{{"agent":"analyze_target_type","target_type":"domain","confidence":"high","reason":"..."}},"select_recon_tools":{{"agent":"select_recon_tools","strategy":"...","selected_tools":"subfinder"}},"execution_orchestration":{{"agent":"orchestrator","mode":"fast","max_parallel":0,"reason":"..."}},"extra_key":"not_allowed"}}
+{{"analyze_target_type":{{"agent":"analyze_target_type","target_type":"domain","confidence":"high","reason":"invalid type"}},"select_recon_tools":{{"agent":"select_recon_tools","strategy":"unknown","selected_tools":"subfinder"}},"execution_orchestration":{{"agent":"orchestrator","mode":"fast","max_parallel":0,"reason":"invalid type"}},"extra_key":"not_allowed"}}
 Input target={target}; target_type={target_type}; available_tools={sorted(list(available_tools.keys()))}; default_web_wordlist={web_wordlist}."""
     )
 
@@ -280,10 +279,10 @@ Rules:
 - Each command must be a full shell command and include required output artifact paths exactly as specified.
 - Keep commands safe and scoped to reconnaissance only. Do not add destructive flags (rm, shutdown, curl|sh).
 - If unsure, keep safe defaults and leave command_overrides empty.
-Schema (required keys, types, allowed values):
+Schema example (valid JSON, use same keys/types):
 {{
-  "parameter_optimization": {{"agent": "parameter_optimization", "web_wordlist": "...", "nmap_timing": "-T3|-T4", "masscan_rate": number, "ffuf_match_codes": "...", "ffuf_threads": number, "gobuster_threads": number}},
-  "command_overrides": {{"tool": "full shell command"}}
+  "parameter_optimization": {{"agent": "parameter_optimization", "web_wordlist": "/usr/share/wordlists/dirb/common.txt", "nmap_timing": "-T4", "masscan_rate": 1000, "ffuf_match_codes": "200,204,301,302,307,401,403", "ffuf_threads": 40, "gobuster_threads": 30}},
+  "command_overrides": {{}}
 }}
 Validation checklist (do NOT output):
 - All required keys present with correct types.
@@ -291,8 +290,6 @@ Validation checklist (do NOT output):
 - Commands include required output artifact paths.
 - No destructive or unrelated commands.
 - No extra keys.
-Example (correct, DO NOT OUTPUT):
-{{"parameter_optimization":{{"agent":"parameter_optimization","web_wordlist":"/usr/share/wordlists/dirb/common.txt","nmap_timing":"-T4","masscan_rate":1000,"ffuf_match_codes":"200,204,301,302,307,401,403","ffuf_threads":40,"gobuster_threads":30}},"command_overrides":{{}}}}
 Example (incorrect, DO NOT OUTPUT):
 {{"parameter_optimization":{{"agent":"parameter_optimization","web_wordlist":123,"nmap_timing":"fast"}},"command_overrides":{{"nmap":"rm -rf /"}},"extra_key":true}}
 Input target={target}; target_type={target_type}; selected_tools={selected_tools}; default_web_wordlist={web_wordlist}; required_output_artifacts={output_artifacts}."""
