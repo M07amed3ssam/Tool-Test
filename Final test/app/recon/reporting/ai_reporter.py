@@ -207,25 +207,26 @@ def _build_summary(full_data: dict, risk_scores: list[dict], open_ports: list[in
 def build_reporting_prompt(full_data: dict) -> str:
     payload = json.dumps(full_data, ensure_ascii=False)
     return (
-        f"""You are a cybersecurity reporting AI. Produce a professional Final_report.json for the dashboard.
+                f"""You are a cybersecurity reporting AI. Produce a professional Final_report.json for the dashboard.
 Rules:
 - Output JSON only (no markdown, no commentary).
 - Use only the keys in the schema. Do not add extra top-level keys.
-- Preserve metadata, summary.counts, subdomains, ports, and list sizes.
-- Enrich vulnerability entries with description, remediation, impact, cve, mitre_link, references.
+- Preserve metadata (report_name, domain, scan_start, scan_end) and summary.counts.
+- Preserve subdomains, ports, and list sizes.
+- Enrich vulnerability entries with description, remediation, affected_hosts, and raw when available.
 - Do not fabricate CVEs or references; leave empty string or null when unknown.
 - Do NOT add or remove items from vulnerability lists; only enhance fields.
 Schema example (valid JSON, use same keys/types):
 {{
-  "metadata": {{"domain": "example.com", "target_type": "domain", "scan_start": "2025-01-01T00:00:00Z"}},
-  "summary": {{"counts": {{"critical": 0, "high": 1, "medium": 0, "low": 0, "info": 2}}}},
-  "critical_severity_vulnerabilities": [],
-  "high_severity_vulnerabilities": [],
-  "medium_severity_vulnerabilities": [],
-  "low_severity_vulnerabilities": [],
-  "subdomains": [],
-  "ports": [],
-  "recommendations": {{"immediate": ["patch critical issues"], "short_term": [], "medium_term": []}}
+    "metadata": {{"report_name": "recon_test.com_20250918", "domain": "example.com", "scan_start": "2025-01-01T00:00:00Z", "scan_end": "2025-01-01T00:10:00Z"}},
+    "summary": {{"counts": {{"total_subdomains": 9, "live_hosts": 9, "open_ports": 10, "unique_urls": 9, "vulnerabilities_total": 2, "vulnerabilities_by_severity": {{"critical": 0, "high": 0, "medium": 0, "low": 2}}}}}},
+    "critical_severity_vulnerabilities": [],
+    "high_severity_vulnerabilities": [],
+    "medium_severity_vulnerabilities": [],
+    "low_severity_vulnerabilities": [],
+    "subdomains": [],
+    "ports": [],
+    "recommendations": {{"immediate": ["patch critical issues"], "short_term": [], "medium_term": []}}
 }}
 Validation checklist (do NOT output):
 - All required top-level keys present; no extra keys.
@@ -243,24 +244,24 @@ def build_reporting_prompt_with_draft(full_data: dict, draft_report: dict) -> st
     payload = json.dumps(full_data, ensure_ascii=False)
     draft_payload = json.dumps(draft_report, ensure_ascii=False)
     return (
-        f"""You are a cybersecurity reporting AI. Enrich a draft report using full_data.json.
+                f"""You are a cybersecurity reporting AI. Enrich a draft report using full_data.json.
 Rules:
 - Output JSON only (no markdown, no commentary).
 - Use only the keys in the schema. Do not add extra top-level keys.
-- Preserve metadata, summary.counts, subdomains, ports, and list ordering.
+- Preserve metadata (report_name, domain, scan_start, scan_end), summary.counts, subdomains, ports, and list ordering.
 - Do NOT delete or add items to vulnerability lists; only enhance fields.
 - Do not fabricate CVEs or references; leave empty string or null when unknown.
 Schema example (valid JSON, use same keys/types):
 {{
-  "metadata": {{"domain": "example.com"}},
-  "summary": {{"counts": {{"critical": 0, "high": 1, "medium": 0, "low": 0, "info": 2}}}},
-  "critical_severity_vulnerabilities": [],
-  "high_severity_vulnerabilities": [],
-  "medium_severity_vulnerabilities": [],
-  "low_severity_vulnerabilities": [],
-  "subdomains": [],
-  "ports": [],
-  "recommendations": {{"immediate": [], "short_term": [], "medium_term": []}}
+    "metadata": {{"report_name": "recon_test.com_20250918", "domain": "example.com", "scan_start": "2025-01-01T00:00:00Z", "scan_end": "2025-01-01T00:10:00Z"}},
+    "summary": {{"counts": {{"total_subdomains": 9, "live_hosts": 9, "open_ports": 10, "unique_urls": 9, "vulnerabilities_total": 2, "vulnerabilities_by_severity": {{"critical": 0, "high": 0, "medium": 0, "low": 2}}}}}},
+    "critical_severity_vulnerabilities": [],
+    "high_severity_vulnerabilities": [],
+    "medium_severity_vulnerabilities": [],
+    "low_severity_vulnerabilities": [],
+    "subdomains": [],
+    "ports": [],
+    "recommendations": {{"immediate": [], "short_term": [], "medium_term": []}}
 }}
 Validation checklist (do NOT output):
 - All required top-level keys present; no extra keys.
