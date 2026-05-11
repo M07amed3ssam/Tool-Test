@@ -239,6 +239,23 @@ def _required_output_artifacts() -> dict[str, list[str]]:
     }
 
 
+def _strip_code_fences(text: str) -> str:
+    stripped = text.strip()
+    if stripped.startswith("```") and stripped.endswith("```"):
+        lines = stripped.splitlines()
+        if lines and lines[0].startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].startswith("```"):
+            lines = lines[:-1]
+        return "\n".join(lines).strip()
+    if stripped.startswith("```"):
+        lines = stripped.splitlines()
+        if lines and lines[0].startswith("```"):
+            lines = lines[1:]
+        return "\n".join(lines).strip()
+    return stripped
+
+
 def _build_selection_prompt(target: str, target_type: str, available_tools: dict[str, str], web_wordlist: str) -> str:
     return (
         f"""You are a recon decision engine. Produce a professional, strict JSON response for phase-1 tool selection.
@@ -919,6 +936,8 @@ def _llm_decisions(target: str, target_type: str, available_tools: dict[str, str
                 raise RuntimeError("Command phase did not return JSON object")
 
             optim, command_overrides = _normalize_parameter_phase(command_decisions, target_type, web_wordlist)
+            if isinstance(optim, dict):
+                optim["agent"] = "parameter_optimization"
             selected_tool_set = {str(tool) for tool in selected_tools}
             filtered_overrides = {
                 tool: cmd
@@ -936,12 +955,7 @@ def _llm_decisions(target: str, target_type: str, available_tools: dict[str, str
                 "execution_orchestration": selection_decisions.get("execution_orchestration", {}),
             }
 
-            raw_response = json.dumps(
-                {
-                    "selection_pass": selection_result.get("raw_response", ""),
-                    "command_pass": command_result.get("raw_response", ""),
-                }
-            )
+            raw_response = json.dumps({"selection_pass": selection_result.get("raw_response", ""), "command_pass": _strip_code_fences(command_result.get("raw_response", "")), "selection_pass_stripped": _strip_code_fences(selection_result.get("raw_response", "")), "command_pass_stripped": _strip_code_fences(command_result.get("raw_response", ""))})
             model = str(command_result.get("model") or selection_result.get("model") or "")
 
             return {
